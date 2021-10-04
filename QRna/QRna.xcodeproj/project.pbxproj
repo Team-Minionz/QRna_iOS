@@ -15,6 +15,7 @@
 		DA34762E270AEA320009519B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762D270AEA320009519B /* UserDataService.swift */; };
 		DA347630270AEBF00009519B /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762F270AEBF00009519B /* ResponseType.swift */; };
 		DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347634270AEF130009519B /* ViewModelStatus.swift */; };
+		DA347638270AF3430009519B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347637270AF3430009519B /* UserViewModel.swift */; };
 		DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF52705983800AC5794 /* AppDelegate.swift */; };
 		DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF72705983800AC5794 /* SceneDelegate.swift */; };
 		DA641AFA2705983800AC5794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF92705983800AC5794 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		DA34762D270AEA320009519B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		DA34762F270AEBF00009519B /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		DA347634270AEF130009519B /* ViewModelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStatus.swift; sourceTree = "<group>"; };
+		DA347637270AF3430009519B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DA641AF22705983800AC5794 /* QRna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641AF52705983800AC5794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA641AF72705983800AC5794 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		DA347636270AF3390009519B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA347637270AF3430009519B /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA641AE92705983800AC5794 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
 				DA641AF72705983800AC5794 /* SceneDelegate.swift */,
@@ -443,6 +454,7 @@
 				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
+				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,

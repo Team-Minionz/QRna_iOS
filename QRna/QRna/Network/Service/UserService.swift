@@ -23,13 +23,13 @@ extension UserService: TargetType {
     public var path: String {
         switch self {
         case .signin:
-            return ""
+            return "/api/v1/users/login"
         case .signup:
-            return ""
+            return "/api/v1/users/join"
         case .withdraw:
-            return ""
+            return "/api/v1/users/withdraw/email"
         case .logout:
-            return ""
+            return "/api/v1/users/logout/email"
         }
     }
     
