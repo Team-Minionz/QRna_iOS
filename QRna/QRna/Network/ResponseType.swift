@@ -17,7 +17,7 @@ struct ResponseArrayType<T: Codable>: Codable {
         var data: [T]?
 }
 
-struct LoginData: Codable {
+struct ResponseData: Codable {
     var email: String?
     var statusCode: Int?
 }
