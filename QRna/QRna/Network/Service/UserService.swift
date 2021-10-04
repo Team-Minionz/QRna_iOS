@@ -27,9 +27,9 @@ extension UserService: TargetType {
         case .signup:
             return "/api/v1/users/join"
         case .withdraw:
-            return "/api/v1/users/withdraw/email"
+            return "/api/v1/users/withdraw/\(UserDataService.userEmail)"
         case .logout:
-            return "/api/v1/users/logout/email"
+            return "/api/v1/users/logout/\(UserDataService.userEmail)"
         }
     }
     
