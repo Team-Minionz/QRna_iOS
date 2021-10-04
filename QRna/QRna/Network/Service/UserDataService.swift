@@ -20,28 +20,53 @@ class UserDataService {
     })
     
     func requestSignIn(email: String, password: String, completion: @escaping ((LoginData?, Error?)->Void)) {
-            provider.request(.signin(email: email, password: password)) { response in
-                
-                print("DataService - \(response)")
-                switch response {
-                case .success(let loginData):
-                    print("DataService - 성공")
-                    do {
-                        let decoder = JSONDecoder()
-                        print("requestSignIn - data")
-                        let post = try decoder.decode(LoginData.self, from: loginData.data)
-                        completion(post, nil)
-                    }
-                    catch (let error) {
-                        print("DataService - 파싱 실패")
-                        completion(nil, error)
-                    }
-                case .failure(let error):
-                    print("DataService - 실패")
-                    completion(nil, error)
-
+        provider.request(.signin(email: email, password: password)) { response in
+            
+            print("DataService - \(response)")
+            switch response {
+            case .success(let loginData):
+                print("DataService - 성공")
+                do {
+                    let decoder = JSONDecoder()
+                    print("requestSignIn - data")
+                    let post = try decoder.decode(LoginData.self, from: loginData.data)
+                    completion(post, nil)
                 }
+                catch (let error) {
+                    print("DataService - 파싱 실패")
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print("DataService - 실패")
+                completion(nil, error)
+                
             }
         }
+    }
+    
+    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, completion: @escaping ((LoginData?, Error?)->Void)) {
+        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password)) { response in
+            
+            print("DataService - \(response)")
+            switch response {
+            case .success(let loginData):
+                print("DataService - 성공")
+                do {
+                    let decoder = JSONDecoder()
+                    print("requestSignUp - data")
+                    let post = try decoder.decode(LoginData.self, from: loginData.data)
+                    completion(post, nil)
+                }
+                catch (let error) {
+                    print("DataService - 파싱 실패")
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print("DataService - 실패")
+                completion(nil, error)
+                
+            }
+        }
+    }
     
 }
