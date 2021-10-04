@@ -9,6 +9,9 @@ import Foundation
 import Moya
 
 class UserDataService {
+    
+    static var userEmail = "a@a.a"
+    
     fileprivate let provider = Moya.MoyaProvider<UserService>(endpointClosure: { (target: UserService) -> Endpoint in
         
         let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
