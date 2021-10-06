@@ -25,8 +25,8 @@
 		DA641B0D2705983B00AC5794 /* QRnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B0C2705983B00AC5794 /* QRnaTests.swift */; };
 		DA641B182705983B00AC5794 /* QRnaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B172705983B00AC5794 /* QRnaUITests.swift */; };
 		DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B252705AB5C00AC5794 /* ReaderView.swift */; };
+		DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
-		DAC66323270B561C009856DD /* QRDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66322270B561C009856DD /* QRDataService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +78,8 @@
 		DA641B172705983B00AC5794 /* QRnaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRnaUITests.swift; sourceTree = "<group>"; };
 		DA641B192705983B00AC5794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA641B252705AB5C00AC5794 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
-		DAC66322270B561C009856DD /* QRDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDataService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,6 @@
 				DA347629270AE73B0009519B /* UserService.swift */,
 				DA34762D270AEA320009519B /* UserDataService.swift */,
 				DAC66320270B54B7009856DD /* QRService.swift */,
-				DAC66322270B561C009856DD /* QRDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 				DA34762B270AE88C0009519B /* NetworkController.swift */,
 				DA34762F270AEBF00009519B /* ResponseType.swift */,
 				DA347634270AEF130009519B /* ViewModelStatus.swift */,
+				DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -472,7 +472,7 @@
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
-				DAC66323270B561C009856DD /* QRDataService.swift in Sources */,
+				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,

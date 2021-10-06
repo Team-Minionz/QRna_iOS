@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Moya
+import RxSwift
 
 class ViewController: UIViewController {
     
@@ -14,6 +16,7 @@ class ViewController: UIViewController {
     
     let userViewModel = UserViewModel()
     let qrViewModel = QRViewModel()
+    let userProvider = MoyaProvider<UserService>()
     
     var testId = "b@b.b"
     var testPass = "1"
@@ -32,6 +35,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func didTapSignIn(_ sender: Any) {
+        
         userViewModel.signIn(email: testId, password: testPass) {
             result in
             switch result {
