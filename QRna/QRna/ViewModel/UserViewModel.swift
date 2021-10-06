@@ -38,13 +38,26 @@ class UserViewModel {
     }
     
     func withdraw(completion: @escaping (ViewModelState) -> Void) {
-        service.requestWithdraw() { (withdrawData, error) in
+        service.requestWithdraw { (withdrawData, error) in
             if withdrawData?.statusCode == 204 {
                 print("탈퇴 성공")
                 completion(.success)
             }
             else {
                 print("탈퇴 실패")
+                completion(.failure)
+            }
+        }
+    }
+    
+    func logout(completion: @escaping (ViewModelState) -> Void) {
+        service.requestLogOut { (logoutData, error) in
+            if logoutData?.statusCode == 204 {
+                print("로그아웃 성공")
+                completion(.success)
+            }
+            else {
+                print("로그아웃 실패")
                 completion(.failure)
             }
         }
