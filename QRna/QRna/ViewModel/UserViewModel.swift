@@ -11,6 +11,8 @@ class UserViewModel {
     
     fileprivate let service = UserDataService()
     
+    static var userEmail = "b@b.b"
+    
     func signIn(email: String, password: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password) { (loginData, error) in
             if loginData?.statusCode == 200 {
