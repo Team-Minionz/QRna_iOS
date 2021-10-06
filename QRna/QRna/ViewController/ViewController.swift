@@ -70,6 +70,15 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func didTapLogout(_ sender: Any) {
+        userViewModel.logout { result in
+            switch result {
+            case .success:
+                print("로그아웃 성공")
+            case .failure:
+                print("로그아웃 실패")
+            }
+            
+        }
     }
     
     @IBAction func didTabCaptureBtn(_ sender: UIButton) {
