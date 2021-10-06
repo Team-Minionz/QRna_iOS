@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD58DD7B0220D5C8DD7D4083 /* Pods_QRna_QRnaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6584B0D7F6E8492B426C9D /* Pods_QRna_QRnaUITests.framework */; };
+		C08C85273952FE3937ED976D /* Pods_QRna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */; };
+		C7B7AEE7C2213543D47BECE8 /* Pods_QRnaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */; };
+		DA34762A270AE73B0009519B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347629270AE73B0009519B /* UserService.swift */; };
+		DA34762C270AE88C0009519B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762B270AE88C0009519B /* NetworkController.swift */; };
+		DA34762E270AEA320009519B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762D270AEA320009519B /* UserDataService.swift */; };
+		DA347630270AEBF00009519B /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762F270AEBF00009519B /* ResponseType.swift */; };
+		DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347634270AEF130009519B /* ViewModelStatus.swift */; };
+		DA347638270AF3430009519B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347637270AF3430009519B /* UserViewModel.swift */; };
 		DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF52705983800AC5794 /* AppDelegate.swift */; };
 		DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF72705983800AC5794 /* SceneDelegate.swift */; };
 		DA641AFA2705983800AC5794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF92705983800AC5794 /* ViewController.swift */; };
@@ -15,6 +24,10 @@
 		DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA641B002705983B00AC5794 /* LaunchScreen.storyboard */; };
 		DA641B0D2705983B00AC5794 /* QRnaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B0C2705983B00AC5794 /* QRnaTests.swift */; };
 		DA641B182705983B00AC5794 /* QRnaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B172705983B00AC5794 /* QRnaUITests.swift */; };
+		DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B252705AB5C00AC5794 /* ReaderView.swift */; };
+		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
+		DAC66323270B561C009856DD /* QRDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66322270B561C009856DD /* QRDataService.swift */; };
+		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +48,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F1A2336BCC302F62F779CA8 /* Pods-QRna-QRnaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna-QRnaUITests.release.xcconfig"; path = "Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		47A2138E6FC5F287AE4C5A81 /* Pods-QRnaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRnaTests.release.xcconfig"; path = "Target Support Files/Pods-QRnaTests/Pods-QRnaTests.release.xcconfig"; sourceTree = "<group>"; };
+		61B121A33E7733A2CACD8570 /* Pods-QRna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna.release.xcconfig"; path = "Target Support Files/Pods-QRna/Pods-QRna.release.xcconfig"; sourceTree = "<group>"; };
+		7B6584B0D7F6E8492B426C9D /* Pods_QRna_QRnaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRna_QRnaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B53C35690E776BB86862E6E /* Pods-QRnaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRnaTests.debug.xcconfig"; path = "Target Support Files/Pods-QRnaTests/Pods-QRnaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRnaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D92DA73ECDBFDC624DA819F /* Pods-QRna-QRnaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna-QRnaUITests.debug.xcconfig"; path = "Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna.debug.xcconfig"; path = "Target Support Files/Pods-QRna/Pods-QRna.debug.xcconfig"; sourceTree = "<group>"; };
+		DA347629270AE73B0009519B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DA34762B270AE88C0009519B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		DA34762D270AEA320009519B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		DA34762F270AEBF00009519B /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		DA347634270AEF130009519B /* ViewModelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStatus.swift; sourceTree = "<group>"; };
+		DA347637270AF3430009519B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		DA641AF22705983800AC5794 /* QRna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641AF52705983800AC5794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA641AF72705983800AC5794 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +77,10 @@
 		DA641B132705983B00AC5794 /* QRnaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRnaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641B172705983B00AC5794 /* QRnaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRnaUITests.swift; sourceTree = "<group>"; };
 		DA641B192705983B00AC5794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA641B252705AB5C00AC5794 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
+		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
+		DAC66322270B561C009856DD /* QRDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDataService.swift; sourceTree = "<group>"; };
+		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08C85273952FE3937ED976D /* Pods_QRna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B7AEE7C2213543D47BECE8 /* Pods_QRnaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +104,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD58DD7B0220D5C8DD7D4083 /* Pods_QRna_QRnaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8793B9332ED366C33D5145BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */,
+				61B121A33E7733A2CACD8570 /* Pods-QRna.release.xcconfig */,
+				9D92DA73ECDBFDC624DA819F /* Pods-QRna-QRnaUITests.debug.xcconfig */,
+				1F1A2336BCC302F62F779CA8 /* Pods-QRna-QRnaUITests.release.xcconfig */,
+				8B53C35690E776BB86862E6E /* Pods-QRnaTests.debug.xcconfig */,
+				47A2138E6FC5F287AE4C5A81 /* Pods-QRnaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA347627270AE7130009519B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DA347629270AE73B0009519B /* UserService.swift */,
+				DA34762D270AEA320009519B /* UserDataService.swift */,
+				DAC66320270B54B7009856DD /* QRService.swift */,
+				DAC66322270B561C009856DD /* QRDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DA347628270AE7270009519B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DA347627270AE7130009519B /* Service */,
+				DA34762B270AE88C0009519B /* NetworkController.swift */,
+				DA34762F270AEBF00009519B /* ResponseType.swift */,
+				DA347634270AEF130009519B /* ViewModelStatus.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DA347636270AF3390009519B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA347637270AF3430009519B /* UserViewModel.swift */,
+				DAC66324270B57C8009856DD /* QRViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DA641AE92705983800AC5794 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +162,8 @@
 				DA641B0B2705983B00AC5794 /* QRnaTests */,
 				DA641B162705983B00AC5794 /* QRnaUITests */,
 				DA641AF32705983800AC5794 /* Products */,
+				8793B9332ED366C33D5145BC /* Pods */,
+				F7EA525667F3E555A0B8B1AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +180,16 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAC66326270B5AE9009856DD /* ViewController */,
+				DA347636270AF3390009519B /* ViewModel */,
+				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
 				DA641AF72705983800AC5794 /* SceneDelegate.swift */,
-				DA641AF92705983800AC5794 /* ViewController.swift */,
 				DA641AFB2705983800AC5794 /* Main.storyboard */,
 				DA641AFE2705983B00AC5794 /* Assets.xcassets */,
 				DA641B002705983B00AC5794 /* LaunchScreen.storyboard */,
 				DA641B032705983B00AC5794 /* Info.plist */,
+				DA641B252705AB5C00AC5794 /* ReaderView.swift */,
 			);
 			path = QRna;
 			sourceTree = "<group>";
@@ -128,6 +212,24 @@
 			path = QRnaUITests;
 			sourceTree = "<group>";
 		};
+		DAC66326270B5AE9009856DD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA641AF92705983800AC5794 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F7EA525667F3E555A0B8B1AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */,
+				7B6584B0D7F6E8492B426C9D /* Pods_QRna_QRnaUITests.framework */,
+				8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA641B1C2705983B00AC5794 /* Build configuration list for PBXNativeTarget "QRna" */;
 			buildPhases = (
+				07651FFCF43DF2BADAC72B81 /* [CP] Check Pods Manifest.lock */,
 				DA641AEE2705983800AC5794 /* Sources */,
 				DA641AEF2705983800AC5794 /* Frameworks */,
 				DA641AF02705983800AC5794 /* Resources */,
+				F821CDB0A45EE6D7B7E600F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA641B1F2705983B00AC5794 /* Build configuration list for PBXNativeTarget "QRnaTests" */;
 			buildPhases = (
+				EFD664035CC161FC556AB6E7 /* [CP] Check Pods Manifest.lock */,
 				DA641B042705983B00AC5794 /* Sources */,
 				DA641B052705983B00AC5794 /* Frameworks */,
 				DA641B062705983B00AC5794 /* Resources */,
@@ -170,9 +275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA641B222705983B00AC5794 /* Build configuration list for PBXNativeTarget "QRnaUITests" */;
 			buildPhases = (
+				41BCC6CE3E33D8C643A9B714 /* [CP] Check Pods Manifest.lock */,
 				DA641B0F2705983B00AC5794 /* Sources */,
 				DA641B102705983B00AC5794 /* Frameworks */,
 				DA641B112705983B00AC5794 /* Resources */,
+				DE30BD89924306820360FC8F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,13 +360,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07651FFCF43DF2BADAC72B81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRna-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41BCC6CE3E33D8C643A9B714 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRna-QRnaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE30BD89924306820360FC8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFD664035CC161FC556AB6E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRnaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F821CDB0A45EE6D7B7E600F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QRna/Pods-QRna-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QRna/Pods-QRna-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QRna/Pods-QRna-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA641AEE2705983800AC5794 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
+				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
+				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
+				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
+				DAC66323270B561C009856DD /* QRDataService.swift in Sources */,
+				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
+				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
+				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
+				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
+				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
+				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +653,7 @@
 		};
 		DA641B1D2705983B00AC5794 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +673,7 @@
 		};
 		DA641B1E2705983B00AC5794 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61B121A33E7733A2CACD8570 /* Pods-QRna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +693,7 @@
 		};
 		DA641B202705983B00AC5794 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B53C35690E776BB86862E6E /* Pods-QRnaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +716,7 @@
 		};
 		DA641B212705983B00AC5794 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47A2138E6FC5F287AE4C5A81 /* Pods-QRnaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +739,7 @@
 		};
 		DA641B232705983B00AC5794 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D92DA73ECDBFDC624DA819F /* Pods-QRna-QRnaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +760,7 @@
 		};
 		DA641B242705983B00AC5794 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F1A2336BCC302F62F779CA8 /* Pods-QRna-QRnaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

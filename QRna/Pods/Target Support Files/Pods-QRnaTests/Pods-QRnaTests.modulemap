@@ -1,0 +1,6 @@
+framework module Pods_QRnaTests {
+  umbrella header "Pods-QRnaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
