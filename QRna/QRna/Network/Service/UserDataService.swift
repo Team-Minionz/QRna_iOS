@@ -91,4 +91,29 @@ class UserDataService {
         }
     }
     
+    func requestLogOut(completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.logout) { response in
+            
+            print("DataService - requestLogOut")
+            
+            switch response {
+            case .success(let logoutData):
+                do {
+                    let decoder = JSONDecoder()
+                    let data = try decoder.decode(ResponseData.self, from: logoutData.data)
+                    print("DataService - requestLogOut : 파싱 성공")
+                    completion(data, nil)
+                    
+                }
+                catch(let error) {
+                    print("DataService - requestLogOut : 파싱 실패")
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                print("DataService - requestLogOut : 통신 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
 }
