@@ -180,11 +180,11 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAC66326270B5AE9009856DD /* ViewController */,
 				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
 				DA641AF72705983800AC5794 /* SceneDelegate.swift */,
-				DA641AF92705983800AC5794 /* ViewController.swift */,
 				DA641AFB2705983800AC5794 /* Main.storyboard */,
 				DA641AFE2705983B00AC5794 /* Assets.xcassets */,
 				DA641B002705983B00AC5794 /* LaunchScreen.storyboard */,
@@ -210,6 +210,14 @@
 				DA641B192705983B00AC5794 /* Info.plist */,
 			);
 			path = QRnaUITests;
+			sourceTree = "<group>";
+		};
+		DAC66326270B5AE9009856DD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA641AF92705983800AC5794 /* ViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		F7EA525667F3E555A0B8B1AE /* Frameworks */ = {
