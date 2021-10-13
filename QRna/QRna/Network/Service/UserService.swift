@@ -27,8 +27,10 @@ extension UserService: TargetType {
         case .signup:
             return "/api/v1/users/join"
         case .withdraw:
+            print("/api/v1/users/withdraw/\(UserViewModel.userEmail)")
             return "/api/v1/users/withdraw/\(UserViewModel.userEmail)"
         case .logout:
+            print("/api/v1/users/logout/\(UserViewModel.userEmail)")
             return "/api/v1/users/logout/\(UserViewModel.userEmail)"
         }
     }
@@ -51,8 +53,10 @@ extension UserService: TargetType {
     public var task: Task {
         switch self {
         case .signin(email: let email, password: let password):
+            print("email : \(email) password : \(password)")
             return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password):
+            print("email : \(email) password : \(password)")
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .withdraw, .logout:
             return .requestPlain

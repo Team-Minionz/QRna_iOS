@@ -26,6 +26,8 @@
 		DA641B182705983B00AC5794 /* QRnaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B172705983B00AC5794 /* QRnaUITests.swift */; };
 		DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B252705AB5C00AC5794 /* ReaderView.swift */; };
 		DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */; };
+		DA73AD86270DA83700916720 /* QRDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD85270DA83700916720 /* QRDataService.swift */; };
+		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +81,8 @@
 		DA641B192705983B00AC5794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA641B252705AB5C00AC5794 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
+		DA73AD85270DA83700916720 /* QRDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDataService.swift; sourceTree = "<group>"; };
+		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,7 @@
 				DA347629270AE73B0009519B /* UserService.swift */,
 				DA34762D270AEA320009519B /* UserDataService.swift */,
 				DAC66320270B54B7009856DD /* QRService.swift */,
+				DA73AD85270DA83700916720 /* QRDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DA85B7C8270ECA7300631BD2 /* UI */,
 				DAC66326270B5AE9009856DD /* ViewController */,
 				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
@@ -210,6 +216,14 @@
 				DA641B192705983B00AC5794 /* Info.plist */,
 			);
 			path = QRnaUITests;
+			sourceTree = "<group>";
+		};
+		DA85B7C8270ECA7300631BD2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DAC66326270B5AE9009856DD /* ViewController */ = {
@@ -474,6 +488,7 @@
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
+				DA73AD86270DA83700916720 /* QRDataService.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
@@ -481,6 +496,7 @@
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
+				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,10 +12,12 @@ class QRViewModel {
     
     func certificationQR(userEmail: String, shopTelNumber: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestQRCertification(userEmail: userEmail, shopTelNumber: shopTelNumber) { (certificationData, error) in
-            if certificationData?.statusCode == 204 {
+            if certificationData != nil {
+                print("QR 인증 성공")
                 completion(.success)
             }
             else {
+                print("QR 인증 실패")
                 completion(.failure)
             }
         }
