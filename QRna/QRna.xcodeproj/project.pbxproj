@@ -30,6 +30,8 @@
 		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
+		DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619412716BD84001D28A7 /* LoginViewController.swift */; };
+		DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619442716BDBC001D28A7 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		DAD619412716BD84001D28A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DAD619442716BDBC001D28A7 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,13 +189,13 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAD619462716BDC6001D28A7 /* LoginAndJoin */,
 				DA85B7C8270ECA7300631BD2 /* UI */,
 				DAC66326270B5AE9009856DD /* ViewController */,
 				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
 				DA641AF72705983800AC5794 /* SceneDelegate.swift */,
-				DA641AFB2705983800AC5794 /* Main.storyboard */,
 				DA641AFE2705983B00AC5794 /* Assets.xcassets */,
 				DA641B002705983B00AC5794 /* LaunchScreen.storyboard */,
 				DA641B032705983B00AC5794 /* Info.plist */,
@@ -230,6 +234,24 @@
 			isa = PBXGroup;
 			children = (
 				DA641AF92705983800AC5794 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD619462716BDC6001D28A7 /* LoginAndJoin */ = {
+			isa = PBXGroup;
+			children = (
+				DAD619472716BFE9001D28A7 /* ViewController */,
+				DA641AFB2705983800AC5794 /* Main.storyboard */,
+			);
+			path = LoginAndJoin;
+			sourceTree = "<group>";
+		};
+		DAD619472716BFE9001D28A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD619412716BD84001D28A7 /* LoginViewController.swift */,
+				DAD619442716BDBC001D28A7 /* JoinViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -483,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
+				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
@@ -494,6 +517,7 @@
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
 				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
+				DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
 				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
