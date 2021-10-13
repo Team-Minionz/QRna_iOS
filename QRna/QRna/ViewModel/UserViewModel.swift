@@ -11,12 +11,12 @@ class UserViewModel {
     
     fileprivate let service = UserDataService()
     
-    static var userEmail = "b@b.b"
+    static var userEmail = "mangdic"
     
     func signIn(email: String, password: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password) { (loginData, error) in
             
-            if error != nil {
+            if loginData != nil {
                 print("로그인 성공")
                 completion(.success)
             }
@@ -29,7 +29,8 @@ class UserViewModel {
     
     func signUp(name: String, email: String, nickName: String, telNumber: String, password: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestSignUp(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password) { (singUpdata, error) in
-            if error != nil {
+            
+            if singUpdata != nil {
                 print("가입 성공")
                 completion(.success)
             }
@@ -42,7 +43,8 @@ class UserViewModel {
     
     func withdraw(completion: @escaping (ViewModelState) -> Void) {
         service.requestWithdraw { (withdrawData, error) in
-            if error != nil {
+            
+            if withdrawData != nil {
                 print("탈퇴 성공")
                 completion(.success)
             }
@@ -55,7 +57,8 @@ class UserViewModel {
     
     func logout(completion: @escaping (ViewModelState) -> Void) {
         service.requestLogOut { (logoutData, error) in
-            if error != nil {
+            
+            if logoutData != nil {
                 print("로그아웃 성공")
                 completion(.success)
             }

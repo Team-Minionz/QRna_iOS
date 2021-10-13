@@ -13,21 +13,26 @@ class QRDataService {
     
     func requestQRCertification(userEmail: String, shopTelNumber: String, completion: @escaping (ResponseData?, Error?) -> Void) {
         provider.request(.certification(userEmail: userEmail, shopTelNumber: shopTelNumber)) { response in
+            print("QRDataService - requestQRCertification")
             switch response {
             case .success(let certificationData):
-                if certificationData.statusCode == 201 {
-                    do {
-                        let decoder = JSONDecoder()
-                        let data = try decoder.decode(ResponseData.self, from: certificationData.data)
+                print("QRDataService - requestQRCertification 성공")
+                print(certificationData.data)
+                print(certificationData.statusCode)
+                do {
+                    let decoder = JSONDecoder()
+                    let data = try decoder.decode(ResponseData.self, from: certificationData.data)
+                    if certificationData.statusCode == 201 {
                         completion(data, nil)
                     }
-                    catch(let error) {
-                        completion(nil, error)
+                    else {
+                        completion(nil, nil)
                     }
                 }
-                else {
-                    completion(nil, nil)
+                catch(let error) {
+                    completion(nil, error)
                 }
+                
             case .failure(let error):
                 completion(nil, error)
             }

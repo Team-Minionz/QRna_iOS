@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     let qrViewModel = QRViewModel()
     let userProvider = MoyaProvider<UserService>()
     
-    var testId = "b@b.b"
-    var testPass = "1"
+    var testId = "mangdic"
+    var testPass = "mangdic"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        var a = [Int]()
+        a.append(1)
         self.readerView.delegate = self
     }
     
@@ -40,9 +41,9 @@ class ViewController: UIViewController {
             result in
             switch result {
             case .success:
-                print("로그인 성공")
+                print("")
             case .failure:
-                print("로그인 실패")
+                print("")
             }
         }
     }
@@ -52,9 +53,9 @@ class ViewController: UIViewController {
             switch result {
             case .success:
                 UserViewModel.userEmail = self.testId
-                print("성공")
+                print("")
             case .failure:
-                print("실패")
+                print("")
             }
             
         }
@@ -63,9 +64,9 @@ class ViewController: UIViewController {
         userViewModel.withdraw { result in
             switch result {
             case .success:
-                print("탈퇴 성공")
+                print("")
             case .failure:
-                print("탈퇴 실패")
+                print("")
             }
         }
     }
@@ -73,9 +74,9 @@ class ViewController: UIViewController {
         userViewModel.logout { result in
             switch result {
             case .success:
-                print("로그아웃 성공")
+                print("")
             case .failure:
-                print("로그아웃 실패")
+                print("")
             }
             
         }
@@ -83,13 +84,22 @@ class ViewController: UIViewController {
     
     @IBAction func didTabCaptureBtn(_ sender: UIButton) {
         
-        if self.readerView.isRunning {
-            self.readerView.stop(isButtonTap: true)
-        } else {
-            self.readerView.start()
+//        if self.readerView.isRunning {
+//            self.readerView.stop(isButtonTap: true)
+//        } else {
+//            self.readerView.start()
+//        }
+//
+//        sender.isSelected = self.readerView.isRunning
+        qrViewModel.certificationQR(userEmail: testId, shopTelNumber: "1111") { result in
+            switch result {
+            case .success:
+                print("")
+            case .failure:
+                print("")
+            }
+
         }
-        
-        sender.isSelected = self.readerView.isRunning
         
     }
     
@@ -110,14 +120,14 @@ extension ViewController: ReaderViewDelegate {
             
             title = "알림"
             message = "인식성공\n\(code)"
-            qrViewModel.certificationQR(userEmail: testId, shopTelNumber: code) { result in
+            qrViewModel.certificationQR(userEmail: testId, shopTelNumber: "010-2234-3319") { result in
                 switch result {
                 case .success:
-                    print("QR 통신 성공")
+                    print("")
                 case .failure:
-                    print("QR 통신 실패")
+                    print("")
                 }
-                
+
             }
         
         case .fail:

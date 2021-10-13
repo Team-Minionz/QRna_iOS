@@ -38,6 +38,7 @@ extension QRService: TargetType {
     var task: Task {
         switch self {
         case .certification(let userEmail, let shopTelNumber):
+            print("email : \(userEmail)  shopTelNumber : \(shopTelNumber)")
             return .requestCompositeParameters(bodyParameters: ["userEmail" : userEmail, "shopTelNumber" : shopTelNumber], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         }
     }
