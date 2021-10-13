@@ -9,21 +9,57 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passField: UITextField!
+    @IBOutlet weak var signUpBtn: UIButton!
+    
+    let userViewModel = UserViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setSignUpBtn()
+        
+    }
+    @IBAction func didTabSignIn(_ sender: Any) {
+        var textFeilds = [UITextField]()
+        textFeilds.append(emailField)
+        textFeilds.append(passField)
+        
+        if checkEmpty(textFeilds) {
+            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
+                switch response {
+                case .success:
+                    print("성공")
+                case .failure:
+                    print("실패")
+                }
+                
+            }
+        }
+        else {
+            // 공백 에러
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    fileprivate func checkEmpty(_ textFeilds: [UITextField]) -> Bool{
+        for textFeild in textFeilds {
+            if textFeild.text == "" {
+                return false
+            }
+        }
+        return true
     }
-    */
+    
+    fileprivate func setSignUpBtn() {
+        let text = "아직 회원이 아니세요?"
+        let attributedString = NSMutableAttributedString(string: text)
+        let textColor = #colorLiteral(red: 0.04115622491, green: 0.07253655046, blue: 0.1939196885, alpha: 1)
+        let underLine = NSUnderlineStyle.single.rawValue
 
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: textColor, range: NSRange(location: 0, length: text.count))
+        attributedString.addAttribute(NSMutableAttributedString.Key.underlineStyle, value: underLine, range: NSRange(location: 0, length: text.count))
+
+        self.signUpBtn.setAttributedTitle(attributedString, for: .normal)
+    }
 }

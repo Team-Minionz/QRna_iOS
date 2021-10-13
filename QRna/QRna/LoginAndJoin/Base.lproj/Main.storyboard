@@ -106,7 +106,7 @@
         <scene sceneID="zaq-yT-pl8">
             <objects>
                 <navigationController id="RqH-eM-ruR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WgR-eh-kMl">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="WgR-eh-kMl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -140,13 +140,16 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cox-HD-9Gd">
                                                 <rect key="frame" x="0.0" y="44" width="290" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37I-de-sRu" customClass="SignInButton" customModule="QRna" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="88" width="290" height="31"/>
                                                 <color key="backgroundColor" red="0.8135044575" green="0.32693743710000001" blue="0.26271405819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="SignIn"/>
+                                                <connections>
+                                                    <action selector="didTabSignIn:" destination="HsE-P0-Vkq" eventType="touchUpInside" id="Dtu-sT-caX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVe-uy-GZN">
                                                 <rect key="frame" x="0.0" y="129" width="290" height="28.5"/>
@@ -181,6 +184,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zDF-a4-qu9"/>
+                    <connections>
+                        <outlet property="emailField" destination="G4B-Tf-2tV" id="ErD-Rs-B46"/>
+                        <outlet property="passField" destination="cox-HD-9Gd" id="sb7-T0-lvs"/>
+                        <outlet property="signUpBtn" destination="BVe-uy-GZN" id="hIL-1b-m6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wti-Vs-C23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,12 +216,12 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-Eb-VqU">
                                                 <rect key="frame" x="0.0" y="44" width="290" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CheckPassword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4U4-zR-b42">
                                                 <rect key="frame" x="0.0" y="88" width="290" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLb-DM-zN4">
                                                 <rect key="frame" x="0.0" y="132" width="290" height="34"/>
@@ -242,12 +250,18 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Join"/>
+                                                <connections>
+                                                    <action selector="didTapJoinBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="WDJ-FJ-61H"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-dQ-Kf5" customClass="CancelButton" customModule="QRna" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="0.0" width="140" height="31"/>
                                                 <color key="backgroundColor" red="0.36078956719999999" green="0.36077481509999998" blue="0.3607848287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="didTabCancelBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="zRf-Jy-CCO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -273,6 +287,14 @@
                             <constraint firstItem="YeF-9r-zyc" firstAttribute="height" secondItem="gPI-m5-Qfo" secondAttribute="height" multiplier="0.699777" id="kU6-ro-aTv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="yEE-At-kuw" id="Uj8-9y-dWv"/>
+                        <outlet property="nameField" destination="mLb-DM-zN4" id="R2i-Qd-Xf5"/>
+                        <outlet property="nickNameField" destination="dVX-Id-kjv" id="2Hc-mw-AUm"/>
+                        <outlet property="passCheckField" destination="4U4-zR-b42" id="88D-Hc-mZG"/>
+                        <outlet property="passField" destination="kYp-Eb-VqU" id="fNs-DM-a0F"/>
+                        <outlet property="phoneNumberField" destination="dVX-Id-kjv" id="n9Y-Ca-ftq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lne-TB-l0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
