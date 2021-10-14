@@ -20,7 +20,7 @@ class CustomButton : UIButton {
     }
 }
 
-class SignInButton : UIButton {
+class RedButton : UIButton {
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         
@@ -32,7 +32,7 @@ class SignInButton : UIButton {
     }
 }
 
-class CancelButton : UIButton {
+class GrayButton : UIButton {
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         
@@ -41,5 +41,19 @@ class CancelButton : UIButton {
         self.layer.backgroundColor = colorLiteral.cgColor
         self.setTitleColor(.white, for: .normal)
         
+    }
+}
+
+class MenuButton: UIButton {
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        
+        self.layer.cornerRadius = 8
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 5
+        self.layer.shadowOpacity = 0.2
     }
 }

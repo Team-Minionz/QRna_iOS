@@ -22,24 +22,30 @@ class LoginViewController: UIViewController {
         
     }
     @IBAction func didTabSignIn(_ sender: Any) {
-        var textFeilds = [UITextField]()
-        textFeilds.append(emailField)
-        textFeilds.append(passField)
+        let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "UserPage")
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
         
-        if checkEmpty(textFeilds) {
-            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
-                switch response {
-                case .success:
-                    print("성공")
-                case .failure:
-                    print("실패")
-                }
-                
-            }
-        }
-        else {
-            // 공백 에러
-        }
+//        var textFeilds = [UITextField]()
+//        textFeilds.append(emailField)
+//        textFeilds.append(passField)
+//
+//        if checkEmpty(textFeilds) {
+//            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
+//                switch response {
+//                case .success:
+//                    print("성공")
+//                case .failure:
+//                    print("실패")
+//                }
+//
+//            }
+//        }
+//        else {
+//            // 공백 에러
+//        }
     }
     
     fileprivate func checkEmpty(_ textFeilds: [UITextField]) -> Bool{

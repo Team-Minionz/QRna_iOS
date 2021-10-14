@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6wB-i1-oNH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="q0N-Zg-Q3A">
+            <objects>
+                <navigationController storyboardIdentifier="UserPage" id="6wB-i1-oNH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eJ6-Yz-4sr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="PAT-IV-ydQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7c-ml-Ttp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-667" y="50"/>
+        </scene>
+        <!--User Main View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="UserMainViewController" id="Y6W-OH-hqX" customClass="UserMainViewController" customModule="QRna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User님 반가워요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLs-m1-2UP">
+                                <rect key="frame" x="40" y="128" width="183.5" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" red="0.024373439649999998" green="0.03279358391" blue="0.29140850029999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rz5-KL-vgp">
+                                <rect key="frame" x="41.5" y="199.5" width="331" height="358.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eed-H9-SxL" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="114.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="매장 QR 체크인">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="AQm-gK-57X" kind="show" id="LHv-OO-hSL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-ee-gtC" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="124.5" width="331" height="115"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="근처 매장 혼잡도 확인">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oD-af-AM4" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="249.5" width="331" height="109"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="내 정보">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="IUk-He-1MA" kind="show" id="cZP-Z9-mcn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QeC-ee-gtC" firstAttribute="height" secondItem="Rz5-KL-vgp" secondAttribute="height" multiplier="0.32" id="J6X-Yi-MbJ"/>
+                                    <constraint firstItem="eed-H9-SxL" firstAttribute="height" secondItem="Rz5-KL-vgp" secondAttribute="height" multiplier="0.32" id="Vaj-mE-744"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.84387993809999995" green="0.97292286159999997" blue="0.94509762529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Rz5-KL-vgp" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4pt-6B-Ngt"/>
+                            <constraint firstItem="Rz5-KL-vgp" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.4" id="Ezf-uA-eau"/>
+                            <constraint firstItem="Rz5-KL-vgp" firstAttribute="top" secondItem="LLs-m1-2UP" secondAttribute="bottom" constant="40" id="OoN-PB-Kqy"/>
+                            <constraint firstItem="LLs-m1-2UP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="n4m-AJ-QBc"/>
+                            <constraint firstItem="LLs-m1-2UP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="p79-sC-DPg"/>
+                            <constraint firstItem="Rz5-KL-vgp" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.8" id="sap-kh-0an"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gcp-h5-9Ih"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="106" y="50"/>
+        </scene>
+        <!--Confusion View Controller-->
+        <scene sceneID="hL0-Wt-glu">
+            <objects>
+                <viewController id="Kyc-z4-uyF" customClass="ConfusionViewController" customModule="QRna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oZJ-Ih-b0F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sfb-vX-DIx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYb-Qb-7iI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="71"/>
+        </scene>
+        <!--My Info View Controller-->
+        <scene sceneID="j7m-rf-0ZO">
+            <objects>
+                <viewController id="IUk-He-1MA" customClass="MyInfoViewController" customModule="QRna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iTW-Zz-0g2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vjt-oH-dNe">
+                                <rect key="frame" x="20" y="108" width="374" height="192.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrZ-WM-TJQ" customClass="ContentView" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="137"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8Fp-Vz-rQy">
+                                                <rect key="frame" x="20" y="20" width="334" height="97"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fOy-oF-xzy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYz-sK-Nby">
+                                                                <rect key="frame" x="0.0" y="0.0" width="234" height="31"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-cO-Cff" customClass="RedButton" customModule="QRna" customModuleProvider="target">
+                                                                <rect key="frame" x="244" y="0.0" width="90" height="31"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                                                <connections>
+                                                                    <action selector="didTabLogoutBtn:" destination="IUk-He-1MA" eventType="touchUpInside" id="NSh-s5-lVu"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="LYz-sK-Nby" firstAttribute="width" secondItem="fOy-oF-xzy" secondAttribute="width" multiplier="0.7" id="nCs-xs-wxH"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="010-1234-5678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23I-6q-FBg">
+                                                        <rect key="frame" x="0.0" y="36" width="334" height="31"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인천광역시 재성대로 112-9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPB-1l-Sb1">
+                                                        <rect key="frame" x="0.0" y="72" width="334" height="25"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="fOy-oF-xzy" firstAttribute="height" secondItem="8Fp-Vz-rQy" secondAttribute="height" multiplier="0.32" id="I6Q-8y-nfi"/>
+                                                    <constraint firstItem="23I-6q-FBg" firstAttribute="height" secondItem="8Fp-Vz-rQy" secondAttribute="height" multiplier="0.32" id="cLx-cB-lcx"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="8Fp-Vz-rQy" firstAttribute="top" secondItem="ZrZ-WM-TJQ" secondAttribute="top" constant="20" id="1T3-45-qQX"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Fp-Vz-rQy" secondAttribute="bottom" constant="20" id="9MU-Vl-4lL"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Fp-Vz-rQy" secondAttribute="trailing" constant="20" id="Hf3-RL-Ek6"/>
+                                            <constraint firstItem="8Fp-Vz-rQy" firstAttribute="leading" secondItem="ZrZ-WM-TJQ" secondAttribute="leading" constant="20" id="KN3-pl-gpt"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-bg-Q5D" customClass="GrayButton" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="157" width="374" height="35.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="회원탈퇴">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTabWithdrawBtn:" destination="IUk-He-1MA" eventType="touchUpInside" id="e8Y-15-f5x"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BeH-ye-Qrm"/>
+                        <color key="backgroundColor" red="0.84387993809999995" green="0.97292286159999997" blue="0.94509762529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vjt-oH-dNe" firstAttribute="leading" secondItem="BeH-ye-Qrm" secondAttribute="leading" constant="20" id="BmL-yd-5Iw"/>
+                            <constraint firstItem="BeH-ye-Qrm" firstAttribute="trailing" secondItem="vjt-oH-dNe" secondAttribute="trailing" constant="20" id="F3w-6f-nfK"/>
+                            <constraint firstItem="vjt-oH-dNe" firstAttribute="top" secondItem="BeH-ye-Qrm" secondAttribute="top" constant="20" id="gIt-fB-BTT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lir-1G-iIv"/>
+                    <connections>
+                        <outlet property="userAddressLabel" destination="ZPB-1l-Sb1" id="rGN-BG-EHz"/>
+                        <outlet property="userNameLabel" destination="23I-6q-FBg" id="HXq-Z0-9hs"/>
+                        <outlet property="userPhoneNumberLabel" destination="23I-6q-FBg" id="Sll-UA-POq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JpD-R3-N8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="721"/>
+        </scene>
+        <!--Reader View Controller-->
+        <scene sceneID="wLf-tj-RPm">
+            <objects>
+                <viewController id="AQm-gK-57X" customClass="QRReaderViewController" customModule="QRna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kyH-UW-ywf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBX-n7-mw5" customClass="RV" customModule="QRna" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DGg-he-1Ih"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="DGg-he-1Ih" firstAttribute="bottom" secondItem="OBX-n7-mw5" secondAttribute="bottom" id="dgK-zo-Z9H"/>
+                            <constraint firstItem="OBX-n7-mw5" firstAttribute="top" secondItem="DGg-he-1Ih" secondAttribute="top" id="eNV-vG-WXd"/>
+                            <constraint firstItem="DGg-he-1Ih" firstAttribute="trailing" secondItem="OBX-n7-mw5" secondAttribute="trailing" id="gYE-3a-RGB"/>
+                            <constraint firstItem="OBX-n7-mw5" firstAttribute="leading" secondItem="DGg-he-1Ih" secondAttribute="leading" id="sNZ-jX-uG9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6bl-P2-OY6"/>
+                    <connections>
+                        <outlet property="rv" destination="OBX-n7-mw5" id="sTw-nK-vpO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUj-Iq-Qqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="-583"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

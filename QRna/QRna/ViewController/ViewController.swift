@@ -23,8 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var a = [Int]()
-        a.append(1)
+        
         self.readerView.delegate = self
     }
     

@@ -142,7 +142,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37I-de-sRu" customClass="SignInButton" customModule="QRna" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37I-de-sRu" customClass="RedButton" customModule="QRna" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="88" width="290" height="31"/>
                                                 <color key="backgroundColor" red="0.8135044575" green="0.32693743710000001" blue="0.26271405819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
@@ -244,7 +244,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HVO-X0-OBN">
                                         <rect key="frame" x="62" y="496" width="290" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-ML-oDL" customClass="SignInButton" customModule="QRna" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-ML-oDL" customClass="RedButton" customModule="QRna" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="31"/>
                                                 <color key="backgroundColor" red="0.8135044575" green="0.32693743710000001" blue="0.26271405819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,7 +254,7 @@
                                                     <action selector="didTapJoinBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="WDJ-FJ-61H"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-dQ-Kf5" customClass="CancelButton" customModule="QRna" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-dQ-Kf5" customClass="GrayButton" customModule="QRna" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="0.0" width="140" height="31"/>
                                                 <color key="backgroundColor" red="0.36078956719999999" green="0.36077481509999998" blue="0.3607848287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>

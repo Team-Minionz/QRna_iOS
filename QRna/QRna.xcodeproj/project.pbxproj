@@ -30,6 +30,13 @@
 		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
+		DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD0A0852718076C00AA47C3 /* UserPage.storyboard */; };
+		DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */; };
+		DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */; };
+		DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */; };
+		DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */; };
+		DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08F27180E8100AA47C3 /* ContentView.swift */; };
+		DAD0A0922718129A00AA47C3 /* RV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0912718129A00AA47C3 /* RV.swift */; };
 		DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619412716BD84001D28A7 /* LoginViewController.swift */; };
 		DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619442716BDBC001D28A7 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +94,13 @@
 		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		DAD0A0852718076C00AA47C3 /* UserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserPage.storyboard; sourceTree = "<group>"; };
+		DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewController.swift; sourceTree = "<group>"; };
+		DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionViewController.swift; sourceTree = "<group>"; };
+		DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
+		DAD0A08F27180E8100AA47C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DAD0A0912718129A00AA47C3 /* RV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RV.swift; sourceTree = "<group>"; };
 		DAD619412716BD84001D28A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAD619442716BDBC001D28A7 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +203,7 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAD0A0832718074D00AA47C3 /* UserPage */,
 				DAD619462716BDC6001D28A7 /* LoginAndJoin */,
 				DA85B7C8270ECA7300631BD2 /* UI */,
 				DAC66326270B5AE9009856DD /* ViewController */,
@@ -200,6 +215,7 @@
 				DA641B002705983B00AC5794 /* LaunchScreen.storyboard */,
 				DA641B032705983B00AC5794 /* Info.plist */,
 				DA641B252705AB5C00AC5794 /* ReaderView.swift */,
+				DAD0A0912718129A00AA47C3 /* RV.swift */,
 			);
 			path = QRna;
 			sourceTree = "<group>";
@@ -226,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */,
+				DAD0A08F27180E8100AA47C3 /* ContentView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -234,6 +251,26 @@
 			isa = PBXGroup;
 			children = (
 				DA641AF92705983800AC5794 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD0A0832718074D00AA47C3 /* UserPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A0842718075700AA47C3 /* ViewController */,
+				DAD0A0852718076C00AA47C3 /* UserPage.storyboard */,
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
+		DAD0A0842718075700AA47C3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */,
+				DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */,
+				DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */,
+				DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -376,6 +413,7 @@
 			files = (
 				DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */,
 				DA641AFF2705983B00AC5794 /* Assets.xcassets in Resources */,
+				DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */,
 				DA641AFD2705983800AC5794 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,12 +544,18 @@
 			files = (
 				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
 				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
+				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,
+				DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */,
+				DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
+				DAD0A0922718129A00AA47C3 /* RV.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
 				DA73AD86270DA83700916720 /* QRDataService.swift in Sources */,
+				DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */,
+				DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
