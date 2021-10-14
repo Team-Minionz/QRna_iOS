@@ -37,6 +37,10 @@
 		DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */; };
 		DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08F27180E8100AA47C3 /* ContentView.swift */; };
 		DAD0A0922718129A00AA47C3 /* RV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0912718129A00AA47C3 /* RV.swift */; };
+		DAD0A096271817BC00AA47C3 /* OwnerPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */; };
+		DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */; };
+		DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */; };
+		DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09C27181BB100AA47C3 /* Store.swift */; };
 		DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619412716BD84001D28A7 /* LoginViewController.swift */; };
 		DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619442716BDBC001D28A7 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +105,10 @@
 		DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
 		DAD0A08F27180E8100AA47C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAD0A0912718129A00AA47C3 /* RV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RV.swift; sourceTree = "<group>"; };
+		DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OwnerPage.storyboard; sourceTree = "<group>"; };
+		DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainViewController.swift; sourceTree = "<group>"; };
+		DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
+		DAD0A09C27181BB100AA47C3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DAD619412716BD84001D28A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAD619442716BDBC001D28A7 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +211,7 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAD0A093271817A000AA47C3 /* OwnerPage */,
 				DAD0A0832718074D00AA47C3 /* UserPage */,
 				DAD619462716BDC6001D28A7 /* LoginAndJoin */,
 				DA85B7C8270ECA7300631BD2 /* UI */,
@@ -273,6 +282,33 @@
 				DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD0A093271817A000AA47C3 /* OwnerPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09B27181BA800AA47C3 /* Model */,
+				DAD0A094271817AC00AA47C3 /* ViewController */,
+				DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */,
+			);
+			path = OwnerPage;
+			sourceTree = "<group>";
+		};
+		DAD0A094271817AC00AA47C3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */,
+				DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD0A09B27181BA800AA47C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09C27181BB100AA47C3 /* Store.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DAD619462716BDC6001D28A7 /* LoginAndJoin */ = {
@@ -411,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD0A096271817BC00AA47C3 /* OwnerPage.storyboard in Resources */,
 				DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */,
 				DA641AFF2705983B00AC5794 /* Assets.xcassets in Resources */,
 				DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */,
@@ -549,6 +586,7 @@
 				DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DAD0A0922718129A00AA47C3 /* RV.swift in Sources */,
+				DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
@@ -557,12 +595,14 @@
 				DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */,
 				DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
+				DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
 				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
 				DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
+				DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
 				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
 			);
