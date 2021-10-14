@@ -45,11 +45,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eed-H9-SxL" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="331" height="114.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="매장 QR 체크인">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="매장 QR 체크인"/>
                                         <connections>
                                             <segue destination="AQm-gK-57X" kind="show" id="LHv-OO-hSL"/>
                                         </connections>
@@ -57,20 +56,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-ee-gtC" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="124.5" width="331" height="115"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="근처 매장 혼잡도 확인">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="근처 매장 혼잡도 확인"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oD-af-AM4" customClass="MenuButton" customModule="QRna" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="249.5" width="331" height="109"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="tintColor" red="0.25330159070000002" green="0.48182684180000002" blue="0.68629956250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="내 정보">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="내 정보"/>
                                         <connections>
                                             <segue destination="IUk-He-1MA" kind="show" id="cZP-Z9-mcn"/>
                                         </connections>
@@ -123,7 +120,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vjt-oH-dNe">
-                                <rect key="frame" x="20" y="108" width="374" height="192.5"/>
+                                <rect key="frame" x="20" y="108" width="374" height="186"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrZ-WM-TJQ" customClass="ContentView" customModule="QRna" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="137"/>
@@ -142,8 +139,9 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-cO-Cff" customClass="RedButton" customModule="QRna" customModuleProvider="target">
                                                                 <rect key="frame" x="244" y="0.0" width="90" height="31"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="로그아웃"/>
                                                                 <connections>
                                                                     <action selector="didTabLogoutBtn:" destination="IUk-He-1MA" eventType="touchUpInside" id="NSh-s5-lVu"/>
                                                                 </connections>
@@ -181,11 +179,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lE3-bg-Q5D" customClass="GrayButton" customModule="QRna" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="157" width="374" height="35.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="회원탈퇴">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                        </buttonConfiguration>
+                                        <rect key="frame" x="0.0" y="157" width="374" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="회원탈퇴"/>
                                         <connections>
                                             <action selector="didTabWithdrawBtn:" destination="IUk-He-1MA" eventType="touchUpInside" id="e8Y-15-f5x"/>
                                         </connections>

@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="269" width="414" height="627"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="di4-IR-1me">
-                                        <rect key="frame" x="62" y="64.5" width="290" height="157.5"/>
+                                        <rect key="frame" x="62" y="66" width="290" height="155"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G4B-Tf-2tV">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="34"/>
@@ -143,21 +143,21 @@
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37I-de-sRu" customClass="RedButton" customModule="QRna" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="88" width="290" height="31"/>
+                                                <rect key="frame" x="0.0" y="88" width="290" height="30"/>
                                                 <color key="backgroundColor" red="0.8135044575" green="0.32693743710000001" blue="0.26271405819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="SignIn"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="SignIn"/>
                                                 <connections>
                                                     <action selector="didTabSignIn:" destination="HsE-P0-Vkq" eventType="touchUpInside" id="Dtu-sT-caX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVe-uy-GZN">
-                                                <rect key="frame" x="0.0" y="129" width="290" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="128" width="290" height="27"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                 <color key="tintColor" red="0.047739739710713609" green="0.07165047161373668" blue="0.18618527569168253" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="아직 회원이 아니세요?">
-                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="12"/>
-                                                </buttonConfiguration>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="아직 회원이 아니세요?"/>
                                                 <connections>
                                                     <segue destination="9aY-bF-9HJ" kind="show" id="ViK-fw-3nD"/>
                                                 </connections>
@@ -242,29 +242,34 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HVO-X0-OBN">
-                                        <rect key="frame" x="62" y="496" width="290" height="31"/>
+                                        <rect key="frame" x="62" y="497" width="290" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-ML-oDL" customClass="RedButton" customModule="QRna" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
                                                 <color key="backgroundColor" red="0.8135044575" green="0.32693743710000001" blue="0.26271405819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Join"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Join"/>
                                                 <connections>
                                                     <action selector="didTapJoinBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="WDJ-FJ-61H"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcn-dQ-Kf5" customClass="GrayButton" customModule="QRna" customModuleProvider="target">
-                                                <rect key="frame" x="150" y="0.0" width="140" height="31"/>
+                                                <rect key="frame" x="149" y="0.0" width="141" height="30"/>
                                                 <color key="backgroundColor" red="0.36078956719999999" green="0.36077481509999998" blue="0.3607848287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Cancel"/>
                                                 <connections>
                                                     <action selector="didTabCancelBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="zRf-Jy-CCO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="5d3-ML-oDL" firstAttribute="width" secondItem="HVO-X0-OBN" secondAttribute="width" multiplier="0.48" id="0WU-PG-Exs"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.49419313669999998" green="0.77437049150000004" blue="0.88237053160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
