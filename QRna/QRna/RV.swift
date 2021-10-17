@@ -16,8 +16,8 @@ class RV: UIView {
     private var cornerLength: CGFloat = 20
     private var cornerLineWidth: CGFloat = 6
     private var rectOfInterest: CGRect {
-        CGRect(x: (bounds.width / 2) - (200 / 2),
-               y: (bounds.height / 2) - (200 / 2),
+        CGRect(x: (bounds.width / 2) - 100,
+               y: (bounds.height / 2) - 100,
                           width: 200, height: 200)
     }
     
@@ -107,6 +107,7 @@ class RV: UIView {
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer.frame = self.layer.bounds
+        
 
         // MARK: - Scan Focus Mask
         /*
