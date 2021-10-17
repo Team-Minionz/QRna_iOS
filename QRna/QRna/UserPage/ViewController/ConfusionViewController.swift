@@ -9,21 +9,34 @@ import UIKit
 
 class ConfusionViewController: UIViewController {
 
+    @IBOutlet weak var mainTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        mainTable.delegate = self
+        mainTable.dataSource = self
+    }
+}
+
+extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = mainTable.dequeueReusableCell(withIdentifier: "ConfusionCell", for: indexPath) as! ConfusionCell
+        cell.name.text = "가게명"
+        cell.address.text = "주소"
+        
+        return cell
     }
-    */
+    
+    
+}
 
+class ConfusionCell: UITableViewCell {
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    
 }
