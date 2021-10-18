@@ -56,37 +56,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zux-lP-Z82">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.79676300290000002" green="0.91802531480000005" blue="0.89019542929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zux-lP-Z82">
+                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <color key="backgroundColor" red="0.84387993809999995" green="0.97292286159999997" blue="0.94509762529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfusionCell" id="6w9-lk-GAc" customClass="ConfusionCell" customModule="QRna" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="97"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="96.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6w9-lk-GAc" id="i6h-Su-Bec">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-mM-Hm0" customClass="ContentView" customModule="QRna" customModuleProvider="target">
-                                                    <rect key="frame" x="5" y="5" width="404" height="87"/>
+                                                    <rect key="frame" x="5" y="5" width="364" height="86.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Be-qwy">
-                                                            <rect key="frame" x="5" y="5" width="394" height="77"/>
+                                                            <rect key="frame" x="5" y="5" width="354" height="76.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6n-Gs-ypm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="23"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wz2-IY-9Mz">
-                                                                    <rect key="frame" x="0.0" y="28" width="394" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="28" width="354" height="23"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfj-Tv-jl7">
-                                                                    <rect key="frame" x="0.0" y="56" width="394" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="56" width="354" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -128,8 +128,8 @@
                         <constraints>
                             <constraint firstItem="zux-lP-Z82" firstAttribute="top" secondItem="sfb-vX-DIx" secondAttribute="top" id="4Xn-3t-ZFs"/>
                             <constraint firstItem="sfb-vX-DIx" firstAttribute="bottom" secondItem="zux-lP-Z82" secondAttribute="bottom" id="ba3-hv-VEl"/>
-                            <constraint firstItem="zux-lP-Z82" firstAttribute="leading" secondItem="sfb-vX-DIx" secondAttribute="leading" id="dph-wZ-jfC"/>
-                            <constraint firstItem="sfb-vX-DIx" firstAttribute="trailing" secondItem="zux-lP-Z82" secondAttribute="trailing" id="izD-w7-e7n"/>
+                            <constraint firstItem="zux-lP-Z82" firstAttribute="leading" secondItem="sfb-vX-DIx" secondAttribute="leading" constant="20" id="dph-wZ-jfC"/>
+                            <constraint firstItem="sfb-vX-DIx" firstAttribute="trailing" secondItem="zux-lP-Z82" secondAttribute="trailing" constant="20" id="izD-w7-e7n"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="혼잡도" image="person.2" catalog="system" id="KsV-ob-FYq"/>

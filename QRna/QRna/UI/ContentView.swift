@@ -21,3 +21,12 @@ class ContentView: UIView {
         
     }
 }
+
+class MainView: UIView {
+    required init(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)!
+        
+        self.layer.cornerRadius = 40
+        
+    }
+}
