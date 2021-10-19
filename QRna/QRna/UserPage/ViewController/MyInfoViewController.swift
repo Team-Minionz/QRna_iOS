@@ -31,6 +31,7 @@ class MyInfoViewController: UIViewController {
             }
             
         }
+        self.dismiss(animated: true)
     }
     
     @IBAction func didTabWithdrawBtn(_ sender: Any) {
