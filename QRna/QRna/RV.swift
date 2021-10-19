@@ -93,6 +93,7 @@ class RV: UIView {
         metadataOutput.rectOfInterest = previewLayer!.metadataOutputRectConverted(fromLayerRect: rectOfInterest)
     }
     
+    
     /// 중앙에 사각형의 Focus Zone Layer을 설정합니다.
     private func setPreviewLayer() {
         let readingRect = rectOfInterest

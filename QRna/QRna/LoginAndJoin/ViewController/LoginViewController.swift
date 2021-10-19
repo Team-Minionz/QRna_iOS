@@ -21,6 +21,13 @@ class LoginViewController: UIViewController {
         setSignUpBtn()
         
     }
+    @IBAction func didTapOwnerBtn(_ sender: Any) {
+        let storyboard = UIStoryboard.init(name: "OwnerPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "OwnerPage")
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
+    }
     @IBAction func didTabSignIn(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "UserPage")

@@ -30,3 +30,14 @@ class MainView: UIView {
         
     }
 }
+
+class TableContainView: UIView {
+    required init(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)!
+        
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 0.8
+        self.layer.borderColor = #colorLiteral(red: 0.9048041701, green: 0.8994255662, blue: 0.9089386463, alpha: 1)
+        
+    }
+}
