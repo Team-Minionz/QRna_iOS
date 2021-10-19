@@ -43,6 +43,9 @@ class JoinViewController: UIViewController {
         textFeilds.append(nickNameField)
         textFeilds.append(phoneNumberField)
         
+        var title = ""
+        var message = ""
+        
         if checkEmpty(textFeilds) {
             if self.checkPassword(self.passField.text!, self.passCheckField.text!) {
                 userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!) { response in
@@ -50,22 +53,32 @@ class JoinViewController: UIViewController {
                     switch response {
                     case .success:
                         print("가입 성공")
+                        title = "가입 성공"
+                        message = "가입을 축하합니다!"
+                        self.showSuccessMessage(title: title, message: message)
+                        
                     case .failure:
                         print("가입 실패")
+                        title = "가입 실패"
+                        message = "서버가 원활하지 않습니다"
+                        self.showErrorMessage(title: title, message: message)
                     }
                 }
             }
             else {
-                // 패스워드 일치 확인 메시지
                 print("비밀번호 불일치")
+                title = "가입 실패"
+                message = "비밀번호를 확인해 주세요"
+                showErrorMessage(title: title, message: message)
             }
         }
         else {
             // 공백 메시지
             print("빈 칸 확인")
+            title = "가입 실패"
+            message = "모든 항목을 기입해 주세요"
+            showErrorMessage(title: title, message: message)
         }
-        
-        
     }
     
     @IBAction func didTabCancelBtn(_ sender: Any) {
@@ -83,6 +96,25 @@ class JoinViewController: UIViewController {
             }
         }
         return true
+    }
+    
+    fileprivate func showErrorMessage(title: String, message: String) {
+        let alertController = AlertController().createAlertController(title: title, message: message)
+        
+        let yes = UIAlertAction(title: "확인", style: .cancel)
+        alertController.addAction(yes)
+        present(alertController, animated: true)
+    }
+    
+    fileprivate func showSuccessMessage(title: String, message: String) {
+        let alertController = AlertController().createAlertController(title: title, message: message)
+        
+        let yes = UIAlertAction(title: "확인", style: .cancel, handler: { (action) in
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        })
+        alertController.addAction(yes)
+        present(alertController, animated: true)
     }
     
     fileprivate func checkPassword(_ passStr: String, _ checkPassStr: String) -> Bool {

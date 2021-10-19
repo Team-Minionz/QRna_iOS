@@ -14,6 +14,13 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var numberOfTable: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     
+    @IBOutlet weak var storeName: UITextField!
+    @IBOutlet weak var storeNumber: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var detailCity: UITextField!
+    @IBOutlet weak var street: UITextField!
+    @IBOutlet weak var zipCode: UITextField!
+    
     var tableArray = [TableInfo]()
     
     override func viewDidLoad() {
@@ -40,8 +47,33 @@ class AddStoreViewController: UIViewController {
     }
     
     @IBAction func didTabAddBtn(_ sender: Any) {
-        self.dismiss(animated: true)
+        var textFields = [UITextField]()
+        textFields.append(storeName)
+        textFields.append(storeNumber)
+        textFields.append(city)
+        textFields.append(detailCity)
+        textFields.append(street)
+        textFields.append(zipCode)
+        
+        if checkEmpty(textFields) {
+            if tableArray.count == 0 {
+                showErrorMessage(title: "등록 실패", message: "테이블 정보를 입력해 주세요")
+            }
+            else {
+                // 테이블 정보 파싱 준비
+                var tableList = [[String:Any]]()
+                
+                for item in tableArray {
+                    tableList.append(["" : item.peopleCount, "": item.tableCount])
+                }
+                self.dismiss(animated: true)
+            }
+        }
+        else {
+            showErrorMessage(title: "등록 실패", message: "모든 항목을 기입해 주세요")
+        }
     }
+    
     @IBAction func didTabCancelBtn(_ sender: Any) {
         self.dismiss(animated: true)
     }
@@ -73,6 +105,34 @@ class AddStoreViewController: UIViewController {
             index += 1
         }
         tableArray.append(TableInfo(tableCount: numberOfTable, peopleCount: numberOfPeople))
+    }
+    
+    fileprivate func showErrorMessage(title: String, message: String) {
+        let alertController = AlertController().createAlertController(title: title, message: message)
+        
+        let yes = UIAlertAction(title: "확인", style: .cancel)
+        alertController.addAction(yes)
+        present(alertController, animated: true)
+    }
+    
+    fileprivate func showSuccessMessage(title: String, message: String) {
+        let alertController = AlertController().createAlertController(title: title, message: message)
+        
+        let yes = UIAlertAction(title: "확인", style: .cancel, handler: { (action) in
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        })
+        alertController.addAction(yes)
+        present(alertController, animated: true)
+    }
+    
+    fileprivate func checkEmpty(_ textFeilds: [UITextField]) -> Bool{
+        for textFeild in textFeilds {
+            if textFeild.text == "" {
+                return false
+            }
+        }
+        return true
     }
 }
 

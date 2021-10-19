@@ -46,13 +46,22 @@ class LoginViewController: UIViewController {
 //                    print("성공")
 //                case .failure:
 //                    print("실패")
+//                    self.showErrorMessage(title: "로그인 실패", message: "서버가 원활하지 않습니다")
 //                }
-//
 //            }
 //        }
+//        
 //        else {
-//            // 공백 에러
+//            showErrorMessage(title: "로그인 실패", message: "아이디와 비밀번호를 입력해 주세요")
 //        }
+    }
+    
+    fileprivate func showErrorMessage(title: String, message: String) {
+        let alertController = AlertController().createAlertController(title: title, message: message)
+        
+        let yes = UIAlertAction(title: "확인", style: .cancel)
+        alertController.addAction(yes)
+        present(alertController, animated: true)
     }
     
     fileprivate func checkEmpty(_ textFeilds: [UITextField]) -> Bool{
