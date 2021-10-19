@@ -41,6 +41,7 @@
 		DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */; };
 		DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */; };
 		DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09C27181BB100AA47C3 /* Store.swift */; };
+		DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5A384271EA6ED0050CA67 /* AlertController.swift */; };
 		DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619412716BD84001D28A7 /* LoginViewController.swift */; };
 		DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619442716BDBC001D28A7 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainViewController.swift; sourceTree = "<group>"; };
 		DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
 		DAD0A09C27181BB100AA47C3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DAD5A384271EA6ED0050CA67 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		DAD619412716BD84001D28A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAD619442716BDBC001D28A7 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 			children = (
 				DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */,
 				DAD0A08F27180E8100AA47C3 /* ContentView.swift */,
+				DAD5A384271EA6ED0050CA67 /* AlertController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
 				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
+				DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */,
 				DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
 				DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */,

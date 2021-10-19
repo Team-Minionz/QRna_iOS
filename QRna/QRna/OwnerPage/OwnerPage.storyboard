@@ -364,10 +364,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Oku-sw-GVh"/>
                     <connections>
+                        <outlet property="city" destination="FD0-4h-iwm" id="Lj1-Ey-8x5"/>
+                        <outlet property="detailCity" destination="qIX-Vo-UFP" id="VbP-2E-6IY"/>
                         <outlet property="mainTable" destination="PZx-eo-bbj" id="5Ef-Tf-VNT"/>
                         <outlet property="numberOfPeople" destination="dQL-mA-Lq2" id="o1b-cv-WzS"/>
                         <outlet property="numberOfTable" destination="ezB-r3-JOl" id="Sil-dr-ozG"/>
+                        <outlet property="storeName" destination="Tgh-vG-IY9" id="8fg-Pb-ixE"/>
+                        <outlet property="storeNumber" destination="Tgh-vG-IY9" id="2oM-yv-2p0"/>
+                        <outlet property="street" destination="PKx-Xp-4UJ" id="Vm1-0j-IUf"/>
                         <outlet property="totalLabel" destination="uOx-nG-qti" id="NkH-5a-eiV"/>
+                        <outlet property="zipCode" destination="0L4-zP-qd7" id="bG7-mA-fCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwj-th-A1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
