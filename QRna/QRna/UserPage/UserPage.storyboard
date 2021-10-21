@@ -249,24 +249,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBX-n7-mw5" customClass="RV" customModule="QRna" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lh2-fN-spw" customClass="ReaderView" customModule="QRna" customModuleProvider="target">
+                                <rect key="frame" x="83" y="324" width="248" height="248"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lh2-fN-spw" secondAttribute="height" multiplier="1:1" id="ZdL-4t-Cds"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DGg-he-1Ih"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="DGg-he-1Ih" firstAttribute="bottom" secondItem="OBX-n7-mw5" secondAttribute="bottom" id="dgK-zo-Z9H"/>
-                            <constraint firstItem="OBX-n7-mw5" firstAttribute="top" secondItem="DGg-he-1Ih" secondAttribute="top" id="eNV-vG-WXd"/>
-                            <constraint firstItem="DGg-he-1Ih" firstAttribute="trailing" secondItem="OBX-n7-mw5" secondAttribute="trailing" id="gYE-3a-RGB"/>
-                            <constraint firstItem="OBX-n7-mw5" firstAttribute="leading" secondItem="DGg-he-1Ih" secondAttribute="leading" id="sNZ-jX-uG9"/>
+                            <constraint firstItem="lh2-fN-spw" firstAttribute="centerX" secondItem="kyH-UW-ywf" secondAttribute="centerX" id="3yA-NM-Zjs"/>
+                            <constraint firstItem="lh2-fN-spw" firstAttribute="width" secondItem="kyH-UW-ywf" secondAttribute="width" multiplier="0.6" id="BC0-9p-jzn"/>
+                            <constraint firstItem="lh2-fN-spw" firstAttribute="centerY" secondItem="kyH-UW-ywf" secondAttribute="centerY" id="jfR-sC-fde"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="QR 인증" image="qrcode.viewfinder" catalog="system" id="mS0-sf-ZqZ"/>
                     <navigationItem key="navigationItem" id="6bl-P2-OY6"/>
                     <connections>
-                        <outlet property="rv" destination="OBX-n7-mw5" id="sTw-nK-vpO"/>
+                        <outlet property="readerView" destination="lh2-fN-spw" id="IAp-S2-dz7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUj-Iq-Qqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -46,7 +46,7 @@ class AddStoreViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func didTabAddBtn(_ sender: Any) {
+    @IBAction func didTapCompletionBtn(_ sender: Any) {
         var textFields = [UITextField]()
         textFields.append(storeName)
         textFields.append(storeNumber)

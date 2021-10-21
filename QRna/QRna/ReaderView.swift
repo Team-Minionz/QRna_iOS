@@ -1,10 +1,9 @@
 //
-//  ReaderView.swift
+//  RV.swift
 //  QRna
 //
-//  Created by 이명직 on 2021/09/30.
+//  Created by 이명직 on 2021/10/14.
 //
-
 import UIKit
 import AVFoundation
 
@@ -35,7 +34,6 @@ class ReaderView: UIView {
         return captureSession.isRunning
     }
 
-    // 리더기가 인식할 수 있는 코드 타입 설정
     let metadataObjectTypes: [AVMetadataObject.ObjectType] = [.upce, .code39, .code39Mod43, .code93, .code128, .ean8, .ean13, .aztec, .pdf417, .itf14, .dataMatrix, .interleaved2of5, .qr]
 
     override init(frame: CGRect) {
@@ -50,17 +48,14 @@ class ReaderView: UIView {
         self.initialSetupView()
     }
     
-    // AVCaptureSession의 입/출력 설정
     private func initialSetupView() {
         self.clipsToBounds = true
         self.captureSession = AVCaptureSession()
         
-        // 카메라를 이용하기 때문에 .video로 설정
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
             return
         }
         
-        // 지정된 장치를 사용하도록 입력을 초기화 하는 작업
         let videoInput: AVCaptureDeviceInput
         
         do {
@@ -75,7 +70,6 @@ class ReaderView: UIView {
             return
         }
 
-        // 만들어진 입력을 AVCaptureSession에 추가
         if captureSession.canAddInput(videoInput) {
             captureSession.addInput(videoInput)
         } else {
@@ -83,8 +77,6 @@ class ReaderView: UIView {
             return
         }
         
-        // 출력을 AVCaptureSession에 추가
-        // 세션이 지정된 메타 데이터를 처리하기 위해 AVCaptureMetadataOutput를 출력으로 지정
         let metadataOutput = AVCaptureMetadataOutput()
         
         if captureSession.canAddOutput(metadataOutput) {
@@ -132,7 +124,6 @@ class ReaderView: UIView {
 }
 
 extension ReaderView {
-    // 스캔 시작
     func start() {
         self.captureSession?.startRunning()
     }
@@ -153,7 +144,6 @@ extension ReaderView {
     }
 }
 
-// 인식 결과 Delegate로 전달
 extension ReaderView: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
