@@ -10,6 +10,7 @@ target 'QRna' do
   pod 'SwiftKeychainWrapper'
   pod 'SwiftyJSON'
   pod 'RxSwift'
+  pod 'DropDown'
 
   target 'QRnaTests' do
     inherit! :search_paths

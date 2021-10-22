@@ -10,6 +10,8 @@
 		AD58DD7B0220D5C8DD7D4083 /* Pods_QRna_QRnaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6584B0D7F6E8492B426C9D /* Pods_QRna_QRnaUITests.framework */; };
 		C08C85273952FE3937ED976D /* Pods_QRna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */; };
 		C7B7AEE7C2213543D47BECE8 /* Pods_QRnaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */; };
+		DA0403A927215366007A20AC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403A827215366007A20AC /* detailViewController.swift */; };
+		DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403AB2721564D007A20AC /* StoreDetail.swift */; };
 		DA34762A270AE73B0009519B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347629270AE73B0009519B /* UserService.swift */; };
 		DA34762C270AE88C0009519B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762B270AE88C0009519B /* NetworkController.swift */; };
 		DA34762E270AEA320009519B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762D270AEA320009519B /* UserDataService.swift */; };
@@ -18,7 +20,6 @@
 		DA347638270AF3430009519B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347637270AF3430009519B /* UserViewModel.swift */; };
 		DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF52705983800AC5794 /* AppDelegate.swift */; };
 		DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF72705983800AC5794 /* SceneDelegate.swift */; };
-		DA641AFA2705983800AC5794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF92705983800AC5794 /* ViewController.swift */; };
 		DA641AFD2705983800AC5794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA641AFB2705983800AC5794 /* Main.storyboard */; };
 		DA641AFF2705983B00AC5794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA641AFE2705983B00AC5794 /* Assets.xcassets */; };
 		DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA641B002705983B00AC5794 /* LaunchScreen.storyboard */; };
@@ -27,9 +28,27 @@
 		DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B252705AB5C00AC5794 /* ReaderView.swift */; };
 		DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */; };
 		DA73AD86270DA83700916720 /* QRDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD85270DA83700916720 /* QRDataService.swift */; };
+		DA84C16027229BB90007B105 /* StoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C15F27229BB90007B105 /* StoreInfo.swift */; };
+		DA84C16227229BF40007B105 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16127229BF40007B105 /* StoreService.swift */; };
+		DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16327229CD50007B105 /* StoreDataService.swift */; };
+		DA84C16627229E050007B105 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16527229E050007B105 /* StoreViewModel.swift */; };
 		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
+		DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD0A0852718076C00AA47C3 /* UserPage.storyboard */; };
+		DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */; };
+		DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */; };
+		DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */; };
+		DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */; };
+		DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A08F27180E8100AA47C3 /* ContentView.swift */; };
+		DAD0A0922718129A00AA47C3 /* RV.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A0912718129A00AA47C3 /* RV.swift */; };
+		DAD0A096271817BC00AA47C3 /* OwnerPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */; };
+		DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */; };
+		DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */; };
+		DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD0A09C27181BB100AA47C3 /* Store.swift */; };
+		DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5A384271EA6ED0050CA67 /* AlertController.swift */; };
+		DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619412716BD84001D28A7 /* LoginViewController.swift */; };
+		DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD619442716BDBC001D28A7 /* JoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +78,8 @@
 		8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D92DA73ECDBFDC624DA819F /* Pods-QRna-QRnaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna-QRnaUITests.debug.xcconfig"; path = "Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna.debug.xcconfig"; path = "Target Support Files/Pods-QRna/Pods-QRna.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0403A827215366007A20AC /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		DA0403AB2721564D007A20AC /* StoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetail.swift; sourceTree = "<group>"; };
 		DA347629270AE73B0009519B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DA34762B270AE88C0009519B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		DA34762D270AEA320009519B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -68,7 +89,6 @@
 		DA641AF22705983800AC5794 /* QRna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641AF52705983800AC5794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA641AF72705983800AC5794 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA641AF92705983800AC5794 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA641AFC2705983800AC5794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA641AFE2705983B00AC5794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA641B012705983B00AC5794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,9 +102,27 @@
 		DA641B252705AB5C00AC5794 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
 		DA73AD85270DA83700916720 /* QRDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDataService.swift; sourceTree = "<group>"; };
+		DA84C15F27229BB90007B105 /* StoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfo.swift; sourceTree = "<group>"; };
+		DA84C16127229BF40007B105 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		DA84C16327229CD50007B105 /* StoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataService.swift; sourceTree = "<group>"; };
+		DA84C16527229E050007B105 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
+		DAD0A0852718076C00AA47C3 /* UserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserPage.storyboard; sourceTree = "<group>"; };
+		DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRReaderViewController.swift; sourceTree = "<group>"; };
+		DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfusionViewController.swift; sourceTree = "<group>"; };
+		DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainViewController.swift; sourceTree = "<group>"; };
+		DAD0A08F27180E8100AA47C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DAD0A0912718129A00AA47C3 /* RV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RV.swift; sourceTree = "<group>"; };
+		DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OwnerPage.storyboard; sourceTree = "<group>"; };
+		DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerMainViewController.swift; sourceTree = "<group>"; };
+		DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreViewController.swift; sourceTree = "<group>"; };
+		DAD0A09C27181BB100AA47C3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		DAD5A384271EA6ED0050CA67 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		DAD619412716BD84001D28A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DAD619442716BDBC001D28A7 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +166,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA0403AA2721563E007A20AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA0403AB2721564D007A20AC /* StoreDetail.swift */,
+				DA84C15F27229BB90007B105 /* StoreInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DA347627270AE7130009519B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +182,8 @@
 				DA34762D270AEA320009519B /* UserDataService.swift */,
 				DAC66320270B54B7009856DD /* QRService.swift */,
 				DA73AD85270DA83700916720 /* QRDataService.swift */,
+				DA84C16127229BF40007B105 /* StoreService.swift */,
+				DA84C16327229CD50007B105 /* StoreDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -156,6 +205,7 @@
 			children = (
 				DA347637270AF3430009519B /* UserViewModel.swift */,
 				DAC66324270B57C8009856DD /* QRViewModel.swift */,
+				DA84C16527229E050007B105 /* StoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,17 +235,19 @@
 		DA641AF42705983800AC5794 /* QRna */ = {
 			isa = PBXGroup;
 			children = (
+				DAD0A093271817A000AA47C3 /* OwnerPage */,
+				DAD0A0832718074D00AA47C3 /* UserPage */,
+				DAD619462716BDC6001D28A7 /* LoginAndJoin */,
 				DA85B7C8270ECA7300631BD2 /* UI */,
-				DAC66326270B5AE9009856DD /* ViewController */,
 				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
 				DA641AF72705983800AC5794 /* SceneDelegate.swift */,
-				DA641AFB2705983800AC5794 /* Main.storyboard */,
 				DA641AFE2705983B00AC5794 /* Assets.xcassets */,
 				DA641B002705983B00AC5794 /* LaunchScreen.storyboard */,
 				DA641B032705983B00AC5794 /* Info.plist */,
 				DA641B252705AB5C00AC5794 /* ReaderView.swift */,
+				DAD0A0912718129A00AA47C3 /* RV.swift */,
 			);
 			path = QRna;
 			sourceTree = "<group>";
@@ -222,14 +274,75 @@
 			isa = PBXGroup;
 			children = (
 				DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */,
+				DAD0A08F27180E8100AA47C3 /* ContentView.swift */,
+				DAD5A384271EA6ED0050CA67 /* AlertController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
 		};
-		DAC66326270B5AE9009856DD /* ViewController */ = {
+		DAD0A0832718074D00AA47C3 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
-				DA641AF92705983800AC5794 /* ViewController.swift */,
+				DA0403AA2721563E007A20AC /* Model */,
+				DAD0A0842718075700AA47C3 /* ViewController */,
+				DAD0A0852718076C00AA47C3 /* UserPage.storyboard */,
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
+		DAD0A0842718075700AA47C3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A0872718094300AA47C3 /* QRReaderViewController.swift */,
+				DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */,
+				DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */,
+				DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */,
+				DA0403A827215366007A20AC /* detailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD0A093271817A000AA47C3 /* OwnerPage */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09B27181BA800AA47C3 /* Model */,
+				DAD0A094271817AC00AA47C3 /* ViewController */,
+				DAD0A095271817BC00AA47C3 /* OwnerPage.storyboard */,
+			);
+			path = OwnerPage;
+			sourceTree = "<group>";
+		};
+		DAD0A094271817AC00AA47C3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */,
+				DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DAD0A09B27181BA800AA47C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAD0A09C27181BB100AA47C3 /* Store.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DAD619462716BDC6001D28A7 /* LoginAndJoin */ = {
+			isa = PBXGroup;
+			children = (
+				DAD619472716BFE9001D28A7 /* ViewController */,
+				DA641AFB2705983800AC5794 /* Main.storyboard */,
+			);
+			path = LoginAndJoin;
+			sourceTree = "<group>";
+		};
+		DAD619472716BFE9001D28A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD619412716BD84001D28A7 /* LoginViewController.swift */,
+				DAD619442716BDBC001D28A7 /* JoinViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -352,8 +465,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD0A096271817BC00AA47C3 /* OwnerPage.storyboard in Resources */,
 				DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */,
 				DA641AFF2705983B00AC5794 /* Assets.xcassets in Resources */,
+				DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */,
 				DA641AFD2705983800AC5794 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,21 +597,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
+				DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */,
+				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
+				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,
+				DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */,
+				DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
+				DAD0A0922718129A00AA47C3 /* RV.swift in Sources */,
+				DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */,
+				DA84C16627229E050007B105 /* StoreViewModel.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
 				DA73AD86270DA83700916720 /* QRDataService.swift in Sources */,
+				DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */,
+				DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */,
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
+				DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
+				DA0403A927215366007A20AC /* detailViewController.swift in Sources */,
 				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
+				DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */,
+				DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
+				DA84C16027229BB90007B105 /* StoreInfo.swift in Sources */,
+				DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
+				DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */,
 				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
+				DA84C16227229BF40007B105 /* StoreService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

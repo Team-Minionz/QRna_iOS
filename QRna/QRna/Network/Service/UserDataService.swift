@@ -12,8 +12,8 @@ class UserDataService {
     
     fileprivate let provider = Moya.MoyaProvider<UserService>()
     
-    func requestSignIn(email: String, password: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
-        provider.request(.signin(email: email, password: password)) { response in
+    func requestSignIn(email: String, password: String, role: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
+        provider.request(.signin(email: email, password: password, role: role)) { response in
             
             print("DataService - requestSignIn")
             
@@ -46,8 +46,8 @@ class UserDataService {
         }
     }
     
-    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
-        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password)) { response in
+    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
+        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, role: role)) { response in
             
             print("DataService - requestSignUp")
             switch response {
