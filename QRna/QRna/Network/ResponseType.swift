@@ -9,7 +9,7 @@ import Foundation
 
 struct ResponseType<T: Codable>: Codable {
     var message: String?
-    var data: [T]?
+    var data: T?
 }
 
 struct ResponseArrayType<T: Codable>: Codable {
@@ -18,6 +18,5 @@ struct ResponseArrayType<T: Codable>: Codable {
 }
 
 struct ResponseData: Codable {
-    var email: String?
-    var statusCode: Int?
+    var message: String?
 }

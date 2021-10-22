@@ -59,3 +59,155 @@ QR 인증을 통해 매장 방문기록을 남기는 것은 현재 매장을 사
   → 매장 총 수용 가능 인원과 테이블 사람 수를 카운트해서 비율을 정해 혼잡도를 표기
   
 - 혼잡도 기능을 추가 시 중복 방문 요청에 처리 기능 추가해야 함.
+
+## 기술 스택
+
+- `Swift 5`,  `Xcode 12`
+- `Moya`,  `MVVM Pattern`, `Delegate Pattern` 
+- `DropDwon`
+
+## 기간
+
+2021.10.04 ~ 
+
+---
+
+## 개발일지
+
+- #### Cell 개수에 따른 TableView 동적 높이
+
+  ~~~ swift
+  class IntrinsicTableView: UITableView {
+      override var intrinsicContentSize: CGSize {
+          // number : cell 개수
+          let number = numberOfRows(inSection: 0)
+          var height: CGFloat = 0
+  
+        
+          for i in 0..<number {
+              guard let cell = cellForRow(at: IndexPath(row: i, section: 0)) else {
+                  continue
+              }
+              // cell의 높이만큼 계속 더함
+              height += cell.bounds.height
+          }
+          return CGSize(width: contentSize.width, height: height)
+      }
+  }
+  ~~~
+
+  
+
+- #### frame VS bounds
+
+  - frame
+
+    - 핵심은 SuperView(상위뷰)
+    - A뷰(SuperView)와 B뷰(SubView)가 있을 때~
+    - B뷰의 frame을 확인해보면 A뷰의 좌상단으로 부터 얼마만큼 떨어져 있는지 볼 수 있다
+      - ex) frame이 120, 20 이라면 SuperView로부터 x는 120, y는 20만큼 떨어져 있다
+      - origin을 0, 0으로 바꾸면 Super뷰의 좌상단에 맞춰짐
+    - SuperView는 바로 상위의 View다 (최상위 뷰가 아님)
+
+  - bounds
+
+    - 핵심은 자신만의 좌표 시스템
+
+    - SuperView의 bounds 값을 주면, 화면상으로는 SubView가 움직인 것처럼 보임
+
+      
+
+- #### DropDown
+
+  - pod file에 DropDown 추가
+
+  ~~~ swift
+  class JoinViewController {
+    // DropDown 선언
+    let dropDown = DropDown()
+    
+    fileprivate func setDropDownBtn() {
+      	  // dropDown에 보여줄 데이터 설정
+          dropDown.dataSource = ["유저", "점주"]
+      		// 보여줄 위치 설정 (이렇게 하면 userTypeBtn 바로 아래에 보여줌)
+          dropDown.anchorView = userTypeBtn
+          dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
+          
+      		// 데이터 view의 cornerRadius 설정
+          DropDown.appearance().cornerRadius = 8
+      }
+    // 사용
+    @IBAction func didTapUserTypeBtn(_ sender: Any) {
+      		// .show() 메소드로 버튼을 클릭하면 dropDown을 보여줌
+          self.dropDown.show()
+    }
+    // 하위 데이터 클릭시 이벤트 처리
+    override func viewDidLoad() {
+          super.viewDidLoad()
+      
+      		dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+              // 해당 Index와 item(string 값)에 접근 가능
+          }
+    }
+  }
+  
+  
+  ~~~
+
+  
+
+- #### 공백 체크 (회원가입, 매장등록 등)
+
+  ~~~ swift
+  // 판단할 textField 들을 모두 담은 배열로 판단
+  fileprivate func checkEmpty(_ textFeilds: [UITextField]) -> Bool{
+      for textFeild in textFeilds {
+          // 하나라도 공백이 발견되면 false 값을 리턴
+          if textFeild.text == "" {
+              return false
+          }
+      }
+      return true 
+  }
+  
+  // 사용
+  var textFields = [UITextField]()
+  textFields.append(storeName)
+  textFields.append(storeNumber)
+  textFields.append(city)
+  textFields.append(detailCity)
+  textFields.append(street)
+  textFields.append(zipCode)
+          
+  if checkEmpty(textFields) {
+       // 체크 후 처리할 로직
+  }
+  else {
+       // 공백 발견 시 처리할 로직
+  }
+  ~~~
+
+  
+
+- #### 매장 등록 - 테이블 계산
+
+  - 딕셔너리를 사용하는 것이 효율적이지만, 딕셔너리로 하면 데이터 추가 후 테이블을 reloadData()를 할 때 순서가 바뀔 수 있음
+  - 딕셔너리는 값을 순서대로 가져오는 것이 아니라 랜덤으로 가져옴
+
+  ~~~ swift
+  // 테이블 중복 확인 후 계산
+  // ex) 2인 테이블이 이미 있는데 2인 테이블을 또 추가한다면 append 하지 않고 이미 있는 값에 더해줘야 함
+  fileprivate func checkDuplicationAndSetArray(_ numberOfPeople: Int, _ numberOfTable: Int){
+      var index = 0
+      for item in tableArray {
+          // 같은 테이블이 있을 경우 그 인덱스에 인원 수 추가
+          if item.peopleCount == numberOfPeople {
+              tableArray[index].tableCount += numberOfTable
+              return
+          }
+          index += 1
+      }
+      // 중복이 없다면 새로운 값을 추가해줌
+      tableArray.append(TableInfo(tableCount: numberOfTable, peopleCount: numberOfPeople))
+  }
+  ~~~
