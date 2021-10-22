@@ -211,7 +211,3 @@ QR 인증을 통해 매장 방문기록을 남기는 것은 현재 매장을 사
       tableArray.append(TableInfo(tableCount: numberOfTable, peopleCount: numberOfPeople))
   }
   ~~~
-
-  
-
-
