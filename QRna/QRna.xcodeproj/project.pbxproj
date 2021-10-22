@@ -10,6 +10,8 @@
 		AD58DD7B0220D5C8DD7D4083 /* Pods_QRna_QRnaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B6584B0D7F6E8492B426C9D /* Pods_QRna_QRnaUITests.framework */; };
 		C08C85273952FE3937ED976D /* Pods_QRna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */; };
 		C7B7AEE7C2213543D47BECE8 /* Pods_QRnaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */; };
+		DA0403A927215366007A20AC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403A827215366007A20AC /* detailViewController.swift */; };
+		DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403AB2721564D007A20AC /* StoreDetail.swift */; };
 		DA34762A270AE73B0009519B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347629270AE73B0009519B /* UserService.swift */; };
 		DA34762C270AE88C0009519B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762B270AE88C0009519B /* NetworkController.swift */; };
 		DA34762E270AEA320009519B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762D270AEA320009519B /* UserDataService.swift */; };
@@ -18,7 +20,6 @@
 		DA347638270AF3430009519B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347637270AF3430009519B /* UserViewModel.swift */; };
 		DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF52705983800AC5794 /* AppDelegate.swift */; };
 		DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF72705983800AC5794 /* SceneDelegate.swift */; };
-		DA641AFA2705983800AC5794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF92705983800AC5794 /* ViewController.swift */; };
 		DA641AFD2705983800AC5794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA641AFB2705983800AC5794 /* Main.storyboard */; };
 		DA641AFF2705983B00AC5794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA641AFE2705983B00AC5794 /* Assets.xcassets */; };
 		DA641B022705983B00AC5794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA641B002705983B00AC5794 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,8 @@
 		8E8B77E13C5655BAC6478241 /* Pods_QRna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D92DA73ECDBFDC624DA819F /* Pods-QRna-QRnaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna-QRnaUITests.debug.xcconfig"; path = "Target Support Files/Pods-QRna-QRnaUITests/Pods-QRna-QRnaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna.debug.xcconfig"; path = "Target Support Files/Pods-QRna/Pods-QRna.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0403A827215366007A20AC /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
+		DA0403AB2721564D007A20AC /* StoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetail.swift; sourceTree = "<group>"; };
 		DA347629270AE73B0009519B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DA34762B270AE88C0009519B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		DA34762D270AEA320009519B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		DA641AF22705983800AC5794 /* QRna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641AF52705983800AC5794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA641AF72705983800AC5794 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DA641AF92705983800AC5794 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA641AFC2705983800AC5794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA641AFE2705983B00AC5794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA641B012705983B00AC5794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DA0403AA2721563E007A20AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA0403AB2721564D007A20AC /* StoreDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DA347627270AE7130009519B /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +227,6 @@
 				DAD0A0832718074D00AA47C3 /* UserPage */,
 				DAD619462716BDC6001D28A7 /* LoginAndJoin */,
 				DA85B7C8270ECA7300631BD2 /* UI */,
-				DAC66326270B5AE9009856DD /* ViewController */,
 				DA347636270AF3390009519B /* ViewModel */,
 				DA347628270AE7270009519B /* Network */,
 				DA641AF52705983800AC5794 /* AppDelegate.swift */,
@@ -259,17 +268,10 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		DAC66326270B5AE9009856DD /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DA641AF92705983800AC5794 /* ViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		DAD0A0832718074D00AA47C3 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
+				DA0403AA2721563E007A20AC /* Model */,
 				DAD0A0842718075700AA47C3 /* ViewController */,
 				DAD0A0852718076C00AA47C3 /* UserPage.storyboard */,
 			);
@@ -283,6 +285,7 @@
 				DAD0A0892718095800AA47C3 /* ConfusionViewController.swift */,
 				DAD0A08B2718096900AA47C3 /* MyInfoViewController.swift */,
 				DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */,
+				DA0403A827215366007A20AC /* detailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -582,7 +585,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA641AFA2705983800AC5794 /* ViewController.swift in Sources */,
 				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
 				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,
 				DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */,
@@ -601,6 +603,7 @@
 				DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
+				DA0403A927215366007A20AC /* detailViewController.swift in Sources */,
 				DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */,
 				DA34762E270AEA320009519B /* UserDataService.swift in Sources */,
 				DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */,
@@ -608,6 +611,7 @@
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
 				DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
+				DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */,
 				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

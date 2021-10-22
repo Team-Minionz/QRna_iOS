@@ -42,7 +42,11 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        present(vc, animated: true)
+    }
 }
 
 class ConfusionCell: UITableViewCell {

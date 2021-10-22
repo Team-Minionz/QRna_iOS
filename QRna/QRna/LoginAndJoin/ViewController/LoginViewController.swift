@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     
     let userViewModel = UserViewModel()
+    var userType: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,39 +22,58 @@ class LoginViewController: UIViewController {
         setSignUpBtn()
         
     }
-    @IBAction func didTapOwnerBtn(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "OwnerPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "OwnerPage")
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true)
+    @IBAction func didTapOwnerSignInBtn(_ sender: Any) {
+        userType = "Owner"
+        signIn()
     }
-    @IBAction func didTabSignIn(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "UserPage")
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        present(vc, animated: true)
-        
-//        var textFeilds = [UITextField]()
-//        textFeilds.append(emailField)
-//        textFeilds.append(passField)
-//
+    @IBAction func didTapUserSignInBtn(_ sender: Any) {
+        userType = "User"
+        signIn()
+    }
+    
+    fileprivate func signIn() {
+        var textFeilds = [UITextField]()
+        textFeilds.append(emailField)
+        textFeilds.append(passField)
+
+        moveNextVC(identifier: userType!)
 //        if checkEmpty(textFeilds) {
-//            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
+//            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!, role: stringToEnumValue(stringValue: self.userType!)) { response in
 //                switch response {
 //                case .success:
 //                    print("성공")
+//                    self.moveNextVC(identifier: self.userType!)
 //                case .failure:
 //                    print("실패")
 //                    self.showErrorMessage(title: "로그인 실패", message: "서버가 원활하지 않습니다")
 //                }
 //            }
 //        }
-//        
+//
 //        else {
 //            showErrorMessage(title: "로그인 실패", message: "아이디와 비밀번호를 입력해 주세요")
 //        }
+    }
+    
+    fileprivate func stringToEnumValue(stringValue: String) -> String {
+        var enumValue = ""
+        switch stringValue {
+        case "User" :
+            enumValue = "USER"
+        case "Owner" :
+            enumValue = "OWNER"
+        default:
+            print("")
+        }
+        return enumValue
+    }
+    
+    fileprivate func moveNextVC(identifier: String) {
+        let storyboard = UIStoryboard.init(name: identifier + "Page", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: identifier + "Page")
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
     }
     
     fileprivate func showErrorMessage(title: String, message: String) {

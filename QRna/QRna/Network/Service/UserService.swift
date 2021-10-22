@@ -9,8 +9,8 @@ import Moya
 import SwiftKeychainWrapper
 
 public enum UserService {
-    case signin(email: String, password: String)
-    case signup(name: String, email: String, nickName: String, telNumber: String, password: String)
+    case signin(email: String, password: String, role: String)
+    case signup(name: String, email: String, nickName: String, telNumber: String, password: String, role: String)
     case withdraw
     case logout
 }
@@ -52,12 +52,12 @@ extension UserService: TargetType {
     
     public var task: Task {
         switch self {
-        case .signin(email: let email, password: let password):
+        case .signin(email: let email, password: let password, role: let role):
             print("email : \(email) password : \(password)")
             return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password):
+        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role):
             print("email : \(email) password : \(password)")
-            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .withdraw, .logout:
             return .requestPlain
         }
