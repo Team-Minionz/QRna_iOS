@@ -22,6 +22,7 @@ class AddStoreViewController: UIViewController {
     @IBOutlet weak var zipCode: UITextField!
     
     var tableArray = [TableInfo]()
+    let storeViewModel = StoreViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,15 @@ class AddStoreViewController: UIViewController {
                 for item in tableArray {
                     tableList.append(["" : item.peopleCount, "": item.tableCount])
                 }
+                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text!, telNumber: self.storeNumber.text!) { result in
+                    switch result {
+                    case .success:
+                        print("성공")
+                    case .failure:
+                        print("실패")
+                    }
+                    
+                }
                 self.dismiss(animated: true)
             }
         }
@@ -92,10 +102,7 @@ class AddStoreViewController: UIViewController {
     }
     
     fileprivate func checkDuplicationAndSetArray(_ numberOfPeople: Int, _ numberOfTable: Int){
-//        if tableArray.count == 0 {
-//            tableArray.append(TableInfo(tableCount: numberOfTable, peopleCount: numberOfPeople))
-//            return
-//        }
+        
         var index = 0
         for item in tableArray {
             if item.peopleCount == numberOfPeople {

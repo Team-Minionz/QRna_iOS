@@ -9,7 +9,7 @@ import Foundation
 
 struct ResponseType<T: Codable>: Codable {
     var message: String?
-    var data: [T]?
+    var data: T?
 }
 
 struct ResponseArrayType<T: Codable>: Codable {
