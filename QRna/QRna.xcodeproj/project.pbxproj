@@ -28,6 +28,10 @@
 		DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641B252705AB5C00AC5794 /* ReaderView.swift */; };
 		DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */; };
 		DA73AD86270DA83700916720 /* QRDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA73AD85270DA83700916720 /* QRDataService.swift */; };
+		DA84C16027229BB90007B105 /* StoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C15F27229BB90007B105 /* StoreInfo.swift */; };
+		DA84C16227229BF40007B105 /* StoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16127229BF40007B105 /* StoreService.swift */; };
+		DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16327229CD50007B105 /* StoreDataService.swift */; };
+		DA84C16627229E050007B105 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16527229E050007B105 /* StoreViewModel.swift */; };
 		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
@@ -98,6 +102,10 @@
 		DA641B252705AB5C00AC5794 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		DA73AD83270DA13300916720 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
 		DA73AD85270DA83700916720 /* QRDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRDataService.swift; sourceTree = "<group>"; };
+		DA84C15F27229BB90007B105 /* StoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInfo.swift; sourceTree = "<group>"; };
+		DA84C16127229BF40007B105 /* StoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreService.swift; sourceTree = "<group>"; };
+		DA84C16327229CD50007B105 /* StoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataService.swift; sourceTree = "<group>"; };
+		DA84C16527229E050007B105 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				DA0403AB2721564D007A20AC /* StoreDetail.swift */,
+				DA84C15F27229BB90007B105 /* StoreInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +182,8 @@
 				DA34762D270AEA320009519B /* UserDataService.swift */,
 				DAC66320270B54B7009856DD /* QRService.swift */,
 				DA73AD85270DA83700916720 /* QRDataService.swift */,
+				DA84C16127229BF40007B105 /* StoreService.swift */,
+				DA84C16327229CD50007B105 /* StoreDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -194,6 +205,7 @@
 			children = (
 				DA347637270AF3430009519B /* UserViewModel.swift */,
 				DAC66324270B57C8009856DD /* QRViewModel.swift */,
+				DA84C16527229E050007B105 /* StoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -585,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */,
 				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
 				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,
 				DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */,
@@ -592,6 +605,7 @@
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DAD0A0922718129A00AA47C3 /* RV.swift in Sources */,
 				DAD0A09D27181BB100AA47C3 /* Store.swift in Sources */,
+				DA84C16627229E050007B105 /* StoreViewModel.swift in Sources */,
 				DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */,
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
@@ -609,10 +623,12 @@
 				DAD5A385271EA6ED0050CA67 /* AlertController.swift in Sources */,
 				DAD619422716BD84001D28A7 /* LoginViewController.swift in Sources */,
 				DA347630270AEBF00009519B /* ResponseType.swift in Sources */,
+				DA84C16027229BB90007B105 /* StoreInfo.swift in Sources */,
 				DAD0A09A27181A2C00AA47C3 /* AddStoreViewController.swift in Sources */,
 				DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */,
 				DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */,
 				DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */,
+				DA84C16227229BF40007B105 /* StoreService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,33 +11,57 @@ class ConfusionViewController: UIViewController {
 
     @IBOutlet weak var mainTable: UITableView!
     
-    var stores = [Store]()
+    let storeViewModel = StoreViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let store1 = Store(name: "코다차야", number: "010-2232-1234", address: "인천광역시 거기로 292-1")
-        let store2 = Store(name: "일등포차", number: "010-1111-1111", address: "인천광역시 구월동 멋진대로 11-1")
-        let store3 = Store(name: "재성이네", number: "010-112-112", address: "탈모광역시 없는대로 00-0")
-        
-        stores.append(store1)
-        stores.append(store2)
-        stores.append(store3)
 
         mainTable.delegate = self
         mainTable.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getStoreData()
+    }
+    
+    fileprivate func getStoreData() {
+        storeViewModel.getStoreList { result in
+            switch result {
+            case .success:
+                self.mainTable.reloadData()
+            case .failure:
+                print("실패")
+            }
+            
+        }
+
+    }
+    
+    fileprivate func setStringValue(enumValue: String) -> String {
+        var stringValue = ""
+        
+        switch enumValue {
+        case "SMOOTH":
+            stringValue = "원활"
+        case "NORMAL":
+            stringValue = "보통"
+        default:
+            stringValue = "혼잡"
+        }
+        
+        return stringValue
     }
 }
 
 extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return storeViewModel.storeArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "ConfusionCell", for: indexPath) as! ConfusionCell
-        cell.name.text = stores[indexPath.row].name
-        cell.address.text = stores[indexPath.row].address
-        cell.confuse.text = "혼잡"
+        cell.name.text = storeViewModel.storeArray[indexPath.row].name
+        cell.confuse.text = setStringValue(enumValue: storeViewModel.storeArray[indexPath.row].congestionStatus)
         
         return cell
     }
@@ -51,7 +75,5 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
 
 class ConfusionCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var address: UILabel!
     @IBOutlet weak var confuse: UILabel!
-    
 }
