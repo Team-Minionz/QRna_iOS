@@ -262,13 +262,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressStack" destination="2pR-h4-R7X" id="Jar-XH-SIM"/>
+                        <outlet property="city" destination="6dl-OP-Txg" id="q3A-2U-m7q"/>
                         <outlet property="emailField" destination="yEE-At-kuw" id="Uj8-9y-dWv"/>
                         <outlet property="nameField" destination="mLb-DM-zN4" id="R2i-Qd-Xf5"/>
                         <outlet property="nickNameField" destination="dVX-Id-kjv" id="2Hc-mw-AUm"/>
                         <outlet property="passCheckField" destination="4U4-zR-b42" id="88D-Hc-mZG"/>
                         <outlet property="passField" destination="kYp-Eb-VqU" id="fNs-DM-a0F"/>
                         <outlet property="phoneNumberField" destination="dVX-Id-kjv" id="n9Y-Ca-ftq"/>
+                        <outlet property="street" destination="wnE-Du-bgu" id="01p-O8-9N1"/>
                         <outlet property="userTypeBtn" destination="3iF-xD-OHh" id="5CA-3u-hGD"/>
+                        <outlet property="zipcode" destination="wnE-Du-bgu" id="Iiu-Ic-mSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lne-TB-l0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -57,8 +57,8 @@ class StoreDataService {
         }
     }
     
-    func requestAddStore(name: String, zipcode: String, street: String, city: String, telNumber: String, completion: @escaping (ResponseData?, Error?) -> Void) {
-        provider.request(.addStore(name: name, zipcode: zipcode, street: street, city: city, telNumber: telNumber)) { response in
+    func requestAddStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]], completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.addStore(name: name, zipcode: zipcode, street: street, city: city, telNumber: telNumber, tableList: tableList)) { response in
             switch response {
             case .success(let addStoreData):
                 if addStoreData.statusCode == 201 {

@@ -11,7 +11,7 @@ import Moya
 public enum StoreService {
     case getStoreList
     case deleteStore(storeId: Int)
-    case addStore(name: String, zipcode: String, street: String, city: String, telNumber: String)
+    case addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]])
 }
 
 extension StoreService : TargetType {
@@ -49,8 +49,8 @@ extension StoreService : TargetType {
         switch self {
         case .getStoreList, .deleteStore:
             return .requestPlain
-        case .addStore(name: let name, zipcode: let zipcode, street: let street, city: let city, telNumber: let telNumber):
-            return .requestCompositeParameters(bodyParameters: ["name":name, "address": ["zipcode":zipcode, "street": street, "city": city], "telNumber": telNumber], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .addStore(name: let name, zipcode: let zipcode, street: let street, city: let city, telNumber: let telNumber, tableList: let tableList):
+            return .requestCompositeParameters(bodyParameters: ["name":name, "address": ["zipcode":zipcode, "street": street, "city": city], "telNumber": telNumber, "tableList": tableList], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         }
     }
     

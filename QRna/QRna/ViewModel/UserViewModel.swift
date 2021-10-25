@@ -11,7 +11,8 @@ class UserViewModel {
     
     fileprivate let service = UserDataService()
     
-    static var userEmail = "mangdic"
+    static var id = 1
+    static var role = "USER"
     
     func signIn(email: String, password: String, role: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password, role: role) { (loginData, error) in
@@ -27,8 +28,8 @@ class UserViewModel {
         }
     }
     
-    func signUp(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, completion: @escaping (ViewModelState) -> Void) {
-        service.requestSignUp(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, role: role) { (signUpdata, error) in
+    func signUp(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, zipcode: String, street: String, city: String, completion: @escaping (ViewModelState) -> Void) {
+        service.requestSignUp(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, role: role, zipcode: zipcode, street: street, city: city) { (signUpdata, error) in
             
             if signUpdata != nil {
                 print("가입 성공")

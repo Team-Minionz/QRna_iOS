@@ -20,3 +20,8 @@ struct ResponseArrayType<T: Codable>: Codable {
 struct ResponseData: Codable {
     var message: String?
 }
+
+struct LoginData: Codable {
+    var id: Int?
+    var message: String?
+}

@@ -24,10 +24,12 @@ class LoginViewController: UIViewController {
     }
     @IBAction func didTapOwnerSignInBtn(_ sender: Any) {
         userType = "Owner"
+        UserViewModel.role = "OWNER"
         signIn()
     }
     @IBAction func didTapUserSignInBtn(_ sender: Any) {
         userType = "User"
+        UserViewModel.role = "USER"
         signIn()
     }
     

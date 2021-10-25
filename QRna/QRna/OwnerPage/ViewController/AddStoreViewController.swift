@@ -67,7 +67,7 @@ class AddStoreViewController: UIViewController {
                 for item in tableArray {
                     tableList.append(["" : item.peopleCount, "": item.tableCount])
                 }
-                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text!, telNumber: self.storeNumber.text!) { result in
+                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text!, telNumber: self.storeNumber.text!, tableList: tableList) { result in
                     switch result {
                     case .success:
                         print("성공")

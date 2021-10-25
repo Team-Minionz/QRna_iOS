@@ -12,7 +12,7 @@ class UserDataService {
     
     fileprivate let provider = Moya.MoyaProvider<UserService>()
     
-    func requestSignIn(email: String, password: String, role: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
+    func requestSignIn(email: String, password: String, role: String, completion: @escaping ((LoginData?, Error?)->Void)) {
         provider.request(.signin(email: email, password: password, role: role)) { response in
             
             print("DataService - requestSignIn")
@@ -24,10 +24,12 @@ class UserDataService {
                 print(loginData.statusCode)
                 do {
                     let decoder = JSONDecoder()
-                    let post = try decoder.decode(ResponseData.self, from: loginData.data)
-                    print(post.message)
+                    let data = try decoder.decode(LoginData.self, from: loginData.data)
+                    print(data.message)
                     if loginData.statusCode == 200 {
-                        completion(post, nil)
+                        UserViewModel.role = role
+                        UserViewModel.id = data.id!
+                        completion(data, nil)
                     }
                     else {
                         completion(nil, nil)
@@ -46,8 +48,8 @@ class UserDataService {
         }
     }
     
-    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
-        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, role: role)) { response in
+    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, zipcode: String, street: String, city: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
+        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, role: role, zipcode: zipcode, street: street, city: city)) { response in
             
             print("DataService - requestSignUp")
             switch response {

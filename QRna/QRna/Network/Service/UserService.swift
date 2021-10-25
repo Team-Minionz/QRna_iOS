@@ -10,7 +10,8 @@ import SwiftKeychainWrapper
 
 public enum UserService {
     case signin(email: String, password: String, role: String)
-    case signup(name: String, email: String, nickName: String, telNumber: String, password: String, role: String)
+    case signup(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, zipcode: String, street: String, city: String)
+    case getInfo
     case withdraw
     case logout
 }
@@ -27,11 +28,13 @@ extension UserService: TargetType {
         case .signup:
             return "/api/v1/users/join"
         case .withdraw:
-            print("/api/v1/users/withdraw/\(UserViewModel.userEmail)")
-            return "/api/v1/users/withdraw/\(UserViewModel.userEmail)"
+            print("/api/v1/users/withdraw/\(UserViewModel.id)/\(UserViewModel.role)")
+            return "/api/v1/users/withdraw/\(UserViewModel.id)/\(UserViewModel.role)"
         case .logout:
-            print("/api/v1/users/logout/\(UserViewModel.userEmail)")
-            return "/api/v1/users/logout/\(UserViewModel.userEmail)"
+            print("/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)")
+            return "/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)"
+        case .getInfo:
+            return "/api/v1/users/page/\(UserViewModel.id)/\(UserViewModel.role)"
         }
     }
     
@@ -41,7 +44,7 @@ extension UserService: TargetType {
             return .post
         case .withdraw:
             return .delete
-        case .logout:
+        case .logout, .getInfo:
             return .get
         }
     }
@@ -54,11 +57,11 @@ extension UserService: TargetType {
         switch self {
         case .signin(email: let email, password: let password, role: let role):
             print("email : \(email) password : \(password)")
-            return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role):
+            return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password, "role": role], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role, zipcode: let zipcode, street: let street, city: let city):
             print("email : \(email) password : \(password)")
-            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .withdraw, .logout:
+            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .withdraw, .logout, .getInfo:
             return .requestPlain
         }
     }
