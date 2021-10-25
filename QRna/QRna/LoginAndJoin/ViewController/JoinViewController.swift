@@ -18,6 +18,11 @@ class JoinViewController: UIViewController {
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var userTypeBtn: UIButton!
     
+    @IBOutlet weak var zipcode: UITextField!
+    @IBOutlet weak var street: UITextField!
+    @IBOutlet weak var city: UITextField!
+    @IBOutlet weak var addressStack: UIStackView!
+    
     let userViewModel = UserViewModel()
     let dropDown = DropDown()
     var userTypeStr = ""
@@ -30,8 +35,14 @@ class JoinViewController: UIViewController {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.userTypeBtn.setTitle(item, for: .normal)
             self.userTypeStr = item
+            
+            if index == 0 {
+                addressStack.isHidden = false
+            }
+            else {
+                addressStack.isHidden =  true
+            }
         }
-        
     }
     
     @IBAction func didTapJoinBtn(_ sender: Any) {
@@ -43,6 +54,12 @@ class JoinViewController: UIViewController {
         textFeilds.append(nickNameField)
         textFeilds.append(phoneNumberField)
         
+        if userTypeStr == "유저" {
+            textFeilds.append(zipcode)
+            textFeilds.append(street)
+            textFeilds.append(city)
+        }
+        
         var title = ""
         var message = ""
         
@@ -52,7 +69,15 @@ class JoinViewController: UIViewController {
         else {
             if checkEmpty(textFeilds) {
                 if self.checkPassword(self.passField.text!, self.passCheckField.text!) {
-                    userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, role: self.userTypeStr) { response in
+                    var zipcodeStr = ""
+                    var streetStr = ""
+                    var cityStr = ""
+                    if userTypeStr == "유저" {
+                        zipcodeStr = self.zipcode.text!
+                        streetStr = self.street.text!
+                        cityStr = self.city.text!
+                    }
+                    userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, role: self.userTypeStr, zipcode: zipcodeStr, street: streetStr, city: cityStr) { response in
                         
                         switch response {
                         case .success:

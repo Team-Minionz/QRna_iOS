@@ -39,8 +39,8 @@ class StoreViewModel {
         }
     }
     
-    func addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, completion: @escaping (ViewModelState) -> Void) {
-        service.requestAddStore(name: name, zipcode: zipcode, street: street, city: city, telNumber: telNumber) { (addStoreData, error) in
+    func addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]], completion: @escaping (ViewModelState) -> Void) {
+        service.requestAddStore(name: name, zipcode: zipcode, street: street, city: city, telNumber: telNumber, tableList: tableList) { (addStoreData, error) in
             if addStoreData != nil {
                 completion(.success)
             }
