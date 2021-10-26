@@ -13,6 +13,7 @@ class UserViewModel {
     
     static var id = 1
     static var role = "USER"
+    var infoData : Info?
     
     func signIn(email: String, password: String, role: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password, role: role) { (loginData, error) in
@@ -68,5 +69,19 @@ class UserViewModel {
                 completion(.failure)
             }
         }
+    }
+    
+    func getInfo(completion: @escaping (ViewModelState) -> Void) {
+        service.requestGetInfo { (infoData, error) in
+            if infoData != nil {
+                print("getInfo 성공")
+                self.infoData = infoData
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+        
     }
 }

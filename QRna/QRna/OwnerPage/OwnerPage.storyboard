@@ -369,7 +369,7 @@
                         <outlet property="mainTable" destination="PZx-eo-bbj" id="5Ef-Tf-VNT"/>
                         <outlet property="numberOfPeople" destination="dQL-mA-Lq2" id="o1b-cv-WzS"/>
                         <outlet property="numberOfTable" destination="ezB-r3-JOl" id="Sil-dr-ozG"/>
-                        <outlet property="storeName" destination="Tgh-vG-IY9" id="8fg-Pb-ixE"/>
+                        <outlet property="storeName" destination="WKq-b8-eGc" id="pZK-60-P1j"/>
                         <outlet property="storeNumber" destination="Tgh-vG-IY9" id="2oM-yv-2p0"/>
                         <outlet property="street" destination="PKx-Xp-4UJ" id="Vm1-0j-IUf"/>
                         <outlet property="totalLabel" destination="uOx-nG-qti" id="NkH-5a-eiV"/>

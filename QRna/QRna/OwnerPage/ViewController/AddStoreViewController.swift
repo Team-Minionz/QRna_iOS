@@ -65,18 +65,22 @@ class AddStoreViewController: UIViewController {
                 var tableList = [[String:Any]]()
                 
                 for item in tableArray {
-                    tableList.append(["" : item.peopleCount, "": item.tableCount])
+                    for table in 0...item.tableCount-1 {
+                        tableList.append(["maxUser" : item.peopleCount])
+                    }
                 }
-                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text!, telNumber: self.storeNumber.text!, tableList: tableList) { result in
+                
+                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text! + " " + self.detailCity.text!, telNumber: self.storeNumber.text!, tableList: tableList) { result in
                     switch result {
                     case .success:
                         print("성공")
+                        self.dismiss(animated: true)
                     case .failure:
                         print("실패")
+                        self.showErrorMessage(title: "등록 실패", message: "서버가 원활하지 않습니다")
                     }
                     
                 }
-                self.dismiss(animated: true)
             }
         }
         else {

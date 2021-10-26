@@ -17,6 +17,8 @@ class MyInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getInfoData()
 
     }
     
@@ -43,6 +45,24 @@ class MyInfoViewController: UIViewController {
             case .failure:
                 print("탈퇴 실패")
             }
+        }
+    }
+    
+    fileprivate func getInfoData() {
+        userViewModel.getInfo { response in
+            switch response {
+            case .success:
+                DispatchQueue.main.async {
+                    let data = self.userViewModel.infoData!
+                    print(data)
+                    self.userNameLabel.text = data.nickname! + "님"
+                    self.userAddressLabel.text = data.address!.zipcode! + " " + data.address!.street! + " " + data.address!.city!
+                    self.userPhoneNumberLabel.text = data.telNumber
+                }
+            case .failure:
+                print("유저 데이터 가져오기 실패")
+            }
+            
         }
     }
 }

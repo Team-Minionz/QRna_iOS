@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum QRService {
-    case certification(userEmail: String, tableId: Int)
+    case certification(tableId: Int)
 }
 
 extension QRService: TargetType {
@@ -37,9 +37,9 @@ extension QRService: TargetType {
     
     var task: Task {
         switch self {
-        case .certification(let userEmail, let tableId):
-            print("email : \(userEmail)  shopTelNumber : \(tableId)")
-            return .requestCompositeParameters(bodyParameters: ["userEmail" : userEmail, "tableId" : tableId], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .certification(let tableId):
+            print("tableId : \(tableId)")
+            return .requestCompositeParameters(bodyParameters: ["userEmail" : UserViewModel.id, "tableId" : tableId], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         }
     }
     

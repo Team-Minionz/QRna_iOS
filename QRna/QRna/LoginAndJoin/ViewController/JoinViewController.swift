@@ -77,7 +77,7 @@ class JoinViewController: UIViewController {
                         streetStr = self.street.text!
                         cityStr = self.city.text!
                     }
-                    userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, role: self.userTypeStr, zipcode: zipcodeStr, street: streetStr, city: cityStr) { response in
+                    userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, role: self.setEnumValue(stringValue: self.userTypeStr), zipcode: zipcodeStr, street: streetStr, city: cityStr) { response in
                         
                         switch response {
                         case .success:
@@ -126,6 +126,17 @@ class JoinViewController: UIViewController {
             }
         }
         return true
+    }
+    
+    fileprivate func setEnumValue(stringValue: String) -> String {
+        var value = ""
+        switch stringValue {
+        case "점주":
+            value = "OWNER"
+        default:
+            value = "USER"
+        }
+        return value
     }
     
     fileprivate func showErrorMessage(title: String, message: String) {

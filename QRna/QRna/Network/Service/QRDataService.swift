@@ -11,8 +11,8 @@ import Moya
 class QRDataService {
     let provider = MoyaProvider<QRService>()
     
-    func requestQRCertification(userEmail: String, tableId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
-        provider.request(.certification(userEmail: userEmail, tableId: tableId)) { response in
+    func requestQRCertification(tableId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.certification(tableId: tableId)) { response in
             print("QRDataService - requestQRCertification")
             switch response {
             case .success(let certificationData):

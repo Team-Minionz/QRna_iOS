@@ -367,7 +367,7 @@
                     <navigationItem key="navigationItem" id="lir-1G-iIv"/>
                     <connections>
                         <outlet property="userAddressLabel" destination="ZPB-1l-Sb1" id="rGN-BG-EHz"/>
-                        <outlet property="userNameLabel" destination="23I-6q-FBg" id="HXq-Z0-9hs"/>
+                        <outlet property="userNameLabel" destination="LYz-sK-Nby" id="UNa-LO-FBu"/>
                         <outlet property="userPhoneNumberLabel" destination="23I-6q-FBg" id="Sll-UA-POq"/>
                     </connections>
                 </viewController>
