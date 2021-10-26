@@ -13,8 +13,7 @@ struct ResponseType<T: Codable>: Codable {
 }
 
 struct ResponseArrayType<T: Codable>: Codable {
-        var message: String?
-        var data: [T]?
+    var data: [T]?
 }
 
 struct ResponseData: Codable {
@@ -25,3 +24,4 @@ struct LoginData: Codable {
     var id: Int?
     var message: String?
 }
+    

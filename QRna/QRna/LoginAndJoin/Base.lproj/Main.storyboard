@@ -218,7 +218,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Join"/>
+                                                <state key="normal" title="가입"/>
                                                 <connections>
                                                     <action selector="didTapJoinBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="WDJ-FJ-61H"/>
                                                 </connections>
@@ -228,7 +228,7 @@
                                                 <color key="backgroundColor" red="0.36078956719999999" green="0.36077481509999998" blue="0.3607848287" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Cancel"/>
+                                                <state key="normal" title="취소"/>
                                                 <connections>
                                                     <action selector="didTabCancelBtn:" destination="9aY-bF-9HJ" eventType="touchUpInside" id="zRf-Jy-CCO"/>
                                                 </connections>
@@ -266,13 +266,13 @@
                         <outlet property="city" destination="6dl-OP-Txg" id="q3A-2U-m7q"/>
                         <outlet property="emailField" destination="yEE-At-kuw" id="Uj8-9y-dWv"/>
                         <outlet property="nameField" destination="mLb-DM-zN4" id="R2i-Qd-Xf5"/>
-                        <outlet property="nickNameField" destination="dVX-Id-kjv" id="2Hc-mw-AUm"/>
+                        <outlet property="nickNameField" destination="HVU-Gy-uLA" id="Iu3-fk-lcM"/>
                         <outlet property="passCheckField" destination="4U4-zR-b42" id="88D-Hc-mZG"/>
                         <outlet property="passField" destination="kYp-Eb-VqU" id="fNs-DM-a0F"/>
                         <outlet property="phoneNumberField" destination="dVX-Id-kjv" id="n9Y-Ca-ftq"/>
                         <outlet property="street" destination="wnE-Du-bgu" id="01p-O8-9N1"/>
                         <outlet property="userTypeBtn" destination="3iF-xD-OHh" id="5CA-3u-hGD"/>
-                        <outlet property="zipcode" destination="wnE-Du-bgu" id="Iiu-Ic-mSB"/>
+                        <outlet property="zipcode" destination="lkQ-LF-WmU" id="0Z1-0k-sHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lne-TB-l0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

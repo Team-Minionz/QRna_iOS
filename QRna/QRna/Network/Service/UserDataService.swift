@@ -25,7 +25,7 @@ class UserDataService {
                 do {
                     let decoder = JSONDecoder()
                     let data = try decoder.decode(LoginData.self, from: loginData.data)
-                    print(data.message)
+                    print(data)
                     if loginData.statusCode == 200 {
                         UserViewModel.role = role
                         UserViewModel.id = data.id!
@@ -147,6 +147,30 @@ class UserDataService {
                 }
             case .failure(let error):
                 print("DataService - requestLogOut : 통신 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
+    
+    func requestGetInfo(completion: @escaping (Info?, Error?) -> Void) {
+        provider.request(.getInfo) { response in
+            switch response {
+            case .success(let infoData):
+                if infoData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode(Info.self, from: infoData.data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    completion(nil, nil)
+                }
+            case .failure(let error):
                 completion(nil, error)
             }
             

@@ -59,7 +59,7 @@ extension UserService: TargetType {
             print("email : \(email) password : \(password)")
             return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password, "role": role], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role, zipcode: let zipcode, street: let street, city: let city):
-            print("email : \(email) password : \(password)")
+            print("[name : \(name), email : \(email), nickName : \(nickName), telNumber : \(telNumber), password : \(password), role : \(role), address:[zipcode:\(zipcode), street: \(street), city: \(city)]]")
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .withdraw, .logout, .getInfo:
             return .requestPlain

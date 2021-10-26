@@ -11,14 +11,15 @@ import Moya
 class StoreDataService {
     let provider = MoyaProvider<StoreService>()
     
-    func requestGetSotreList(completion: @escaping (ResponseArrayType<StoreInfo>?, Error?) -> Void) {
+    func requestGetSotreList(completion: @escaping ([StoreInfo]?, Error?) -> Void) {
         provider.request(.getStoreList) { response in
             print("StoreDataService - requestGetSotreList")
             switch response {
             case .success(let getStoreData) :
                 do {
+                    print(getStoreData)
                     let decoder = JSONDecoder()
-                    let data = try decoder.decode(ResponseArrayType<StoreInfo>.self, from: getStoreData.data)
+                    let data = try decoder.decode([StoreInfo].self, from: getStoreData.data)
                     print("파싱 성공")
                     completion(data, nil)
                 }
@@ -57,17 +58,19 @@ class StoreDataService {
         }
     }
     
-    func requestAddStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]], completion: @escaping (ResponseData?, Error?) -> Void) {
+    func requestAddStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]], completion: @escaping (LoginData?, Error?) -> Void) {
         provider.request(.addStore(name: name, zipcode: zipcode, street: street, city: city, telNumber: telNumber, tableList: tableList)) { response in
             switch response {
             case .success(let addStoreData):
+                print(addStoreData.statusCode)
                 if addStoreData.statusCode == 201 {
                     do {
                         let decoder = JSONDecoder()
-                        let data = try decoder.decode(ResponseData.self, from: addStoreData.data)
+                        let data = try decoder.decode(LoginData.self, from: addStoreData.data)
                         completion(data, nil)
                     }
                     catch(let error) {
+                        print("파싱 실패")
                         completion(nil, error)
                     }
                 }

@@ -15,7 +15,7 @@ class StoreViewModel {
     func getStoreList(completion: @escaping (ViewModelState)->Void) {
         service.requestGetSotreList() { (storeData, error) in
             if storeData != nil {
-                guard let storeList = storeData?.data else{
+                guard let storeList = storeData else{
                     completion(.success)
                     return
                 }
