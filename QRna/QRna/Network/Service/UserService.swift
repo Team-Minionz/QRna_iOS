@@ -14,6 +14,7 @@ public enum UserService {
     case getInfo
     case withdraw
     case logout
+    case findStoreByOwnerId
 }
 
 extension UserService: TargetType {
@@ -35,6 +36,9 @@ extension UserService: TargetType {
             return "/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)"
         case .getInfo:
             return "/api/v1/users/page/\(UserViewModel.id)/\(UserViewModel.role)"
+        case .findStoreByOwnerId:
+            print("/api/v1/owners/\(UserViewModel.id)")
+            return "/api/v1/owners/\(UserViewModel.id)"
         }
     }
     
@@ -44,7 +48,7 @@ extension UserService: TargetType {
             return .post
         case .withdraw:
             return .delete
-        case .logout, .getInfo:
+        case .logout, .getInfo, .findStoreByOwnerId:
             return .get
         }
     }
@@ -61,7 +65,7 @@ extension UserService: TargetType {
         case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role, zipcode: let zipcode, street: let street, city: let city):
             print("[name : \(name), email : \(email), nickName : \(nickName), telNumber : \(telNumber), password : \(password), role : \(role), address:[zipcode:\(zipcode), street: \(street), city: \(city)]]")
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .withdraw, .logout, .getInfo:
+        case .withdraw, .logout, .getInfo, .findStoreByOwnerId:
             return .requestPlain
         }
     }

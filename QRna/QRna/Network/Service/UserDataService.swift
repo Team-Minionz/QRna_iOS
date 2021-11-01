@@ -173,6 +173,31 @@ class UserDataService {
             case .failure(let error):
                 completion(nil, error)
             }
+        }
+    }
+    
+    func requestFindStoreByOwnerId(completion: @escaping ([Store]?,Error?)->Void) {
+        provider.request(.findStoreByOwnerId) { response in
+            switch response {
+            case .success(let findStoreData):
+                print(findStoreData)
+                if findStoreData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([Store].self, from: findStoreData.data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
             
         }
     }

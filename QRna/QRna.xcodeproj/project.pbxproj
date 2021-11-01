@@ -12,6 +12,8 @@
 		C7B7AEE7C2213543D47BECE8 /* Pods_QRnaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0B9E6032134B6259017C75 /* Pods_QRnaTests.framework */; };
 		DA0403A927215366007A20AC /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403A827215366007A20AC /* detailViewController.swift */; };
 		DA0403AC2721564D007A20AC /* StoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0403AB2721564D007A20AC /* StoreDetail.swift */; };
+		DA0F4DBE272FD7550072A549 /* OwnerStroeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F4DBD272FD7550072A549 /* OwnerStroeDetailViewController.swift */; };
+		DA0F4DC0272FD7EB0072A549 /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0F4DBF272FD7EB0072A549 /* TableData.swift */; };
 		DA34762A270AE73B0009519B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347629270AE73B0009519B /* UserService.swift */; };
 		DA34762C270AE88C0009519B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762B270AE88C0009519B /* NetworkController.swift */; };
 		DA34762E270AEA320009519B /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762D270AEA320009519B /* UserDataService.swift */; };
@@ -81,6 +83,8 @@
 		CC343701BED2389BEDBADCEC /* Pods-QRna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRna.debug.xcconfig"; path = "Target Support Files/Pods-QRna/Pods-QRna.debug.xcconfig"; sourceTree = "<group>"; };
 		DA0403A827215366007A20AC /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		DA0403AB2721564D007A20AC /* StoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetail.swift; sourceTree = "<group>"; };
+		DA0F4DBD272FD7550072A549 /* OwnerStroeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerStroeDetailViewController.swift; sourceTree = "<group>"; };
+		DA0F4DBF272FD7EB0072A549 /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
 		DA347629270AE73B0009519B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		DA34762B270AE88C0009519B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		DA34762D270AEA320009519B /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 			children = (
 				DAD0A09727181A1E00AA47C3 /* OwnerMainViewController.swift */,
 				DAD0A09927181A2C00AA47C3 /* AddStoreViewController.swift */,
+				DA0F4DBD272FD7550072A549 /* OwnerStroeDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD0A09C27181BB100AA47C3 /* Store.swift */,
+				DA0F4DBF272FD7EB0072A549 /* TableData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
 				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,
 				DAD0A08A2718095800AA47C3 /* ConfusionViewController.swift in Sources */,
+				DA0F4DC0272FD7EB0072A549 /* TableData.swift in Sources */,
 				DAD0A0882718094300AA47C3 /* QRReaderViewController.swift in Sources */,
 				DA34762A270AE73B0009519B /* UserService.swift in Sources */,
 				DAD0A0922718129A00AA47C3 /* RV.swift in Sources */,
@@ -619,6 +626,7 @@
 				DA641B262705AB5C00AC5794 /* ReaderView.swift in Sources */,
 				DAD0A09827181A1E00AA47C3 /* OwnerMainViewController.swift in Sources */,
 				DAC66321270B54B7009856DD /* QRService.swift in Sources */,
+				DA0F4DBE272FD7550072A549 /* OwnerStroeDetailViewController.swift in Sources */,
 				DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */,
 				DA0403A927215366007A20AC /* detailViewController.swift in Sources */,
 				DA5168F32727F6F80092DD0E /* Info.swift in Sources */,
