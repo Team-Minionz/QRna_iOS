@@ -14,6 +14,7 @@ class UserViewModel {
     static var id = 1
     static var role = "USER"
     var infoData : Info?
+    var ownerStoreData: [Store]?
     
     func signIn(email: String, password: String, role: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password, role: role) { (loginData, error) in
@@ -83,5 +84,18 @@ class UserViewModel {
             }
         }
         
+    }
+    
+    func findStoreByOwnerId(completion: @escaping (ViewModelState) -> Void) {
+        service.requestFindStoreByOwnerId { (storeData, error) in
+            if storeData != nil {
+                print("getStore 성공")
+                self.ownerStoreData = storeData
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
     }
 }

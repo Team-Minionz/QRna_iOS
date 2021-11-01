@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class OwnerMainViewController: UIViewController{
 
     @IBOutlet weak var mainTable: UITableView!
     
+    let userViewModel = UserViewModel()
     let storeViewModel = StoreViewModel()
     
     override func viewDidLoad() {
@@ -18,6 +20,21 @@ class OwnerMainViewController: UIViewController{
         
         mainTable.delegate = self
         mainTable.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getStoreList()
+    }
+    
+    fileprivate func getStoreList() {
+        userViewModel.findStoreByOwnerId { response in
+            switch response {
+            case .success:
+                print("성공")
+            case .failure:
+                print("실패")
+            }
+        }
     }
     
     @IBAction func didTapAddBtn(_ sender: Any) {
@@ -32,13 +49,14 @@ class OwnerMainViewController: UIViewController{
 extension OwnerMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return userViewModel.ownerStoreData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath) as! storeCell
         cell.delete = { [unowned self] in
-            self.storeViewModel.deleteStore(storeId: 1) { result in
+            let storeId = userViewModel.ownerStoreData![indexPath.row].id!
+            self.storeViewModel.deleteStore(storeId: storeId) { result in
                 switch result {
                 case .success:
                     self.storeViewModel.ownerStoreArray.remove(at: indexPath.row)
@@ -46,13 +64,22 @@ extension OwnerMainViewController: UITableViewDelegate, UITableViewDataSource {
                 case .failure:
                     print("")
                 }
-                
             }
         }
-//        cell.nameLabel.text = stores[indexPath.row].name
-//        cell.numberLabel.text = stores[indexPath.row].number
-//        cell.addressLabel.text = stores[indexPath.row].address
+        cell.nameLabel.text = userViewModel.ownerStoreData![indexPath.row].name
+        let addressStr = userViewModel.ownerStoreData![indexPath.row].address!.street! + " " + userViewModel.ownerStoreData![indexPath.row].address!.city!
+        cell.addressLabel.text = addressStr
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "OwnerPage", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "OwnerStroeDetailViewController") as! OwnerStroeDetailViewController
+        
+        vc.storeId = userViewModel.ownerStoreData![indexPath.row].id!
+        vc.storeNameStr = userViewModel.ownerStoreData![indexPath.row].name!
+        
+        present(vc, animated: true)
     }
 }
 

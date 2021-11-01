@@ -7,8 +7,14 @@
 
 import Foundation
 
-struct Store {
-    let name: String
-    let number: String
-    let address: String
+struct Store: Codable {
+    let id: Int?
+    let name: String?
+    let address: Address?
+    let numberOfTables: Int?
+}
+
+struct Address: Codable {
+    let street: String?
+    let city: String?
 }
