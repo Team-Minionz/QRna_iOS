@@ -70,7 +70,7 @@ class AddStoreViewController: UIViewController {
                     }
                 }
                 
-                storeViewModel.addStore(name: self.zipCode.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text! + " " + self.detailCity.text!, telNumber: self.storeNumber.text!, tableList: tableList) { result in
+                storeViewModel.addStore(name: self.storeName.text!, zipcode: self.zipCode.text!, street: self.street.text!, city: self.city.text! + " " + self.detailCity.text!, telNumber: self.storeNumber.text!, tableList: tableList) { result in
                     switch result {
                     case .success:
                         print("성공")
