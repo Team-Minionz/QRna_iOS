@@ -74,6 +74,21 @@ QR 인증을 통해 매장 방문기록을 남기는 것은 현재 매장을 사
 
 ## 개발일지
 
+- #### 버튼이 클릭되지 않는 이슈
+
+  - Debug View Hierarchy를 통해서 뷰 계층을 살펴보면 버튼이 보이지만 뒤에 있어서 클릭되지 않음
+
+  ~~~ swift
+  // contentView 내에서 bookMarkBtn이라는 요소를 맨 앞으로 가져오겠다!
+  self.contentView.bringSubviewToFront(self.bookMarkBtn)
+  ~~~
+
+  
+
+  <img width="901" alt="스크린샷 2021-11-02 오후 4 48 59" src="https://user-images.githubusercontent.com/44960073/139806385-fe68eba1-92cb-40ce-8efd-5894be0b90b7.png">
+
+
+
 - #### Cell 개수에 따른 TableView 동적 높이
 
   ~~~ swift
