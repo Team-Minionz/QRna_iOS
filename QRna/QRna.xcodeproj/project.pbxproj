@@ -18,6 +18,7 @@
 		DA347630270AEBF00009519B /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA34762F270AEBF00009519B /* ResponseType.swift */; };
 		DA347635270AEF130009519B /* ViewModelStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347634270AEF130009519B /* ViewModelStatus.swift */; };
 		DA347638270AF3430009519B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA347637270AF3430009519B /* UserViewModel.swift */; };
+		DA3FE70D273119A30067E874 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3FE70C273119A30067E874 /* History.swift */; };
 		DA5168F32727F6F80092DD0E /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5168F22727F6F80092DD0E /* Info.swift */; };
 		DA641AF62705983800AC5794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF52705983800AC5794 /* AppDelegate.swift */; };
 		DA641AF82705983800AC5794 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA641AF72705983800AC5794 /* SceneDelegate.swift */; };
@@ -87,6 +88,7 @@
 		DA34762F270AEBF00009519B /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		DA347634270AEF130009519B /* ViewModelStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelStatus.swift; sourceTree = "<group>"; };
 		DA347637270AF3430009519B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		DA3FE70C273119A30067E874 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		DA5168F22727F6F80092DD0E /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		DA641AF22705983800AC5794 /* QRna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA641AF52705983800AC5794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				DA0403AB2721564D007A20AC /* StoreDetail.swift */,
 				DA84C15F27229BB90007B105 /* StoreInfo.swift */,
 				DA5168F22727F6F80092DD0E /* Info.swift */,
+				DA3FE70C273119A30067E874 /* History.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3FE70D273119A30067E874 /* History.swift in Sources */,
 				DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */,
 				DAD619452716BDBC001D28A7 /* JoinViewController.swift in Sources */,
 				DAD0A08C2718096900AA47C3 /* MyInfoViewController.swift in Sources */,

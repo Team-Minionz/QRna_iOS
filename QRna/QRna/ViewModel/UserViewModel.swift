@@ -14,6 +14,7 @@ class UserViewModel {
     static var id = 1
     static var role = "USER"
     var infoData : Info?
+    var history: [History]?
     
     func signIn(email: String, password: String, role: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password, role: role) { (loginData, error) in
@@ -76,12 +77,34 @@ class UserViewModel {
             if infoData != nil {
                 print("getInfo 성공")
                 self.infoData = infoData
+                self.history = infoData?.userVisitResponseList
                 completion(.success)
             }
             else {
                 completion(.failure)
             }
         }
-        
+    }
+    
+    func bookMark(shopId: Int, completion: @escaping (ViewModelState) -> Void) {
+        service.requestBookMark(shopId: shopId) { (bookMarkData, error) in
+            if bookMarkData != nil {
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+    }
+    
+    func removeBookMark(shopId: Int, completion: @escaping (ViewModelState) -> Void) {
+        service.requestRemoveBookMark(shopId: shopId) { (removeData, error) in
+            if removeData != nil {
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
     }
 }

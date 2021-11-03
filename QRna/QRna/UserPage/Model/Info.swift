@@ -8,13 +8,14 @@
 import Foundation
 
 struct Info: Codable {
-    var nickname: String?
-    var telNumber: String?
-    var address: addressData?
+    let nickname: String?
+    let telNumber: String?
+    let address: addressData?
+    let userVisitResponseList: [History]?
     
     struct addressData: Codable {
-        var zipcode: String?
-        var street: String?
-        var city: String?
+        let street: String?
+        let city: String?
     }
 }
+

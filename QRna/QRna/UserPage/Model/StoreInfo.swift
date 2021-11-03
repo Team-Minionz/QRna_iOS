@@ -9,5 +9,6 @@ import Foundation
 
 struct StoreInfo: Codable {
     let name: String
+    let shopId: Int?
     let congestionStatus: String
 }

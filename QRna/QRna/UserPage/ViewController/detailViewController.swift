@@ -11,11 +11,19 @@ class detailViewController: UIViewController {
     
     @IBOutlet weak var tableContentView: UIView!
     @IBOutlet weak var storeTable: UITableView!
+    @IBOutlet weak var useRatio: UILabel!
+    @IBOutlet weak var bookMarkBtn: UIButton!
+    @IBOutlet weak var contentView: ContentView!
+    
     var temp = [StoreTemp]()
+    var isLiked = false
+    var shopId = -1
+    let userViewModel = UserViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.contentView.bringSubviewToFront(self.bookMarkBtn)
         temp.append(StoreTemp(tableMaxNumberOfPeople: 2, currentNumberOPeople: 4, totalNumberOfPeople: 10))
         temp.append(StoreTemp(tableMaxNumberOfPeople: 3, currentNumberOPeople: 5, totalNumberOfPeople: 30))
         temp.append(StoreTemp(tableMaxNumberOfPeople: 4, currentNumberOPeople: 8, totalNumberOfPeople: 40))
@@ -29,12 +37,49 @@ class detailViewController: UIViewController {
         tableContentView.layer.borderWidth = 0.8
         
         //storeTable.rowHeight = UITableView.automaticDimension
+        setBookMark()
         storeTable.delegate = self
         storeTable.dataSource = self
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if isLiked {
+            userViewModel.bookMark(shopId: self.shopId) { response in
+                switch response {
+                case .success:
+                    print("북마크 성공")
+                case .failure:
+                    print("북마크 실패")
+                }
+            }
+        }
+        else {
+            userViewModel.removeBookMark(shopId: self.shopId) { response in
+                switch response {
+                case .success:
+                    print("북마크 해제 성공")
+                case .failure:
+                    print("북마크 해제 실패")
+                }
+            }
+        }
+    }
+    
     @IBAction func didTapConfirmBtn(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    @IBAction func didTapBookMarkBtn(_ sender: Any) {
+        isLiked = !isLiked
+        setBookMark()
+    }
+    
+    fileprivate func setBookMark() {
+        if !isLiked {
+            bookMarkBtn.setImage(UIImage(named: "like1"), for: .normal)
+        }
+        else {
+            bookMarkBtn.setImage(UIImage(named: "like2"), for: .normal)
+        }
     }
 }
 

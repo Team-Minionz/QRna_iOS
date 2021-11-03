@@ -69,6 +69,7 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        vc.shopId = storeViewModel.storeArray[indexPath.row].shopId ?? -1
         present(vc, animated: true)
     }
 }
