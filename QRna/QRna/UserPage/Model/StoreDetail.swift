@@ -11,5 +11,4 @@ struct StoreDetail {
     let name: String
     let number: String
     let address: String
-    
 }

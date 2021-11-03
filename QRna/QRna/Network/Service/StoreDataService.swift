@@ -82,4 +82,55 @@ class StoreDataService {
             }
         }
     }
+    
+    func requestGetTableDetailInfo(storeId: Int, completion: @escaping ([TableData]?, Error?) -> Void) {
+        provider.request(.getDetailTableInfo(storeId: storeId)) { response in
+            switch response {
+            case .success(let tableData):
+                if tableData.statusCode == 200 {
+                    print("requestGetTableDetailInfo - 요청 성공")
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([TableData].self, from: tableData.data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+            case .failure(let error):
+                print("requestGetTableDetailInfo - 요청 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
+    
+    func requestExitTable(tableId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.exitTable(tableId: tableId)) { response in
+            switch response {
+            case .success(let exitData):
+                if exitData.statusCode == 200 {
+                    print("requestExitTable - 요청 성공")
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode(ResponseData.self, from: exitData.data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("requestExitTable - 요청 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
 }
