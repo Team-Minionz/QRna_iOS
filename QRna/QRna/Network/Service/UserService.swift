@@ -14,7 +14,8 @@ public enum UserService {
     case getInfo
     case withdraw
     case logout
-    case findStoreByOwnerId
+    case bookMark(shopId: Int)
+    case removeBookMark(shopId: Int)
 }
 
 extension UserService: TargetType {
@@ -36,19 +37,20 @@ extension UserService: TargetType {
             return "/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)"
         case .getInfo:
             return "/api/v1/users/page/\(UserViewModel.id)/\(UserViewModel.role)"
-        case .findStoreByOwnerId:
-            print("/api/v1/owners/\(UserViewModel.id)")
-            return "/api/v1/owners/\(UserViewModel.id)"
+        case .bookMark:
+            return "/api/v1/users/bookmark"
+        case .removeBookMark(let shopId):
+            return "/api/v1/users/bookmark/\(UserViewModel.id)/\(shopId)"
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .signin, .signup:
+        case .signin, .signup, .bookMark:
             return .post
-        case .withdraw:
+        case .withdraw, .removeBookMark:
             return .delete
-        case .logout, .getInfo, .findStoreByOwnerId:
+        case .logout, .getInfo:
             return .get
         }
     }
@@ -65,7 +67,9 @@ extension UserService: TargetType {
         case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role, zipcode: let zipcode, street: let street, city: let city):
             print("[name : \(name), email : \(email), nickName : \(nickName), telNumber : \(telNumber), password : \(password), role : \(role), address:[zipcode:\(zipcode), street: \(street), city: \(city)]]")
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .withdraw, .logout, .getInfo, .findStoreByOwnerId:
+        case .bookMark(let shopId):
+            return .requestCompositeParameters(bodyParameters: ["shopId":shopId, "userId":UserViewModel.id], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .withdraw, .logout, .getInfo, .removeBookMark:
             return .requestPlain
         }
     }

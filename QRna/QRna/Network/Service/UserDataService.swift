@@ -176,19 +176,19 @@ class UserDataService {
         }
     }
     
-    func requestFindStoreByOwnerId(completion: @escaping ([Store]?,Error?)->Void) {
-        provider.request(.findStoreByOwnerId) { response in
+    func requestBookMark(shopId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.bookMark(shopId: shopId)) { response in
             switch response {
-            case .success(let findStoreData):
-                print(findStoreData)
-                if findStoreData.statusCode == 200 {
+            case .success(let bookMarkData):
+                print("requestBookMark - 통신 성공")
+                if bookMarkData.statusCode == 200 {
                     do {
                         let decoder = JSONDecoder()
-                        let data = try decoder.decode([Store].self, from: findStoreData.data)
+                        let data = try decoder.decode(ResponseData.self, from: bookMarkData.data)
                         completion(data, nil)
                     }
-                    catch(let error) {
-                        print("파싱 실패")
+                    catch (let error) {
+                        print("requestBookMark - 파싱 실패")
                         completion(nil, error)
                     }
                 }
@@ -196,6 +196,35 @@ class UserDataService {
                     completion(nil, nil)
                 }
             case .failure(let error):
+                print("requestBookMark - 통신 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
+    
+    func requestRemoveBookMark(shopId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
+        provider.request(.removeBookMark(shopId: shopId)) { response in
+            switch response {
+            case .success(let removeData):
+                print("requestRemoveBookMark - 통신 성공")
+                if removeData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode(ResponseData.self, from: removeData.data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("requestRemoveBookMark - 파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    print("requestRemoveBookMark - 요청 실패")
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("requestRemoveBookMark - 통신 실패")
                 completion(nil, error)
             }
             

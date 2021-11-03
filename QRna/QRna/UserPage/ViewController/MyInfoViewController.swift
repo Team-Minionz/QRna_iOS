@@ -13,10 +13,14 @@ class MyInfoViewController: UIViewController {
     @IBOutlet weak var userPhoneNumberLabel: UILabel!
     @IBOutlet weak var userAddressLabel: UILabel!
     
+    @IBOutlet weak var historyTable: UITableView!
     let userViewModel = UserViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        historyTable.delegate = self
+        historyTable.dataSource = self
         
         getInfoData()
 
@@ -56,13 +60,43 @@ class MyInfoViewController: UIViewController {
                     let data = self.userViewModel.infoData!
                     print(data)
                     self.userNameLabel.text = data.nickname! + "님"
-                    self.userAddressLabel.text = data.address!.zipcode! + " " + data.address!.street! + " " + data.address!.city!
+                    self.userAddressLabel.text = data.address!.street! + " " + data.address!.city!
                     self.userPhoneNumberLabel.text = data.telNumber
+                    
+                    self.historyTable.reloadData()
                 }
             case .failure:
                 print("유저 데이터 가져오기 실패")
             }
-            
         }
     }
+}
+
+extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userViewModel.history?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = historyTable.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryCell
+        
+        cell.name.text = userViewModel.history![indexPath.row].shopName!
+        cell.number.text = userViewModel.history![indexPath.row].shopTelNumber
+        cell.date.text = "\(userViewModel.history![indexPath.row].visitedDate)"
+        
+        let address = userViewModel.history![indexPath.row].shopAddress!.street! + " " +  userViewModel.history![indexPath.row].shopAddress!.city!
+        
+        cell.address.text = address
+        
+        return cell
+    }
+}
+
+class HistoryCell: UITableViewCell {
+    
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var number: UILabel!
+    
 }
