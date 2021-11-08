@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct Info: Codable {
+struct UserInfo: Codable {
     let nickname: String?
     let telNumber: String?
     let address: addressData?
     let userVisitResponseList: [History]?
-    
-    struct addressData: Codable {
-        let street: String?
-        let city: String?
-    }
+}
+
+struct addressData: Codable {
+    let street: String?
+    let city: String?
 }
 

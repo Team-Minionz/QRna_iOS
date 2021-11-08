@@ -25,6 +25,7 @@ class ConfusionViewController: UIViewController {
     }
     
     fileprivate func getStoreData() {
+        
         storeViewModel.getStoreList { result in
             switch result {
             case .success:
@@ -32,9 +33,7 @@ class ConfusionViewController: UIViewController {
             case .failure:
                 print("실패")
             }
-            
         }
-
     }
     
     fileprivate func setStringValue(enumValue: String) -> String {
@@ -61,7 +60,7 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "ConfusionCell", for: indexPath) as! ConfusionCell
         cell.name.text = storeViewModel.storeArray[indexPath.row].name
-        cell.confuse.text = setStringValue(enumValue: storeViewModel.storeArray[indexPath.row].congestionStatus)
+        cell.confuse.text = setStringValue(enumValue: storeViewModel.storeArray[indexPath.row].congestionStatus!)
         
         return cell
     }
@@ -69,7 +68,7 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
-        vc.shopId = storeViewModel.storeArray[indexPath.row].shopId ?? -1
+        vc.shopId = storeViewModel.storeArray[indexPath.row].id ?? -1
         present(vc, animated: true)
     }
 }

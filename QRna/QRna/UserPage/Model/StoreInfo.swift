@@ -8,7 +8,15 @@
 import Foundation
 
 struct StoreInfo: Codable {
-    let name: String
-    let shopId: Int?
-    let congestionStatus: String
+    let id: Int?
+    let name: String?
+    let address: addressOfInfo?
+    let congestionStatus: String?
+    let numberOfTables: Int?
+    let useTables: Int?
+}
+
+struct addressOfInfo: Codable {
+    let zipcode: String?
+    let street: String?
 }

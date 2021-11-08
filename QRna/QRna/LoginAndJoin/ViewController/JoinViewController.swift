@@ -24,7 +24,10 @@ class JoinViewController: UIViewController {
     @IBOutlet weak var addressStack: UIStackView!
     
     let userViewModel = UserViewModel()
+    let ownerViewModel = OwnerViewModel()
     let dropDown = DropDown()
+    let latitude = 27.0
+    let longitude = 103.0
     var userTypeStr = ""
     
     override func viewDidLoad() {
@@ -76,21 +79,39 @@ class JoinViewController: UIViewController {
                         zipcodeStr = self.zipcode.text!
                         streetStr = self.street.text!
                         cityStr = self.city.text!
-                    }
-                    userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, role: self.setEnumValue(stringValue: self.userTypeStr), zipcode: zipcodeStr, street: streetStr, city: cityStr) { response in
                         
-                        switch response {
-                        case .success:
-                            print("가입 성공")
-                            title = "가입 성공"
-                            message = "가입을 축하합니다!"
-                            self.showSuccessMessage(title: title, message: message)
+                        userViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!, zipcode: zipcodeStr, street: streetStr, city: cityStr, latitude: self.latitude, longitude: self.longitude) { response in
                             
-                        case .failure:
-                            print("가입 실패")
-                            title = "가입 실패"
-                            message = "서버가 원활하지 않습니다"
-                            self.showErrorMessage(title: title, message: message)
+                            switch response {
+                            case .success:
+                                print("가입 성공")
+                                title = "가입 성공"
+                                message = "가입을 축하합니다!"
+                                self.showSuccessMessage(title: title, message: message)
+                                
+                            case .failure:
+                                print("가입 실패")
+                                title = "가입 실패"
+                                message = "서버가 원활하지 않습니다"
+                                self.showErrorMessage(title: title, message: message)
+                            }
+                        }
+                    }
+                    else {
+                        ownerViewModel.signUp(name: self.nameField.text!, email: self.emailField.text!, nickName: self.nickNameField.text!, telNumber: self.phoneNumberField.text!, password: self.passField.text!) { response in
+                            switch response {
+                            case .success:
+                                print("가입 성공")
+                                title = "가입 성공"
+                                message = "가입을 축하합니다!"
+                                self.showSuccessMessage(title: title, message: message)
+                                
+                            case .failure:
+                                print("가입 실패")
+                                title = "가입 실패"
+                                message = "서버가 원활하지 않습니다"
+                                self.showErrorMessage(title: title, message: message)
+                            }
                         }
                     }
                 }

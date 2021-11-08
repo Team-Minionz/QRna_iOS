@@ -12,6 +12,7 @@ class StoreViewModel {
     var storeArray = [StoreInfo]()
     var ownerStoreArray = [Store]()
     var ownerTableDataInStore: [TableData]?
+    var storeDetailData: StoreDetail?
     
     func getStoreList(completion: @escaping (ViewModelState)->Void) {
         service.requestGetSotreList() { (storeData, error) in
@@ -72,5 +73,18 @@ class StoreViewModel {
                 completion(.failure)
             }
         }
+    }
+    
+    func getStoreDetail(storeId: Int, completion: @escaping (ViewModelState) -> Void) {
+        service.requestGetStoreDetail(storeId: storeId) { (detailData, error) in
+            if detailData != nil {
+                self.storeDetailData = detailData
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+        
     }
 }

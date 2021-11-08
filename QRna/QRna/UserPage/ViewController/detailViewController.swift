@@ -19,6 +19,7 @@ class detailViewController: UIViewController {
     var isLiked = false
     var shopId = -1
     let userViewModel = UserViewModel()
+    let storeViewModel = StoreViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,17 @@ class detailViewController: UIViewController {
         tableContentView.layer.borderWidth = 0.8
         
         //storeTable.rowHeight = UITableView.automaticDimension
+        storeViewModel.getStoreDetail(storeId: 1) { response in
+            switch response {
+            case .success:
+                print("성공")
+            case .failure:
+                print("실패")
+            }
+            
+        }
+        
+    
         setBookMark()
         storeTable.delegate = self
         storeTable.dataSource = self

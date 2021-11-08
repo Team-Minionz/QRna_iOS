@@ -14,6 +14,7 @@ public enum StoreService {
     case addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]])
     case getDetailTableInfo(storeId: Int)
     case exitTable(tableId: Int)
+    case getStoreDetail(storeId: Int)
 }
 
 extension StoreService : TargetType {
@@ -24,7 +25,9 @@ extension StoreService : TargetType {
     public var path: String {
         switch self {
         case .getStoreList:
-            return "/api/v1/shops"
+            let la: Double = 27.0
+            let lo: Double = 103.0
+            return "/api/v1/shops/near?latitude=\(la)&longitude=\(lo)"
         case .deleteStore(let storeId):
             return "/api/v1/shops/\(storeId)"
         case .addStore:
@@ -33,12 +36,16 @@ extension StoreService : TargetType {
             return "/api/v1/shops/\(storeId)"
         case .exitTable(let tableId):
             return "/api/v1/tables/\(tableId)"
+        case .getStoreDetail(let storeId):
+            print( "/api/v1/shops/detail/\(storeId)/\(UserViewModel.id)")
+            return "/api/v1/shops/detail/\(storeId)/\(UserViewModel.id)"
+            
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case .getStoreList, .getDetailTableInfo, .exitTable:
+        case .getStoreList, .getDetailTableInfo, .exitTable, .getStoreDetail:
             return .get
         case .deleteStore:
             return .delete
@@ -53,10 +60,11 @@ extension StoreService : TargetType {
     
     public var task: Task {
         switch self {
-        case .getStoreList, .deleteStore, .getDetailTableInfo, .exitTable:
+        case .getStoreList, .deleteStore, .getDetailTableInfo, .exitTable, .getStoreDetail:
             return .requestPlain
         case .addStore(name: let name, zipcode: let zipcode, street: let street, city: let city, telNumber: let telNumber, tableList: let tableList):
-            return .requestCompositeParameters(bodyParameters: ["ownerId": UserViewModel.id, "name": name, "address": ["zipcode":zipcode, "street": street, "city": city], "telNumber": telNumber, "tableList": tableList], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+            print("\(OwnerViewModel.id)")
+            return .requestCompositeParameters(bodyParameters: ["ownerId": OwnerViewModel.id, "name": name, "address": ["zipcode":zipcode, "street": street, "city": city, "latitude": 27.0, "longitude": 204.0], "telNumber": telNumber, "tableList": tableList], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         }
     }
     
