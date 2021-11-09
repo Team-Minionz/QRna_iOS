@@ -26,6 +26,9 @@ class OwnerStroeDetailViewController: UIViewController {
         detailListTable.delegate = self
         detailListTable.dataSource = self
     }
+    @IBAction func didTapCancelBtn(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     
     fileprivate func getTableDetailInfo() {
         storeViewModel.getDetailTableInfo(storeId: storeId) { response in
@@ -50,9 +53,9 @@ extension OwnerStroeDetailViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = detailListTable.dequeueReusableCell(withIdentifier: "DetailTableCell", for: indexPath) as! DetailTableCell
         
-        cell.tableNumber.text = "\(storeViewModel.ownerTableDataInStore![indexPath.row].tableNumber)번"
+        cell.tableNumber.text = "\(storeViewModel.ownerTableDataInStore![indexPath.row].tableNumber!)번 테이블"
         let tableUseStatus = storeViewModel.ownerTableDataInStore![indexPath.row].useStatus
-        cell.tableUseStatus.text = tableUseStatus
+        cell.tableUseStatus.text = setStringValue(enumValue: tableUseStatus!)
         
         switch tableUseStatus {
         case "EMPTY":
@@ -75,6 +78,14 @@ extension OwnerStroeDetailViewController: UITableViewDelegate, UITableViewDataSo
         }
         
         return cell
+    }
+    
+    fileprivate func setStringValue(enumValue: String) -> String {
+        var string = "사용 불가"
+        if enumValue == "EMPTY" {
+            string = "사용 가능"
+        }
+        return string
     }
 }
 

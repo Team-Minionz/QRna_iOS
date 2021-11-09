@@ -130,6 +130,34 @@ class StoreDataService {
                 print("requestExitTable - 요청 실패")
                 completion(nil, error)
             }
+        }
+    }
+    
+    func requestGetStoreDetail(storeId: Int, completion: @escaping (StoreDetail?, Error?) -> Void) {
+        provider.request(.getStoreDetail(storeId: storeId)) { response in
+            switch response {
+            case .success(let detailData):
+                print(detailData)
+                if detailData.statusCode == 200 {
+                    do {
+                        print("통신 성공")
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode(StoreDetail.self, from: detailData.data)
+                        print(data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("통신 실패")
+                completion(nil, error)
+            }
             
         }
     }

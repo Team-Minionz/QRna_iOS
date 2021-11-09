@@ -14,6 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpBtn: UIButton!
     
     let userViewModel = UserViewModel()
+    let ownerViewModel = OwnerViewModel()
     var userType: String?
     
     override func viewDidLoad() {
@@ -24,23 +25,20 @@ class LoginViewController: UIViewController {
     }
     @IBAction func didTapOwnerSignInBtn(_ sender: Any) {
         userType = "Owner"
-        UserViewModel.role = "OWNER"
-        signIn()
+        ownerSignIn()
     }
     @IBAction func didTapUserSignInBtn(_ sender: Any) {
         userType = "User"
-        UserViewModel.role = "USER"
-        signIn()
+        userSignIn()
     }
     
-    fileprivate func signIn() {
+    fileprivate func userSignIn() {
         var textFeilds = [UITextField]()
         textFeilds.append(emailField)
         textFeilds.append(passField)
 
-        //moveNextVC(identifier: userType!)
         if checkEmpty(textFeilds) {
-            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!, role: stringToEnumValue(stringValue: self.userType!)) { response in
+            userViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
                 switch response {
                 case .success:
                     print("성공")
@@ -57,17 +55,27 @@ class LoginViewController: UIViewController {
         }
     }
     
-    fileprivate func stringToEnumValue(stringValue: String) -> String {
-        var enumValue = ""
-        switch stringValue {
-        case "User" :
-            enumValue = "USER"
-        case "Owner" :
-            enumValue = "OWNER"
-        default:
-            print("")
+    fileprivate func ownerSignIn() {
+        var textFeilds = [UITextField]()
+        textFeilds.append(emailField)
+        textFeilds.append(passField)
+
+        if checkEmpty(textFeilds) {
+            ownerViewModel.signIn(email: self.emailField.text!, password: self.passField.text!) { response in
+                switch response {
+                case .success:
+                    print("성공")
+                    self.moveNextVC(identifier: self.userType!)
+                case .failure:
+                    print("실패")
+                    self.showErrorMessage(title: "로그인 실패", message: "서버가 원활하지 않습니다")
+                }
+            }
         }
-        return enumValue
+
+        else {
+            showErrorMessage(title: "로그인 실패", message: "아이디와 비밀번호를 입력해 주세요")
+        }
     }
     
     fileprivate func moveNextVC(identifier: String) {

@@ -9,8 +9,8 @@ import Moya
 import SwiftKeychainWrapper
 
 public enum UserService {
-    case signin(email: String, password: String, role: String)
-    case signup(name: String, email: String, nickName: String, telNumber: String, password: String, role: String, zipcode: String, street: String, city: String)
+    case signin(email: String, password: String)
+    case signup(name: String, email: String, nickName: String, telNumber: String, password: String, zipcode: String, street: String, city: String, latitude: Double, longitude: Double)
     case getInfo
     case withdraw
     case logout
@@ -30,13 +30,13 @@ extension UserService: TargetType {
         case .signup:
             return "/api/v1/users/join"
         case .withdraw:
-            print("/api/v1/users/withdraw/\(UserViewModel.id)/\(UserViewModel.role)")
-            return "/api/v1/users/withdraw/\(UserViewModel.id)/\(UserViewModel.role)"
+            print("/api/v1/users/withdraw/\(UserViewModel.id)")
+            return "/api/v1/users/withdraw/\(UserViewModel.id)"
         case .logout:
-            print("/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)")
-            return "/api/v1/users/logout/\(UserViewModel.id)/\(UserViewModel.role)"
+            print("/api/v1/users/logout/\(UserViewModel.id)")
+            return "/api/v1/users/logout/\(UserViewModel.id)"
         case .getInfo:
-            return "/api/v1/users/page/\(UserViewModel.id)/\(UserViewModel.role)"
+            return "/api/v1/users/page/\(UserViewModel.id)"
         case .bookMark:
             return "/api/v1/users/bookmark"
         case .removeBookMark(let shopId):
@@ -61,12 +61,12 @@ extension UserService: TargetType {
     
     public var task: Task {
         switch self {
-        case .signin(email: let email, password: let password, role: let role):
+        case .signin(email: let email, password: let password):
             print("email : \(email) password : \(password)")
-            return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password, "role": role], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, role: let role, zipcode: let zipcode, street: let street, city: let city):
-            print("[name : \(name), email : \(email), nickName : \(nickName), telNumber : \(telNumber), password : \(password), role : \(role), address:[zipcode:\(zipcode), street: \(street), city: \(city)]]")
-            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "role" : role, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+            return .requestCompositeParameters(bodyParameters: ["email" : email, "password" : password], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .signup(name: let name, email: let email, nickName: let nickName, telNumber: let telNumber, password: let password, zipcode: let zipcode, street: let street, city: let city, latitude: let latitude, longitude: let longitude):
+            print("[name : \(name), email : \(email), nickName : \(nickName), telNumber : \(telNumber), password : \(password), address:[zipcode:\(zipcode), street: \(street), city: \(city), latitude: \(latitude), longitude: \(longitude)]]")
+            return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .bookMark(let shopId):
             return .requestCompositeParameters(bodyParameters: ["shopId":shopId, "userId":UserViewModel.id], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .withdraw, .logout, .getInfo, .removeBookMark:
@@ -80,6 +80,4 @@ extension UserService: TargetType {
             return ["Content-Type": "application/json"]
         }
     }
-    
-    
 }

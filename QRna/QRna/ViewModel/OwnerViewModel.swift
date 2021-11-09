@@ -1,19 +1,16 @@
 //
-//  UserViewModel.swift
+//  OwnerViewModel.swift
 //  QRna
 //
-//  Created by 이명직 on 2021/10/04.
+//  Created by 이명직 on 2021/11/08.
 //
 
 import Foundation
 
-class UserViewModel {
-    
-    fileprivate let service = UserDataService()
-    
+class OwnerViewModel {
+    let service = OwnerDataService()
     static var id = -1
-    var infoData : UserInfo?
-    var history: [History]?
+    var infoData : OwnerInfo?
     var ownerStoreData: [Store]?
     
     func signIn(email: String, password: String, completion: @escaping (ViewModelState) -> Void ) {
@@ -30,8 +27,8 @@ class UserViewModel {
         }
     }
     
-    func signUp(name: String, email: String, nickName: String, telNumber: String, password: String, zipcode: String, street: String, city: String, latitude: Double, longitude: Double, completion: @escaping (ViewModelState) -> Void) {
-        service.requestSignUp(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, zipcode: zipcode, street: street, city: city, latitude: latitude, longitude: longitude) { (signUpdata, error) in
+    func signUp(name: String, email: String, nickName: String, telNumber: String, password: String, completion: @escaping (ViewModelState) -> Void) {
+        service.requestSignUp(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password) { (signUpdata, error) in
             
             if signUpdata != nil {
                 print("가입 성공")
@@ -77,7 +74,6 @@ class UserViewModel {
             if infoData != nil {
                 print("getInfo 성공")
                 self.infoData = infoData
-                self.history = infoData?.userVisitResponseList
                 completion(.success)
             }
             else {
@@ -86,20 +82,10 @@ class UserViewModel {
         }
     }
     
-    func bookMark(shopId: Int, completion: @escaping (ViewModelState) -> Void) {
-        service.requestBookMark(shopId: shopId) { (bookMarkData, error) in
-            if bookMarkData != nil {
-                completion(.success)
-            }
-            else {
-                completion(.failure)
-            }
-        }
-    }
-    
-    func removeBookMark(shopId: Int, completion: @escaping (ViewModelState) -> Void) {
-        service.requestRemoveBookMark(shopId: shopId) { (removeData, error) in
-            if removeData != nil {
+    func findStoreByOwnerId(completion: @escaping (ViewModelState) -> Void) {
+        service.requestFindStoreByOwnerId { (storeData, error) in
+            if storeData != nil {
+                self.ownerStoreData = storeData
                 completion(.success)
             }
             else {

@@ -1,16 +1,15 @@
 //
-//  UserServiceData.swift
+//  OwnerDataService.swift
 //  QRna
 //
-//  Created by 이명직 on 2021/10/04.
+//  Created by 이명직 on 2021/11/08.
 //
 
 import Foundation
 import Moya
 
-class UserDataService {
-    
-    fileprivate let provider = Moya.MoyaProvider<UserService>()
+class OwnerDataService {
+    fileprivate let provider = Moya.MoyaProvider<OwnerService>()
     
     func requestSignIn(email: String, password: String, completion: @escaping ((LoginData?, Error?)->Void)) {
         provider.request(.signin(email: email, password: password)) { response in
@@ -27,7 +26,7 @@ class UserDataService {
                     let data = try decoder.decode(LoginData.self, from: loginData.data)
                     print(data)
                     if loginData.statusCode == 200 {
-                        UserViewModel.id = data.id!
+                        OwnerViewModel.id = data.id!
                         completion(data, nil)
                     }
                     else {
@@ -47,8 +46,8 @@ class UserDataService {
         }
     }
     
-    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, zipcode: String, street: String, city: String, latitude: Double, longitude: Double, completion: @escaping ((ResponseData?, Error?)->Void)) {
-        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password, zipcode: zipcode, street: street, city: city, latitude: latitude, longitude: longitude)) { response in
+    func requestSignUp(name: String, email: String, nickName: String, telNumber: String, password: String, completion: @escaping ((ResponseData?, Error?)->Void)) {
+        provider.request(.signup(name: name, email: email, nickName: nickName, telNumber: telNumber, password: password)) { response in
             
             print("DataService - requestSignUp")
             switch response {
@@ -152,14 +151,14 @@ class UserDataService {
         }
     }
     
-    func requestGetInfo(completion: @escaping (UserInfo?, Error?) -> Void) {
+    func requestGetInfo(completion: @escaping (OwnerInfo?, Error?) -> Void) {
         provider.request(.getInfo) { response in
             switch response {
             case .success(let infoData):
                 if infoData.statusCode == 200 {
                     do {
                         let decoder = JSONDecoder()
-                        let data = try decoder.decode(UserInfo.self, from: infoData.data)
+                        let data = try decoder.decode(OwnerInfo.self, from: infoData.data)
                         completion(data, nil)
                     }
                     catch(let error) {
@@ -175,59 +174,33 @@ class UserDataService {
         }
     }
     
-    func requestBookMark(shopId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
-        provider.request(.bookMark(shopId: shopId)) { response in
+    func requestFindStoreByOwnerId(completion: @escaping ([Store]?, Error?) -> Void) {
+        provider.request(.findStoreByOwnerId) { response in
             switch response {
-            case .success(let bookMarkData):
-                print("requestBookMark - 통신 성공")
-                if bookMarkData.statusCode == 200 {
+            case .success(let storeData):
+                print("requestFindStoreByOwnerId - 통신 성공")
+                print(storeData)
+                if storeData.statusCode == 200 {
                     do {
                         let decoder = JSONDecoder()
-                        let data = try decoder.decode(ResponseData.self, from: bookMarkData.data)
-                        completion(data, nil)
-                    }
-                    catch (let error) {
-                        print("requestBookMark - 파싱 실패")
-                        completion(nil, error)
-                    }
-                }
-                else {
-                    completion(nil, nil)
-                }
-            case .failure(let error):
-                print("requestBookMark - 통신 실패")
-                completion(nil, error)
-            }
-            
-        }
-    }
-    
-    func requestRemoveBookMark(shopId: Int, completion: @escaping (ResponseData?, Error?) -> Void) {
-        provider.request(.removeBookMark(shopId: shopId)) { response in
-            switch response {
-            case .success(let removeData):
-                print("requestRemoveBookMark - 통신 성공")
-                if removeData.statusCode == 200 {
-                    do {
-                        let decoder = JSONDecoder()
-                        let data = try decoder.decode(ResponseData.self, from: removeData.data)
+                        let data = try decoder.decode([Store].self, from: storeData.data)
+                        print(data)
                         completion(data, nil)
                     }
                     catch(let error) {
-                        print("requestRemoveBookMark - 파싱 실패")
+                        print("requestFindStoreByOwnerId - 파싱 실패")
                         completion(nil, error)
                     }
                 }
                 else {
-                    print("requestRemoveBookMark - 요청 실패")
+                    print("requestFindStoreByOwnerId - 요청 실패")
                     completion(nil, nil)
                 }
             case .failure(let error):
-                print("requestRemoveBookMark - 통신 실패")
+                print("requestFindStoreByOwnerId - 통신 실패")
                 completion(nil, error)
             }
             
         }
     }
-
 }
