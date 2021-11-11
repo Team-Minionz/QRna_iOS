@@ -16,6 +16,8 @@ public enum UserService {
     case logout
     case bookMark(shopId: Int)
     case removeBookMark(shopId: Int)
+    case searchStore(keyword: String)
+    case searchStoreWithRegion(keyword: String, region: String)
 }
 
 extension UserService: TargetType {
@@ -41,6 +43,10 @@ extension UserService: TargetType {
             return "/api/v1/users/bookmark"
         case .removeBookMark(let shopId):
             return "/api/v1/users/bookmark/\(UserViewModel.id)/\(shopId)"
+        case .searchStore(let keyword):
+            return "/api/v1/shops/search?keyword=\(keyword)"
+        case .searchStoreWithRegion(let keyword, let region):
+            return "/api/v1/shops/search/region?region=\(region)&keyword=\(keyword)"
         }
     }
     
@@ -50,7 +56,7 @@ extension UserService: TargetType {
             return .post
         case .withdraw, .removeBookMark:
             return .delete
-        case .logout, .getInfo:
+        case .logout, .getInfo, .searchStore, .searchStoreWithRegion:
             return .get
         }
     }
@@ -69,7 +75,7 @@ extension UserService: TargetType {
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .bookMark(let shopId):
             return .requestCompositeParameters(bodyParameters: ["shopId":shopId, "userId":UserViewModel.id], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .withdraw, .logout, .getInfo, .removeBookMark:
+        case .withdraw, .logout, .getInfo, .removeBookMark, .searchStore, .searchStoreWithRegion:
             return .requestPlain
         }
     }

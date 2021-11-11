@@ -226,8 +226,62 @@ class UserDataService {
                 print("requestRemoveBookMark - 통신 실패")
                 completion(nil, error)
             }
-            
         }
     }
-
+    
+    func requestSearchStore(keyword: String, completion: @escaping ([StoreInfo]?, Error?)-> Void) {
+        provider.request(.searchStore(keyword: keyword)) { response in
+            switch response {
+            case .success(let searchData):
+                print(searchData)
+                if searchData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([StoreInfo].self, from: searchData.data)
+                        print(data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("requestSearchStore - 파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    print("requestSearchStore - 요청 실패")
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("requestSearchStore - 통신 실패")
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func requestSearchStoreWithRegion(keyword: String, region: String, completion: @escaping ([StoreInfo]?, Error?)-> Void) {
+        provider.request(.searchStoreWithRegion(keyword: keyword, region: region)) { response in
+            switch response {
+            case .success(let searchData):
+                print(searchData)
+                if searchData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([StoreInfo].self, from: searchData.data)
+                        print(data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("requestSearchStoreWithRegion - 파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    print("requestSearchStoreWithRegion - 요청 실패")
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("requestSearchStoreWithRegion - 통신 실패")
+                completion(nil, error)
+            }
+        }
+    }
 }

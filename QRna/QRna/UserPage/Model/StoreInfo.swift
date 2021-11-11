@@ -17,6 +17,6 @@ struct StoreInfo: Codable {
 }
 
 struct addressOfInfo: Codable {
-    let zipcode: String?
+    let city: String?
     let street: String?
 }

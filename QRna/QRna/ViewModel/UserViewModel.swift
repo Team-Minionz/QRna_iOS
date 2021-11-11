@@ -15,6 +15,7 @@ class UserViewModel {
     var infoData : UserInfo?
     var history: [History]?
     var ownerStoreData: [Store]?
+    var storeList: [StoreInfo]?
     
     func signIn(email: String, password: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password) { (loginData, error) in
@@ -100,6 +101,32 @@ class UserViewModel {
     func removeBookMark(shopId: Int, completion: @escaping (ViewModelState) -> Void) {
         service.requestRemoveBookMark(shopId: shopId) { (removeData, error) in
             if removeData != nil {
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+    }
+    
+    func searchStore(keyword: String, completion: @escaping (ViewModelState) -> Void) {
+        service.requestSearchStore(keyword: keyword) { (searchData, error) in
+            if searchData != nil {
+                self.storeList = [StoreInfo]()
+                self.storeList = searchData
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+    }
+    
+    func searchStoreWithRegion(keyword: String, region: String, completion: @escaping (ViewModelState) -> Void) {
+        service.requestSearchStoreWithRegion(keyword: keyword, region: region) { (searchData, error) in
+            if searchData != nil {
+                self.storeList = [StoreInfo]()
+                self.storeList = searchData
                 completion(.success)
             }
             else {

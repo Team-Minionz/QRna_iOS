@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         setSignUpBtn()
+        moveNextVC(identifier: "User")
         
     }
     @IBAction func didTapOwnerSignInBtn(_ sender: Any) {
