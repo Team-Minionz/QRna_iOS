@@ -61,6 +61,8 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "ConfusionCell", for: indexPath) as! ConfusionCell
         cell.name.text = storeViewModel.storeArray[indexPath.row].name
         cell.confuse.text = setStringValue(enumValue: storeViewModel.storeArray[indexPath.row].congestionStatus!)
+        cell.address.text = "\(storeViewModel.storeArray[indexPath.row].address)"
+        cell.tableStatus.text = "\(storeViewModel.storeArray[indexPath.row].useTables)/ \(storeViewModel.storeArray[indexPath.row].numberOfTables)"
         
         return cell
     }
@@ -75,5 +77,7 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
 
 class ConfusionCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var tableStatus: UILabel!
     @IBOutlet weak var confuse: UILabel!
 }

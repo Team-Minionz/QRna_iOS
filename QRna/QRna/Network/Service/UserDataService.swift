@@ -284,4 +284,32 @@ class UserDataService {
             }
         }
     }
+    
+    func requestGetBookMarkStores(completion: @escaping ([StoreInfo]?, Error?) -> Void) {
+        provider.request(.getBookMarkStores) { response in
+            switch response {
+            case .success(let storeData):
+                if storeData.statusCode == 200 {
+                    do {
+                        let decoder = JSONDecoder()
+                        let data = try decoder.decode([StoreInfo].self, from: storeData.data)
+                        print(data)
+                        completion(data, nil)
+                    }
+                    catch(let error) {
+                        print("requestGetBookMarkStores - 파싱 실패")
+                        completion(nil, error)
+                    }
+                }
+                else {
+                    print("requestGetBookMarkStores - 요청 실패")
+                    completion(nil, nil)
+                }
+            case .failure(let error):
+                print("requestGetBookMarkStores - 통신 실패")
+                completion(nil, error)
+            }
+            
+        }
+    }
 }
