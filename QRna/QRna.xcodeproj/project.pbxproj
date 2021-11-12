@@ -43,6 +43,7 @@
 		DA84C16427229CD50007B105 /* StoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16327229CD50007B105 /* StoreDataService.swift */; };
 		DA84C16627229E050007B105 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84C16527229E050007B105 /* StoreViewModel.swift */; };
 		DA85B7CA270ECA8D00631BD2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */; };
+		DA8F42BA273E4BC800049079 /* BookMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8F42B9273E4BC800049079 /* BookMarkViewController.swift */; };
 		DAC66321270B54B7009856DD /* QRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66320270B54B7009856DD /* QRService.swift */; };
 		DAC66325270B57C8009856DD /* QRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC66324270B57C8009856DD /* QRViewModel.swift */; };
 		DAD0A0862718076C00AA47C3 /* UserPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD0A0852718076C00AA47C3 /* UserPage.storyboard */; };
@@ -127,6 +128,7 @@
 		DA84C16327229CD50007B105 /* StoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataService.swift; sourceTree = "<group>"; };
 		DA84C16527229E050007B105 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		DA85B7C9270ECA8D00631BD2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DA8F42B9273E4BC800049079 /* BookMarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkViewController.swift; sourceTree = "<group>"; };
 		DAC66320270B54B7009856DD /* QRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRService.swift; sourceTree = "<group>"; };
 		DAC66324270B57C8009856DD /* QRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewModel.swift; sourceTree = "<group>"; };
 		DAD0A0852718076C00AA47C3 /* UserPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserPage.storyboard; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				DAD0A08D27180DA000AA47C3 /* UserMainViewController.swift */,
 				DA0403A827215366007A20AC /* detailViewController.swift */,
 				DA748C2B2737A65D009EE1A3 /* SearchViewController.swift */,
+				DA8F42B9273E4BC800049079 /* BookMarkViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				DA347638270AF3430009519B /* UserViewModel.swift in Sources */,
 				DA73AD84270DA13300916720 /* RequestLoggingPlugin.swift in Sources */,
 				DA34762C270AE88C0009519B /* NetworkController.swift in Sources */,
+				DA8F42BA273E4BC800049079 /* BookMarkViewController.swift in Sources */,
 				DA73AD86270DA83700916720 /* QRDataService.swift in Sources */,
 				DAD0A08E27180DA000AA47C3 /* UserMainViewController.swift in Sources */,
 				DAD0A09027180E8100AA47C3 /* ContentView.swift in Sources */,

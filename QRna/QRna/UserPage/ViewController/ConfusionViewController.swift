@@ -10,6 +10,7 @@ import UIKit
 class ConfusionViewController: UIViewController {
 
     @IBOutlet weak var mainTable: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     let storeViewModel = StoreViewModel()
     
@@ -54,6 +55,16 @@ class ConfusionViewController: UIViewController {
 
 extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if self.storeViewModel.storeArray.count == 0{
+            self.noDataLabel.isHidden = false
+            self.mainTable.isHidden = true
+        }
+        else {
+            self.noDataLabel.isHidden = true
+            self.mainTable.isHidden = false
+        }
+        
         return storeViewModel.storeArray.count
     }
     
@@ -61,6 +72,8 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "ConfusionCell", for: indexPath) as! ConfusionCell
         cell.name.text = storeViewModel.storeArray[indexPath.row].name
         cell.confuse.text = setStringValue(enumValue: storeViewModel.storeArray[indexPath.row].congestionStatus!)
+        cell.address.text = "\(storeViewModel.storeArray[indexPath.row].address)"
+        cell.tableStatus.text = "\(storeViewModel.storeArray[indexPath.row].useTables)/ \(storeViewModel.storeArray[indexPath.row].numberOfTables)"
         
         return cell
     }
@@ -75,5 +88,7 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
 
 class ConfusionCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var tableStatus: UILabel!
     @IBOutlet weak var confuse: UILabel!
 }

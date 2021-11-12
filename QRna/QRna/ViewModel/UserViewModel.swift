@@ -16,6 +16,7 @@ class UserViewModel {
     var history: [History]?
     var ownerStoreData: [Store]?
     var storeList: [StoreInfo]?
+    var bookMarkStores: [StoreInfo]?
     
     func signIn(email: String, password: String, completion: @escaping (ViewModelState) -> Void ) {
         service.requestSignIn(email: email, password: password) { (loginData, error) in
@@ -111,8 +112,8 @@ class UserViewModel {
     
     func searchStore(keyword: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestSearchStore(keyword: keyword) { (searchData, error) in
+            self.storeList = [StoreInfo]()
             if searchData != nil {
-                self.storeList = [StoreInfo]()
                 self.storeList = searchData
                 completion(.success)
             }
@@ -124,9 +125,22 @@ class UserViewModel {
     
     func searchStoreWithRegion(keyword: String, region: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestSearchStoreWithRegion(keyword: keyword, region: region) { (searchData, error) in
+            self.storeList = [StoreInfo]()
             if searchData != nil {
-                self.storeList = [StoreInfo]()
                 self.storeList = searchData
+                completion(.success)
+            }
+            else {
+                completion(.failure)
+            }
+        }
+    }
+    
+    func getBookMarkStores(completion: @escaping (ViewModelState)->Void) {
+        service.requestGetBookMarkStores { (storeData, error) in
+            self.bookMarkStores = [StoreInfo]()
+            if storeData != nil {
+                self.bookMarkStores = storeData
                 completion(.success)
             }
             else {

@@ -48,7 +48,6 @@ class detailViewController: UIViewController {
             
         }
         
-    
         setBookMark()
         storeTable.delegate = self
         storeTable.dataSource = self
