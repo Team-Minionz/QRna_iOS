@@ -112,8 +112,8 @@ class UserViewModel {
     
     func searchStore(keyword: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestSearchStore(keyword: keyword) { (searchData, error) in
+            self.storeList = [StoreInfo]()
             if searchData != nil {
-                self.storeList = [StoreInfo]()
                 self.storeList = searchData
                 completion(.success)
             }
@@ -125,8 +125,8 @@ class UserViewModel {
     
     func searchStoreWithRegion(keyword: String, region: String, completion: @escaping (ViewModelState) -> Void) {
         service.requestSearchStoreWithRegion(keyword: keyword, region: region) { (searchData, error) in
+            self.storeList = [StoreInfo]()
             if searchData != nil {
-                self.storeList = [StoreInfo]()
                 self.storeList = searchData
                 completion(.success)
             }
@@ -138,8 +138,8 @@ class UserViewModel {
     
     func getBookMarkStores(completion: @escaping (ViewModelState)->Void) {
         service.requestGetBookMarkStores { (storeData, error) in
+            self.bookMarkStores = [StoreInfo]()
             if storeData != nil {
-                self.bookMarkStores = [StoreInfo]()
                 self.bookMarkStores = storeData
                 completion(.success)
             }

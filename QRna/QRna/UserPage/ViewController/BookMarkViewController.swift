@@ -30,16 +30,7 @@ class BookMarkViewController: UIViewController {
         userViewModel.getBookMarkStores { response in
             switch response {
             case .success:
-                if self.userViewModel.bookMarkStores == nil || self.userViewModel.bookMarkStores?.count == 0{
-                    self.noDataLabel.isHidden = false
-                    self.bookMarkTable.isHidden = true
-                }
-                else {
-                    self.noDataLabel.isHidden = true
-                    self.bookMarkTable.isHidden = false
-                    self.bookMarkTable.reloadData()
-                }
-                print("")
+                self.bookMarkTable.reloadData()
             case .failure:
                 self.bookMarkTable.isHidden = true
                 self.noDataLabel.isHidden = false
@@ -50,6 +41,15 @@ class BookMarkViewController: UIViewController {
 
 extension BookMarkViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if self.userViewModel.bookMarkStores == nil || self.userViewModel.bookMarkStores?.count == 0{
+            self.noDataLabel.isHidden = false
+            self.bookMarkTable.isHidden = true
+        }
+        else {
+            self.noDataLabel.isHidden = true
+            self.bookMarkTable.isHidden = false
+        }
+        
         return userViewModel.storeList?.count ?? 0
     }
     

@@ -10,6 +10,7 @@ import UIKit
 class ConfusionViewController: UIViewController {
 
     @IBOutlet weak var mainTable: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     let storeViewModel = StoreViewModel()
     
@@ -54,6 +55,16 @@ class ConfusionViewController: UIViewController {
 
 extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if self.storeViewModel.storeArray.count == 0{
+            self.noDataLabel.isHidden = false
+            self.mainTable.isHidden = true
+        }
+        else {
+            self.noDataLabel.isHidden = true
+            self.mainTable.isHidden = false
+        }
+        
         return storeViewModel.storeArray.count
     }
     

@@ -12,6 +12,7 @@ class SearchViewController: UIViewController{
     @IBOutlet weak var regionCollectionView: UICollectionView!
     @IBOutlet weak var keywordLabel: UITextField!
     @IBOutlet weak var searchBtn: RedButton!
+    @IBOutlet weak var searchTableView: UITableView!
     
     var flowLayout = UICollectionViewFlowLayout()
     let regionArray = ["서울","인천","경기도","강원도","충청도", "전라도", "경상도", "제주도"]
@@ -35,13 +36,19 @@ class SearchViewController: UIViewController{
             showErrorMessage(title: "검색 실패", message: "키워드를 입력해 주세요")
         }
         else {
+            setTableView()
             if regionValue == "" {
                 userViewModel.searchStore(keyword: keywordLabel.text!) { response in
                     switch response {
                     case .success:
                         print("키워드 검색 성공")
+                        if self.userViewModel.storeList?.count == 0 {
+                            self.showErrorMessage(title: "", message: "검색된 데이터가 없습니다.")
+                        }
+                        self.searchTableView.reloadData()
                     case .failure:
                         print("키워드 검색 실패")
+                        self.showErrorMessage(title: "검색 실패", message: "서버가 원활하지 않습니다")
                     }
                 }
             }
@@ -51,8 +58,13 @@ class SearchViewController: UIViewController{
                     switch response {
                     case .success:
                         print("키워드/지역 검색 성공")
+                        if self.userViewModel.storeList?.count == 0 {
+                            self.showErrorMessage(title: "", message: "검색된 데이터가 없습니다.")
+                        }
+                        self.searchTableView.reloadData()
                     case .failure:
                         print("키워드/지역 검색 실패")
+                        self.showErrorMessage(title: "검색 실패", message: "서버가 원활하지 않습니다")
                     }
                 }
             }
@@ -73,6 +85,11 @@ class SearchViewController: UIViewController{
         
         regionCollectionView.delegate = self
         regionCollectionView.dataSource = self
+    }
+    
+    fileprivate func setTableView() {
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
     }
 }
 
@@ -104,6 +121,21 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
 }
 
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userViewModel.storeList?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
+        
+        
+        return cell
+    }
+    
+    
+}
+
 class RegionCell: UICollectionViewCell {
     
     @IBOutlet weak var regionContentView: UIView!
@@ -127,4 +159,11 @@ class RegionCell: UICollectionViewCell {
             }
         }
     }
+}
+
+class SearchCell: UITableViewCell {
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var numberOfTables: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var congestionStatus: UILabel!
 }

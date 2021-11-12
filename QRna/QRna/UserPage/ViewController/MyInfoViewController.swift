@@ -12,8 +12,9 @@ class MyInfoViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userPhoneNumberLabel: UILabel!
     @IBOutlet weak var userAddressLabel: UILabel!
-    
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var historyTable: UITableView!
+    
     let userViewModel = UserViewModel()
     
     override func viewDidLoad() {
@@ -74,6 +75,14 @@ class MyInfoViewController: UIViewController {
 
 extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if userViewModel.history?.count == 0 || userViewModel.history == nil {
+            noDataLabel.isHidden = false
+            historyTable.isHidden = true
+        }
+        else {
+            noDataLabel.isHidden = true
+            historyTable.isHidden = false
+        }
         return userViewModel.history?.count ?? 0
     }
     
