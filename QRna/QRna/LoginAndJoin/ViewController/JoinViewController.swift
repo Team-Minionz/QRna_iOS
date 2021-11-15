@@ -34,7 +34,6 @@ class JoinViewController: UIViewController {
         super.viewDidLoad()
         
         setDropDownBtn()
-        
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.userTypeBtn.setTitle(item, for: .normal)
             self.userTypeStr = item

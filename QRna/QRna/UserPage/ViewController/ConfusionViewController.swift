@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ConfusionViewController: UIViewController {
 
@@ -13,12 +14,17 @@ class ConfusionViewController: UIViewController {
     @IBOutlet weak var noDataLabel: UILabel!
     
     let storeViewModel = StoreViewModel()
+    var locationManager = CLLocationManager()
+    var latitude = 0.0
+    var longitude = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         mainTable.delegate = self
         mainTable.dataSource = self
+        
+        setLocationManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +32,6 @@ class ConfusionViewController: UIViewController {
     }
     
     fileprivate func getStoreData() {
-        
         storeViewModel.getStoreList { result in
             switch result {
             case .success:
@@ -51,12 +56,27 @@ class ConfusionViewController: UIViewController {
         
         return stringValue
     }
+    
+    fileprivate func setLocationManager() {
+        locationManager.delegate = self
+        // 거리 정확도
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        // 위치 사용 허용 알림
+        locationManager.requestWhenInUseAuthorization()
+        // 위치 사용을 허용하면 현재 위치 정보를 가져옴
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+        else {
+            print("위치 서비스 허용 off")
+        }
+    }
 }
 
 extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.storeViewModel.storeArray.count == 0{
+        if self.storeViewModel.storeArray.count == 0 {
             self.noDataLabel.isHidden = false
             self.mainTable.isHidden = true
         }
@@ -83,6 +103,23 @@ extension ConfusionViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
         vc.shopId = storeViewModel.storeArray[indexPath.row].id ?? -1
         present(vc, animated: true)
+    }
+}
+
+extension ConfusionViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("위치 업데이트!")
+            print("위도 : \(location.coordinate.latitude)")
+            print("경도 : \(location.coordinate.longitude)")
+            self.latitude = location.coordinate.latitude
+            self.longitude = location.coordinate.longitude
+        }
+    }
+    
+    // 위치 가져오기 실패
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("error")
     }
 }
 
