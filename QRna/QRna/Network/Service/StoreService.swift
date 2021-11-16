@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 public enum StoreService {
-    case getStoreList
+    case getStoreList(latitude: Double, longitude: Double)
     case deleteStore(storeId: Int)
     case addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]])
     case getDetailTableInfo(storeId: Int)
@@ -25,9 +25,7 @@ extension StoreService : TargetType {
     public var path: String {
         switch self {
         case .getStoreList:
-            let la: Double = 27.0
-            let lo: Double = 103.0
-            return "/api/v1/shops/near?latitude=\(la)&longitude=\(lo)"
+            return "/api/v1/shops/near"
         case .deleteStore(let storeId):
             return "/api/v1/shops/\(storeId)"
         case .addStore:
@@ -60,11 +58,13 @@ extension StoreService : TargetType {
     
     public var task: Task {
         switch self {
-        case .getStoreList, .deleteStore, .getDetailTableInfo, .exitTable, .getStoreDetail:
+        case .deleteStore, .getDetailTableInfo, .exitTable, .getStoreDetail:
             return .requestPlain
         case .addStore(name: let name, zipcode: let zipcode, street: let street, city: let city, telNumber: let telNumber, tableList: let tableList):
             print("\(OwnerViewModel.id)")
             return .requestCompositeParameters(bodyParameters: ["ownerId": OwnerViewModel.id, "name": name, "address": ["zipcode":zipcode, "street": street, "city": city, "latitude": 27.0, "longitude": 204.0], "telNumber": telNumber, "tableList": tableList], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+        case .getStoreList(let latitude, let longitude):
+            return .requestParameters(parameters: ["latitude":latitude, "longitude":longitude], encoding: URLEncoding.queryString)
         }
     }
     

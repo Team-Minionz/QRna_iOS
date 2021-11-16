@@ -11,8 +11,8 @@ import Moya
 class StoreDataService {
     let provider = MoyaProvider<StoreService>()
     
-    func requestGetSotreList(completion: @escaping ([StoreInfo]?, Error?) -> Void) {
-        provider.request(.getStoreList) { response in
+    func requestGetSotreList(latitude: Double, longitude: Double, completion: @escaping ([StoreInfo]?, Error?) -> Void) {
+        provider.request(.getStoreList(latitude: latitude, longitude: longitude)) { response in
             print("StoreDataService - requestGetSotreList")
             switch response {
             case .success(let getStoreData) :

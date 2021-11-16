@@ -14,6 +14,9 @@ class detailViewController: UIViewController {
     @IBOutlet weak var useRatio: UILabel!
     @IBOutlet weak var bookMarkBtn: UIButton!
     @IBOutlet weak var contentView: ContentView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var number: UILabel!
     
     var temp = [StoreTemp]()
     var isLiked = false
@@ -38,10 +41,16 @@ class detailViewController: UIViewController {
         tableContentView.layer.borderWidth = 0.8
         
         //storeTable.rowHeight = UITableView.automaticDimension
-        storeViewModel.getStoreDetail(storeId: 1) { response in
+        storeViewModel.getStoreDetail(storeId: self.shopId) { response in
             switch response {
             case .success:
-                print("성공")
+                self.name.text = self.storeViewModel.storeDetailData!.name!
+                self.address.text = self.storeViewModel.storeDetailData!.address!.city! + " " + self.storeViewModel.storeDetailData!.address!.street!
+                self.number.text = self.storeViewModel.storeDetailData!.telNumber
+                if self.storeViewModel.storeDetailData!.bookMark! {
+                    self.isLiked = true
+                }
+                self.setBookMark()
             case .failure:
                 print("실패")
             }

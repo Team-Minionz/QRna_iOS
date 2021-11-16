@@ -8,5 +8,5 @@
 import Foundation
 
 class NetworkController {
-    static let baseUrl = "http://13.209.117.145:8080"
+    static let baseUrl = "http://www.qrna.kro.kr"
 }

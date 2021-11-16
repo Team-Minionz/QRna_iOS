@@ -37,6 +37,21 @@ class BookMarkViewController: UIViewController {
             }
         }
     }
+    
+    fileprivate func setStringValue(enumValue: String) -> String {
+        var stringValue = ""
+        
+        switch enumValue {
+        case "SMOOTH":
+            stringValue = "원활"
+        case "NORMAL":
+            stringValue = "보통"
+        default:
+            stringValue = "혼잡"
+        }
+        
+        return stringValue
+    }
 }
 
 extension BookMarkViewController: UITableViewDelegate, UITableViewDataSource {
@@ -50,18 +65,25 @@ extension BookMarkViewController: UITableViewDelegate, UITableViewDataSource {
             self.bookMarkTable.isHidden = false
         }
         
-        return userViewModel.storeList?.count ?? 0
+        return userViewModel.bookMarkStores?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = bookMarkTable.dequeueReusableCell(withIdentifier: "BookMarkCell", for: indexPath) as! BookMarkCell
         
-        cell.name.text = userViewModel.storeList![indexPath.row].name
-        cell.address.text = userViewModel.storeList![indexPath.row].address!.street! + " " +  userViewModel.storeList![indexPath.row].address!.city!
-        cell.tableStatus.text = "\(userViewModel.storeList![indexPath.row].useTables) / \(userViewModel.storeList![indexPath.row].numberOfTables)"
-        cell.degreeOfCongestion.text = userViewModel.storeList![indexPath.row].congestionStatus!
+        cell.name.text = userViewModel.bookMarkStores![indexPath.row].name
+        cell.address.text = userViewModel.bookMarkStores![indexPath.row].address!.street! + " " +  userViewModel.bookMarkStores![indexPath.row].address!.city!
+        cell.tableStatus.text = "\(userViewModel.bookMarkStores![indexPath.row].useTables!) / \(userViewModel.bookMarkStores![indexPath.row].numberOfTables!)"
+        cell.degreeOfCongestion.text = setStringValue(enumValue: userViewModel.bookMarkStores![indexPath.row].congestionStatus!)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        vc.shopId = userViewModel.bookMarkStores![indexPath.row].id ?? -1
+        present(vc, animated: true)
     }
 }
 

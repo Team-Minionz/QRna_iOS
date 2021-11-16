@@ -54,6 +54,7 @@ class SearchViewController: UIViewController{
             }
             
             else {
+              
                 userViewModel.searchStoreWithRegion(keyword: keywordLabel.text!, region: regionValue) { response in
                     switch response {
                     case .success:
@@ -90,6 +91,21 @@ class SearchViewController: UIViewController{
     fileprivate func setTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
+    }
+    
+    fileprivate func setStringValue(enumValue: String) -> String {
+        var stringValue = ""
+        
+        switch enumValue {
+        case "SMOOTH":
+            stringValue = "원활"
+        case "NORMAL":
+            stringValue = "보통"
+        default:
+            stringValue = "혼잡"
+        }
+        
+        return stringValue
     }
 }
 
@@ -128,9 +144,21 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
+        cell.name.text = userViewModel.storeList![indexPath.row].name
+        cell.address.text = userViewModel.storeList![indexPath.row].address!.street! + " " + userViewModel.storeList![indexPath.row].address!.city!
         
+        cell.congestionStatus.text = setStringValue(enumValue: userViewModel.storeList![indexPath.row].congestionStatus!)
+        
+        cell.numberOfTables.text = "\(userViewModel.storeList![indexPath.row].useTables!) / \(userViewModel.storeList![indexPath.row].numberOfTables!)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "UserPage", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "detailViewController") as! detailViewController
+        vc.shopId = userViewModel.storeList![indexPath.row].id ?? -1
+        present(vc, animated: true)
     }
     
     

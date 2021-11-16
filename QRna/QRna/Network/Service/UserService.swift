@@ -44,10 +44,10 @@ extension UserService: TargetType {
             return "/api/v1/users/bookmark"
         case .removeBookMark(let shopId):
             return "/api/v1/users/bookmark/\(UserViewModel.id)/\(shopId)"
-        case .searchStore(let keyword):
-            return "/api/v1/shops/search?keyword=\(keyword)"
-        case .searchStoreWithRegion(let keyword, let region):
-            return "/api/v1/shops/search/region?region=\(region)&keyword=\(keyword)"
+        case .searchStore:
+            return "/api/v1/shops/search"
+        case .searchStoreWithRegion(_, _):
+            return "/api/v1/shops/search"
         case .getBookMarkStores:
             return "/api/v1/users/bookmark/\(UserViewModel.id)"
         }
@@ -78,8 +78,12 @@ extension UserService: TargetType {
             return .requestCompositeParameters(bodyParameters: ["name" : name, "email" : email, "nickName" : nickName, "telNumber" : telNumber, "password" : password, "address":["zipcode":zipcode, "street": street, "city": city]], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         case .bookMark(let shopId):
             return .requestCompositeParameters(bodyParameters: ["shopId":shopId, "userId":UserViewModel.id], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .withdraw, .logout, .getInfo, .removeBookMark, .searchStore, .searchStoreWithRegion, .getBookMarkStores:
+        case .withdraw, .logout, .getInfo, .removeBookMark, .getBookMarkStores:
             return .requestPlain
+        case .searchStore(let keyword):
+            return .requestParameters(parameters: ["keyword":keyword], encoding: URLEncoding.queryString)
+        case .searchStoreWithRegion(let keyword, let region):
+            return .requestParameters(parameters: ["keyword":keyword, "region": region], encoding: URLEncoding.queryString)
         }
     }
     

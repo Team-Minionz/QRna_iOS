@@ -13,6 +13,8 @@ class ConfusionViewController: UIViewController {
     @IBOutlet weak var noDataLabel: UILabel!
     
     let storeViewModel = StoreViewModel()
+    var latitude = 27.0
+    var longitude = 204.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ class ConfusionViewController: UIViewController {
     
     fileprivate func getStoreData() {
         
-        storeViewModel.getStoreList { result in
+        storeViewModel.getStoreList(latitude: self.latitude, longitude: self.longitude) { result in
             switch result {
             case .success:
                 self.mainTable.reloadData()
