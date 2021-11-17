@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6wB-i1-oNH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6wB-i1-oNH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -184,8 +184,43 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wKM-0E-rJG">
+                                <rect key="frame" x="20" y="108" width="374" height="264"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qF5-Zt-CrX" customClass="ContentView" customModule="QRna" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="224"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7rC-8K-Ny0">
+                                        <rect key="frame" x="0.0" y="234" width="374" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syl-NY-6jT" customClass="RadioButton" customModule="QRna" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="혼잡도 순"/>
+                                                <connections>
+                                                    <action selector="didTapConfusionBtn:" destination="Kyc-z4-uyF" eventType="touchUpInside" id="ddj-q8-5XR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-Vu-80S" customClass="RadioButton" customModule="QRna" customModuleProvider="target">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="거리 순"/>
+                                                <connections>
+                                                    <action selector="didTapDistanceBtn:" destination="Kyc-z4-uyF" eventType="touchUpInside" id="xKK-lH-v1l"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="syl-NY-6jT" firstAttribute="width" secondItem="7rC-8K-Ny0" secondAttribute="width" multiplier="0.486631" id="Bh2-MW-zmR"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zux-lP-Z82">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="392" width="374" height="421"/>
                                 <color key="backgroundColor" red="0.84387993809999995" green="0.97292286159999997" blue="0.94509762529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfusionCell" id="6w9-lk-GAc" customClass="ConfusionCell" customModule="QRna" customModuleProvider="target">
@@ -272,21 +307,29 @@
                         <constraints>
                             <constraint firstItem="eE7-m3-FWd" firstAttribute="centerX" secondItem="oZJ-Ih-b0F" secondAttribute="centerX" id="0Tq-bj-L00"/>
                             <constraint firstItem="eE7-m3-FWd" firstAttribute="centerY" secondItem="oZJ-Ih-b0F" secondAttribute="centerY" id="2eE-yK-KP0"/>
-                            <constraint firstItem="zux-lP-Z82" firstAttribute="top" secondItem="sfb-vX-DIx" secondAttribute="top" id="4Xn-3t-ZFs"/>
+                            <constraint firstItem="qF5-Zt-CrX" firstAttribute="height" secondItem="oZJ-Ih-b0F" secondAttribute="height" multiplier="0.25" id="39b-kM-YLD"/>
+                            <constraint firstAttribute="trailing" secondItem="wKM-0E-rJG" secondAttribute="trailing" constant="20" id="JK2-9P-wTm"/>
+                            <constraint firstItem="wKM-0E-rJG" firstAttribute="top" secondItem="sfb-vX-DIx" secondAttribute="top" constant="20" id="UsI-Lu-sG2"/>
                             <constraint firstItem="sfb-vX-DIx" firstAttribute="bottom" secondItem="zux-lP-Z82" secondAttribute="bottom" id="ba3-hv-VEl"/>
                             <constraint firstItem="zux-lP-Z82" firstAttribute="leading" secondItem="sfb-vX-DIx" secondAttribute="leading" constant="20" id="dph-wZ-jfC"/>
                             <constraint firstItem="sfb-vX-DIx" firstAttribute="trailing" secondItem="zux-lP-Z82" secondAttribute="trailing" constant="20" id="izD-w7-e7n"/>
+                            <constraint firstItem="wKM-0E-rJG" firstAttribute="leading" secondItem="sfb-vX-DIx" secondAttribute="leading" constant="20" id="min-vw-DqL"/>
+                            <constraint firstItem="zux-lP-Z82" firstAttribute="top" secondItem="wKM-0E-rJG" secondAttribute="bottom" constant="20" id="vk7-zU-JYa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="혼잡도" image="person.2" catalog="system" id="KsV-ob-FYq"/>
                     <connections>
+                        <outlet property="confusionBtn" destination="syl-NY-6jT" id="ddw-88-Shf"/>
+                        <outlet property="distanceBtn" destination="ieV-Vu-80S" id="m31-pG-NpM"/>
                         <outlet property="mainTable" destination="zux-lP-Z82" id="VaQ-WL-GH6"/>
+                        <outlet property="mapStackView" destination="wKM-0E-rJG" id="eyT-Rw-XBV"/>
                         <outlet property="noDataLabel" destination="eE7-m3-FWd" id="Cbg-xJ-ioe"/>
+                        <outlet property="subView" destination="qF5-Zt-CrX" id="ePf-pj-upq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYb-Qb-7iI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="-621"/>
+            <point key="canvasLocation" x="1076.8115942028987" y="-621.42857142857144"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="sc1-mA-zBv">

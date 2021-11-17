@@ -11,7 +11,7 @@ class ContentView: UIView {
     required init(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)!
         
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 4
         
         self.layer.shadowColor = UIColor.black.cgColor 
         self.layer.masksToBounds = false

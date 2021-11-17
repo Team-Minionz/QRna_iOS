@@ -27,15 +27,16 @@ extension StoreService : TargetType {
         case .getStoreList:
             return "/api/v1/shops/near"
         case .deleteStore(let storeId):
+            print("/api/v1/shops/\(storeId)")
             return "/api/v1/shops/\(storeId)"
         case .addStore:
             return "/api/v1/shops"
         case .getDetailTableInfo(let storeId):
+            print("/api/v1/shops/\(storeId)")
             return "/api/v1/shops/\(storeId)"
         case .exitTable(let tableId):
             return "/api/v1/tables/\(tableId)"
         case .getStoreDetail(let storeId):
-            print( "/api/v1/shops/detail/\(storeId)/\(UserViewModel.id)")
             return "/api/v1/shops/detail/\(storeId)/\(UserViewModel.id)"
             
         }

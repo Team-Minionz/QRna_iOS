@@ -57,13 +57,15 @@ extension OwnerMainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = mainTable.dequeueReusableCell(withIdentifier: "storeCell", for: indexPath) as! storeCell
         cell.delete = { [unowned self] in
             let storeId = ownerViewModel.ownerStoreData![indexPath.row].id!
+            print("삭제!!")
             self.storeViewModel.deleteStore(storeId: storeId) { result in
                 switch result {
                 case .success:
+                    print("삭제 완료!")
                     self.storeViewModel.ownerStoreArray.remove(at: indexPath.row)
                     self.mainTable.reloadData()
                 case .failure:
-                    print("")
+                    print("삭제 실패")
                 }
             }
         }

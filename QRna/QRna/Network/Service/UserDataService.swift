@@ -211,6 +211,7 @@ class UserDataService {
                     do {
                         let decoder = JSONDecoder()
                         let data = try decoder.decode(ResponseData.self, from: removeData.data)
+                        print(data)
                         completion(data, nil)
                     }
                     catch(let error) {

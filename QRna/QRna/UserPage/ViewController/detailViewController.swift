@@ -63,6 +63,7 @@ class detailViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        print("Like? : \(isLiked)")
         if isLiked {
             userViewModel.bookMark(shopId: self.shopId) { response in
                 switch response {

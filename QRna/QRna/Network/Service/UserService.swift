@@ -43,6 +43,7 @@ extension UserService: TargetType {
         case .bookMark:
             return "/api/v1/users/bookmark"
         case .removeBookMark(let shopId):
+            print("/api/v1/users/bookmark/\(UserViewModel.id)/\(shopId)")
             return "/api/v1/users/bookmark/\(UserViewModel.id)/\(shopId)"
         case .searchStore:
             return "/api/v1/shops/search"
@@ -83,6 +84,7 @@ extension UserService: TargetType {
         case .searchStore(let keyword):
             return .requestParameters(parameters: ["keyword":keyword], encoding: URLEncoding.queryString)
         case .searchStoreWithRegion(let keyword, let region):
+            
             return .requestParameters(parameters: ["keyword":keyword, "region": region], encoding: URLEncoding.queryString)
         }
     }

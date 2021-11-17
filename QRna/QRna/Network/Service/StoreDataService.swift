@@ -39,6 +39,8 @@ class StoreDataService {
         provider.request(.deleteStore(storeId: storeId)) { response in
             switch response {
             case .success(let deleteData):
+                print("requestDeleteStore - 통신 성공")
+                print(deleteData)
                 if deleteData.statusCode == 204 {
                     do {
                         let decoder = JSONDecoder()
@@ -46,6 +48,7 @@ class StoreDataService {
                         completion(data, nil)
                     }
                     catch(let error) {
+                        print("requestDeleteStore - 요청 실패")
                         completion(nil, error)
                     }
                 }
@@ -53,6 +56,7 @@ class StoreDataService {
                     completion(nil, nil)
                 }
             case .failure(let error):
+                print("requestDeleteStore - 통신 실패")
                 completion(nil, error)
             }
         }
