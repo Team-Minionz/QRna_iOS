@@ -91,7 +91,7 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.name.text = userViewModel.history![indexPath.row].shopName!
         cell.number.text = userViewModel.history![indexPath.row].shopTelNumber
-        cell.date.text = "\(userViewModel.history![indexPath.row].visitedDate)"
+        cell.date.text = userViewModel.history![indexPath.row].visitedDate!
         
         let address = userViewModel.history![indexPath.row].shopAddress!.street! + " " +  userViewModel.history![indexPath.row].shopAddress!.city!
         

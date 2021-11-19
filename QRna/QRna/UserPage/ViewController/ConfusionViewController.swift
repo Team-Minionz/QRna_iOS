@@ -17,15 +17,19 @@ class ConfusionViewController: UIViewController, MTMapViewDelegate {
     @IBOutlet var distanceBtn: RadioButton!
     
     var mapView: MTMapView?
-    let storeViewModel = StoreViewModel()
+    var mapPoint1: MTMapPoint?
+    var poiItem1: MTMapPOIItem?
     var latitude = 27.0
     var longitude = 204.0
+    var sortValue = "default"
+    let storeViewModel = StoreViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         confusionBtn?.alternateButton = [distanceBtn!]
         distanceBtn?.alternateButton = [confusionBtn!]
+        distanceBtn.isSelected = true
         setMapView()
         mainTable.delegate = self
         mainTable.dataSource = self
@@ -44,14 +48,17 @@ class ConfusionViewController: UIViewController, MTMapViewDelegate {
     }
     
     @IBAction func didTapConfusionBtn(_ sender: Any) {
+        sortValue = "congestion"
+        getStoreData()
     }
     
     @IBAction func didTapDistanceBtn(_ sender: Any) {
+        sortValue = "default"
+        getStoreData()
     }
     
     fileprivate func getStoreData() {
-        
-        storeViewModel.getStoreList(latitude: self.latitude, longitude: self.longitude) { result in
+        storeViewModel.getStoreList(latitude: self.latitude, longitude: self.longitude, sort: self.sortValue) { result in
             switch result {
             case .success:
                 self.mapStackView.isHidden = false
@@ -92,6 +99,24 @@ class ConfusionViewController: UIViewController, MTMapViewDelegate {
         }
         
         return stringValue
+    }
+    
+    fileprivate func makeMarker(){
+        var cnt = 0
+        for item in storeViewModel.storeArray {
+            self.mapPoint1 = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.latitude ?? 0, longitude: item.longitude ?? 0))
+            poiItem1 = MTMapPOIItem()
+            // 핀 색상 설정
+            poiItem1?.markerType = MTMapPOIItemMarkerType.redPin
+            poiItem1?.mapPoint = mapPoint1
+            // 핀 이름 설정
+            poiItem1?.itemName = item.name
+            // 태그 설정
+            poiItem1?.tag = cnt
+            // 맵뷰에 추가!
+            mapView!.add(poiItem1)
+            cnt += 1
+        }
     }
 }
 

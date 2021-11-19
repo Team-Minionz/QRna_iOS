@@ -156,6 +156,7 @@ class UserDataService {
         provider.request(.getInfo) { response in
             switch response {
             case .success(let infoData):
+                print(infoData)
                 if infoData.statusCode == 200 {
                     do {
                         let decoder = JSONDecoder()

@@ -11,7 +11,7 @@ struct History: Codable {
     let shopName: String?
     let shopAddress: Address?
     let shopTelNumber: String?
-    let visitedDate: Date?
+    let visitedDate: String?
     
     struct Address: Codable {
         let street: String?

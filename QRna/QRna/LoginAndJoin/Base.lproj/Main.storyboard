@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RqH-eM-ruR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RqH-eM-ruR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,7 +101,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="jDD-Hn-QGa" kind="show" id="hgd-aY-yYA"/>
+                                    <action selector="qrCheckIn:" destination="HsE-P0-Vkq" eventType="touchUpInside" id="gRv-du-dak"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -128,37 +127,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wti-Vs-C23" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="755.35714285714278"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="IyG-PT-Uet">
-            <objects>
-                <viewController id="jDD-Hn-QGa" customClass="MapViewController" customModule="QRna" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sVt-2b-Shw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UY1-8J-Ujl">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="MQO-uk-YAR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UY1-8J-Ujl" firstAttribute="top" secondItem="MQO-uk-YAR" secondAttribute="top" id="LFI-OT-5f7"/>
-                            <constraint firstItem="MQO-uk-YAR" firstAttribute="bottom" secondItem="UY1-8J-Ujl" secondAttribute="bottom" id="MqI-X7-VPB"/>
-                            <constraint firstItem="UY1-8J-Ujl" firstAttribute="leading" secondItem="MQO-uk-YAR" secondAttribute="leading" id="VWL-Au-ayc"/>
-                            <constraint firstItem="MQO-uk-YAR" firstAttribute="trailing" secondItem="UY1-8J-Ujl" secondAttribute="trailing" id="bAQ-i5-gAR"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Fwh-ZF-u3r"/>
-                    <connections>
-                        <outlet property="subView" destination="UY1-8J-Ujl" id="2Dq-bC-ubE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AnL-ms-qGy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="35" y="1470"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="aXX-Is-Vv1">
@@ -323,9 +291,4 @@
             <point key="canvasLocation" x="759" y="755"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

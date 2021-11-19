@@ -194,22 +194,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7rC-8K-Ny0">
                                         <rect key="frame" x="0.0" y="234" width="374" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syl-NY-6jT" customClass="RadioButton" customModule="QRna" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="182" height="30"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="혼잡도 순"/>
-                                                <connections>
-                                                    <action selector="didTapConfusionBtn:" destination="Kyc-z4-uyF" eventType="touchUpInside" id="ddj-q8-5XR"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieV-Vu-80S" customClass="RadioButton" customModule="QRna" customModuleProvider="target">
-                                                <rect key="frame" x="192" y="0.0" width="182" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="거리 순"/>
                                                 <connections>
                                                     <action selector="didTapDistanceBtn:" destination="Kyc-z4-uyF" eventType="touchUpInside" id="xKK-lH-v1l"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syl-NY-6jT" customClass="RadioButton" customModule="QRna" customModuleProvider="target">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="혼잡도 순"/>
+                                                <connections>
+                                                    <action selector="didTapConfusionBtn:" destination="Kyc-z4-uyF" eventType="touchUpInside" id="ddj-q8-5XR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -833,7 +833,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TJE-iz-wjP">
-                                <rect key="frame" x="20" y="307" width="374" height="486"/>
+                                <rect key="frame" x="20" y="287" width="374" height="506"/>
                                 <color key="backgroundColor" red="0.84387993809999995" green="0.97292286159999997" blue="0.94509762529999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="m8k-5i-Czc" customClass="SearchCell" customModule="QRna" customModuleProvider="target">
@@ -928,7 +928,7 @@
                             <constraint firstItem="XIb-8t-svU" firstAttribute="bottom" secondItem="TJE-iz-wjP" secondAttribute="bottom" constant="20" id="cZo-nJ-wmV"/>
                             <constraint firstItem="kx0-yW-50a" firstAttribute="height" secondItem="FM2-HJ-Y1s" secondAttribute="height" multiplier="0.05" id="fx3-Lb-Lft"/>
                             <constraint firstItem="XIb-8t-svU" firstAttribute="trailing" secondItem="TJE-iz-wjP" secondAttribute="trailing" constant="20" id="n6w-qO-BIj"/>
-                            <constraint firstItem="TJE-iz-wjP" firstAttribute="top" secondItem="kg2-cw-byf" secondAttribute="bottom" constant="20" id="z1A-Vl-Bdw"/>
+                            <constraint firstItem="TJE-iz-wjP" firstAttribute="top" secondItem="kg2-cw-byf" secondAttribute="bottom" id="z1A-Vl-Bdw"/>
                             <constraint firstItem="kg2-cw-byf" firstAttribute="top" secondItem="kx0-yW-50a" secondAttribute="bottom" constant="20" id="zeP-ha-DRH"/>
                         </constraints>
                     </view>

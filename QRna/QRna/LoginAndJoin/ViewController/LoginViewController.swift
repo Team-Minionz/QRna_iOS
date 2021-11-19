@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     let userViewModel = UserViewModel()
     let ownerViewModel = OwnerViewModel()
+    let qrViewModel = QRViewModel()
     var userType: String?
     
     override func viewDidLoad() {
@@ -23,6 +24,18 @@ class LoginViewController: UIViewController {
         setSignUpBtn()
         
     }
+    
+    @IBAction func qrCheckIn(_ sender: Any) {
+        qrViewModel.certificationQR(tableId: 21) { result in
+            switch result {
+            case .success:
+                print("성공")
+            case .failure:
+                print("실패")
+            }
+        }
+    }
+    
     @IBAction func didTapOwnerSignInBtn(_ sender: Any) {
         userType = "Owner"
         ownerSignIn()

@@ -28,7 +28,7 @@ class SearchViewController: UIViewController{
         super.viewDidLoad()
         
         setRegionLayout()
-       
+        
     }
     
     @IBAction func didTapSearchBtn(_ sender: Any) {
@@ -54,7 +54,7 @@ class SearchViewController: UIViewController{
             }
             
             else {
-              
+                
                 userViewModel.searchStoreWithRegion(keyword: keywordLabel.text!, region: regionValue) { response in
                     switch response {
                     case .success:
@@ -65,7 +65,7 @@ class SearchViewController: UIViewController{
                         self.searchTableView.reloadData()
                     case .failure:
                         print("키워드/지역 검색 실패")
-                        self.showErrorMessage(title: "검색 실패", message: "서버가 원활하지 않습니다")
+                        self.showErrorMessage(title: "검색 실패", message: "검색 결과가 없습니다.")
                     }
                 }
             }
@@ -145,7 +145,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchTableView.dequeueReusableCell(withIdentifier: "SearchCell", for: indexPath) as! SearchCell
         cell.name.text = userViewModel.storeList![indexPath.row].name
-        cell.address.text = userViewModel.storeList![indexPath.row].address!.street! + " " + userViewModel.storeList![indexPath.row].address!.city!
+        cell.address.text = userViewModel.storeList![indexPath.row].address!.city! + " " + userViewModel.storeList![indexPath.row].address!.street!
         
         cell.congestionStatus.text = setStringValue(enumValue: userViewModel.storeList![indexPath.row].congestionStatus!)
         

@@ -39,7 +39,7 @@ extension QRService: TargetType {
         switch self {
         case .certification(let tableId):
             print("tableId : \(tableId)")
-            return .requestCompositeParameters(bodyParameters: ["userEmail" : UserViewModel.id, "tableId" : tableId], bodyEncoding: JSONEncoding.default, urlParameters: .init())
+            return .requestCompositeParameters(bodyParameters: ["userId" : 1, "tableId" : tableId], bodyEncoding: JSONEncoding.default, urlParameters: .init())
         }
     }
     

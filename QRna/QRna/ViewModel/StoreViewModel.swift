@@ -14,8 +14,8 @@ class StoreViewModel {
     var ownerTableDataInStore: [TableData]?
     var storeDetailData: StoreDetail?
     
-    func getStoreList(latitude: Double, longitude: Double,completion: @escaping (ViewModelState)->Void) {
-        service.requestGetSotreList(latitude: latitude, longitude: longitude) { (storeData, error) in
+    func getStoreList(latitude: Double, longitude: Double, sort: String, completion: @escaping (ViewModelState)->Void) {
+        service.requestGetSotreList(latitude: latitude, longitude: longitude, sort: sort) { (storeData, error) in
             if storeData != nil {
                 guard let storeList = storeData else{
                     completion(.success)

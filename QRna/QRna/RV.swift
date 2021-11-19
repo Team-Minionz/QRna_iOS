@@ -13,6 +13,8 @@ class RV: UIView {
     var previewLayer: AVCaptureVideoPreviewLayer?
     var captureSession: AVCaptureSession?
 
+    let qrViewModel = QRViewModel()
+    
     private var cornerLength: CGFloat = 20
     private var cornerLineWidth: CGFloat = 6
     private var rectOfInterest: CGRect {
@@ -239,6 +241,15 @@ extension RV: AVCaptureMetadataOutputObjectsDelegate {
 //            AudioServicesPlayAlertSound(SystemSoundID(1407)) // Appstore purchase sound
             found(code: stringValue)
             print("## Found metadata Value\n + \(stringValue)\n")
+            qrViewModel.certificationQR(tableId: Int(stringValue) ?? 1) { result in
+                switch result {
+                case .success:
+                    print("성공")
+                case .failure:
+                    print("실패")
+                }
+                
+            }
             stop(isButtonTap: true)
         }
     }

@@ -14,6 +14,8 @@ struct StoreInfo: Codable {
     let congestionStatus: String?
     let numberOfTables: Int?
     let useTables: Int?
+    let latitude: Double?
+    let longitude: Double?
 }
 
 struct addressOfInfo: Codable {

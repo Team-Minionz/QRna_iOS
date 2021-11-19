@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 public enum StoreService {
-    case getStoreList(latitude: Double, longitude: Double)
+    case getStoreList(latitude: Double, longitude: Double, sort: String)
     case deleteStore(storeId: Int)
     case addStore(name: String, zipcode: String, street: String, city: String, telNumber: String, tableList: [[String:Any]])
     case getDetailTableInfo(storeId: Int)
@@ -64,8 +64,8 @@ extension StoreService : TargetType {
         case .addStore(name: let name, zipcode: let zipcode, street: let street, city: let city, telNumber: let telNumber, tableList: let tableList):
             print("\(OwnerViewModel.id)")
             return .requestCompositeParameters(bodyParameters: ["ownerId": OwnerViewModel.id, "name": name, "address": ["zipcode":zipcode, "street": street, "city": city, "latitude": 27.0, "longitude": 204.0], "telNumber": telNumber, "tableList": tableList], bodyEncoding: JSONEncoding.default, urlParameters: .init())
-        case .getStoreList(let latitude, let longitude):
-            return .requestParameters(parameters: ["latitude":latitude, "longitude":longitude], encoding: URLEncoding.queryString)
+        case .getStoreList(let latitude, let longitude, let sort):
+            return .requestParameters(parameters: ["latitude":latitude, "longitude":longitude, "sort": sort], encoding: URLEncoding.queryString)
         }
     }
     

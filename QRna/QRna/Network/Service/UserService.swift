@@ -48,7 +48,8 @@ extension UserService: TargetType {
         case .searchStore:
             return "/api/v1/shops/search"
         case .searchStoreWithRegion(_, _):
-            return "/api/v1/shops/search"
+            print("/api/v1/shops/search/region")
+            return "/api/v1/shops/search/region"
         case .getBookMarkStores:
             return "/api/v1/users/bookmark/\(UserViewModel.id)"
         }
@@ -82,10 +83,11 @@ extension UserService: TargetType {
         case .withdraw, .logout, .getInfo, .removeBookMark, .getBookMarkStores:
             return .requestPlain
         case .searchStore(let keyword):
+            print("keyword: \(keyword)")
             return .requestParameters(parameters: ["keyword":keyword], encoding: URLEncoding.queryString)
         case .searchStoreWithRegion(let keyword, let region):
-            
-            return .requestParameters(parameters: ["keyword":keyword, "region": region], encoding: URLEncoding.queryString)
+            print("keyword: \(keyword)  region: \(region)")
+            return .requestParameters(parameters: ["region": region, "keyword":keyword], encoding: URLEncoding.queryString)
         }
     }
     
